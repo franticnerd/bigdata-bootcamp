@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zeppelin Basic Tutorial Learning Objectives
+ Try to follow the official tutorial of Zeppelin Notebook step-by-step.   1. Create a new Notebook Click on &lsquo;Create new note&rsquo;, and give a name, click on &lsquo;Create Note&rsquo;: Then, you will see a new blank note:
+Next, click the gear icon on the top-right, interpreter binding setting will be unfolded. Default interpreters will be enough for the most of cases, but you can add/remove at &lsquo;interpreter&rsquo; menu if you want to."><meta property="og:title" content="" />
+<meta property="og:description" content="Zeppelin Basic Tutorial Learning Objectives
+ Try to follow the official tutorial of Zeppelin Notebook step-by-step.   1. Create a new Notebook Click on &lsquo;Create new note&rsquo;, and give a name, click on &lsquo;Create Note&rsquo;: Then, you will see a new blank note:
+Next, click the gear icon on the top-right, interpreter binding setting will be unfolded. Default interpreters will be enough for the most of cases, but you can add/remove at &lsquo;interpreter&rsquo; menu if you want to." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" />
+
+<title>Zeppelin Tutorial | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="active">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Zeppelin Tutorial</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-create-a-new-notebook">1. Create a new Notebook</a></li>
+    <li><a href="#2-basic-usage">2. Basic usage</a>
+      <ul>
+        <li><a href="#text-note">Text note</a></li>
+        <li><a href="#scala-code">Scala code</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-load-data-into-table">3. Load Data Into Table</a></li>
+    <li><a href="#4-visualization-of-data-via-sql-query-statement">4. Visualization of Data via SQL query statement</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#5-exportimport-notebook">5. Export/Import Notebook</a></li>
+    <li><a href="#tutorial-file">Tutorial File</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="zeppelin-basic-tutorial">Zeppelin Basic Tutorial</h1>
+<blockquote class="book-hint info">
+  <strong>Learning Objectives</strong></p>
+<ul>
+<li>Try to follow the official tutorial of Zeppelin Notebook step-by-step.</li>
+</ul>
+</blockquote>
+
+<h2 id="1-create-a-new-notebook">1. Create a new Notebook</h2>
+<p>Click on &lsquo;Create new note&rsquo;, and give a name, click on &lsquo;Create Note&rsquo;:
+Then, you will see a new blank note:</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/create.gif" alt="zeppelin-new" /></p>
+<p>Next, click the gear icon on the top-right, interpreter binding setting will be unfolded.
+Default interpreters will be enough for the most of cases, but you can add/remove at &lsquo;interpreter&rsquo; menu if you want to. Click on &lsquo;Save&rsquo; once you complete your configuration.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/settings.gif" alt="zeppelin-interpreters" /></p>
+<h2 id="2-basic-usage">2. Basic usage</h2>
+<p>You can click the gear icon at the right side of the paragraph. If you click &lsquo;Show title&rsquo; you can give a title as you want for each paragraph.
+Try to use other commands also.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/menu.gif" alt="zeppelin-title" /></p>
+<h3 id="text-note">Text note</h3>
+<p>Like other Notebooks, e.g. Jupyter, we can put some text in a paragraph by using <code>md</code> command with Markdown syntax:</p>
+<pre><code>%md
+&lt;some text using markdown syntax&gt;
+</code></pre><p>After put text, click <code>play button</code> or <code>Shift+Enter</code> to run the paragraph. It will show formatted Markdown text.
+You can also choose show/hide editor for better visual or publishing.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/text.gif" alt="zeppelin-text" /></p>
+<h3 id="scala-code">Scala code</h3>
+<p>If you bind default interpreters, you can use scala codes as well as Spark API directly in a paragraph:</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/scala.png" alt="zeppelin-scala" /></p>
+<p>Again, do not forget to click <code>play button</code> or <code>Shift+Enter</code> to actually run the paragraph.</p>
+<h4 id="possible-error">Possible Error</h4>
+<p>If you meet an error related with HDFS, please check whether you have created HDFS user folder for &lsquo;zeppelin&rsquo; as described in <a href="/spark/zeppelin-intro.html">Zeppelin-Intro</a></p>
+<h2 id="3-load-data-into-table">3. Load Data Into Table</h2>
+<p>We can use sql query statements for easier visualization with Zeppelin. Later, you can fully utilize Angular or D3 in Zeppelin for better or more sophisticated visualization.</p>
+<p>Let&rsquo;s get &lsquo;Bank&rsquo; data from the official Zeppelin tutorial.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/prepare.png" alt="zeppelin-data" /></p>
+<p>Next, define a <code>case class</code> for easy transformation into <code>DataFrame</code> and map the text data we downloaded into DataFrame without its header. Finally, register this DataFrame as <code>Table</code> to use sql query statements.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/table.png" alt="zeppelin-load" /></p>
+<h2 id="4-visualization-of-data-via-sql-query-statement">4. Visualization of Data via SQL query statement</h2>
+<p>Once data is loaded into <code>Table</code>, you can use <code>SQL</code> query to visualize data you want to see:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">%</span><span style="color:#66d9ef">sql</span>
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">valid</span> <span style="color:#66d9ef">SQL</span> <span style="color:#66d9ef">statement</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p>Let&rsquo;s try to show a distribution of age of who are younger than 30.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/sql.png" alt="zeppelin-sql" /></p>
+<p>As you can see, visualization tool will be automatically loaded once you run a paragraph with SQL statement. Default one is the result table of the query statement, but you can choose other types of visualization such as bar chart, pie chart and line chart by just clicking the icons.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/zeppelin_basic.gif" alt="zeppelin-charts" />
+Also, you can change configurations for each chart as you want</p>
+<h4 id="input-form">Input Form</h4>
+<p>You can create input form by using <code>${formName}</code> or <code>${formName=defaultValue}</code> templates.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/input_form.gif" alt="zeppelin-input-form" /></p>
+<h4 id="select-form">Select Form</h4>
+<p>Also, you can create select form by using <code>${formName=defaultValue,option1|option2...}</code></p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/select_form.gif" alt="zeppelin-select-form" /></p>
+<p>For more dynamic forms, please refer to <a href="https://zeppelin.apache.org/docs/latest/manual/dynamicform.html">zeppelin-dynamicform</a></p>
+<h2 id="5-exportimport-notebook">5. Export/Import Notebook</h2>
+<p>Once you finish your works, you can export Notebook as JSON file for later use.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/export.png" alt="zeppelin-select-form" /></p>
+<p>Also, you can import Notebook exported as JSON or from URL.</p>
+<p><img src="/bigdata-bootcamp/spark_images/zeppelin/import.png" alt="zeppelin-select-form" /></p>
+<h2 id="tutorial-file">Tutorial File</h2>
+<p>You can download the JSON file for this tutorial <a href="https://gist.githubusercontent.com/yuikns/b7fc51a56e936e29f1577456c1b47563/raw/17d25875d7fd73eedaa67bc2f02e0a115110c233/tutorial.json">here</a> or see the official &lsquo;Zeppelin Tutorial&rsquo; on the frontpage of Zeppelin.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-create-a-new-notebook">1. Create a new Notebook</a></li>
+    <li><a href="#2-basic-usage">2. Basic usage</a>
+      <ul>
+        <li><a href="#text-note">Text note</a></li>
+        <li><a href="#scala-code">Scala code</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-load-data-into-table">3. Load Data Into Table</a></li>
+    <li><a href="#4-visualization-of-data-via-sql-query-statement">4. Visualization of Data via SQL query statement</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#5-exportimport-notebook">5. Export/Import Notebook</a></li>
+    <li><a href="#tutorial-file">Tutorial File</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

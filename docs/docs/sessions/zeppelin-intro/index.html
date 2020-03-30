@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to start Zeppelin Learning Objectives
+ Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment."><meta property="og:title" content="" />
+<meta property="og:description" content="How to start Zeppelin Learning Objectives
+ Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/" />
+
+<title>Zeppelin Intro | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="active">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Zeppelin Intro</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-run-provided-docker-image">1. Run provided Docker image</a>
+      <ul>
+        <li><a href="#shared-folder">Shared Folder</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-start-zeppelin-service-and-create-hdfs-folder">2. Start Zeppelin service and create HDFS folder</a></li>
+    <li><a href="#3-open-zeppelin-notebook-in-your-browser">3. Open Zeppelin Notebook in your browser</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-start-zeppelin">How to start Zeppelin</h1>
+<blockquote class="book-hint info">
+  <strong>Learning Objectives</strong></p>
+<ul>
+<li>Learn how to work with Zeppelin Notebook.</li>
+</ul>
+</blockquote>
+
+<blockquote class="book-hint warning">
+  You can skip this section, if you use your locally installed Zeppelin
+</blockquote>
+
+<h2 id="1-run-provided-docker-image">1. Run provided Docker image</h2>
+<p>Please prepare your docker environment and refer to <a href="/env/env-local-docker.html#_2-pull-and-run-docker-image">this section</a> to start your zeppelin service.</p>
+<h3 id="shared-folder">Shared Folder</h3>
+<p>You can use shared folder between your local OS and the virtual environment on Docker.
+This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment.
+Use <code>-v</code> option to make shared folder from an existing local folder and a folder in virtual environment:</p>
+<blockquote>
+<p>-v &lt;local_folder:vm_folder&gt;</p>
+</blockquote>
+<p>You should use absolute path for <code>vm_folder</code>, but it does not need to be an existing folder. For example, if want to use <code>~/Data/</code> in my local OS as shared folder connected with <code>/sample_data/</code> in VM, I can start a container as following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -m 8192m -h bootcamp1.docker <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /path/to/Data/:/sample_data/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  /bin/bash
+</code></pre></div><h2 id="2-start-zeppelin-service-and-create-hdfs-folder">2. Start Zeppelin service and create HDFS folder</h2>
+<p>If you have not started Zeppelin service,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/scripts/start-zeppelin.sh
+</code></pre></div><p>We need to create a HDFS folder for the user <code>zeppelin</code> as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo su - hdfs <span style="color:#75715e"># switch to user &#39;hdfs&#39;</span>
+hdfs dfs -mkdir -p /user/zeppelin <span style="color:#75715e"># create folder in hdfs</span>
+hdfs dfs -chown zeppelin /user/zeppelin <span style="color:#75715e">#  change the folder owner</span>
+exit
+</code></pre></div><p>You can check whether it has been created or not by using:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hdfs dfs -ls /user/
+</code></pre></div><h2 id="3-open-zeppelin-notebook-in-your-browser">3. Open Zeppelin Notebook in your browser</h2>
+<p>Once you have started Zeppelin service and have created HDFS folder for Zeppelin, you can access Zeppelin Notebook by using your local web browser.</p>
+<p>Open your web browser, and type in the address:
+<code>host-ip:port-for-zeppelin</code>
+For example,
+<code>192.168.99.100:9530</code> since the IP address assigned to my Docker container is <code>192.168.99.100</code> as it is shown above, and the port number assigned to Zeppelin service is <code>9530</code> as default in our Docker image.</p>
+<p>Once you navigate to that IP address with the port number, you will see the front page of Zeppelin like:
+<img src="/bigdata-bootcamp/spark_images/zeppelin/frontpage.png" alt="zeppelin-frontpage" /></p>
+<p>Let&rsquo;s move to do a simple tutorial in the next section.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-run-provided-docker-image">1. Run provided Docker image</a>
+      <ul>
+        <li><a href="#shared-folder">Shared Folder</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-start-zeppelin-service-and-create-hdfs-folder">2. Start Zeppelin service and create HDFS folder</a></li>
+    <li><a href="#3-open-zeppelin-notebook-in-your-browser">3. Open Zeppelin Notebook in your browser</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

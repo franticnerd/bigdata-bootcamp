@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview of Spark Learning Objectives
+ Learn basics about Scala programming language. Understand Spark RDD operations. Acquire hands-on experiences using Spark for analytics.   In this chapter, you will learn about Spark, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem through the interactive shell.
+Spark is mainly developed with Scala, a functional programming language on JVM."><meta property="og:title" content="" />
+<meta property="og:description" content="Overview of Spark Learning Objectives
+ Learn basics about Scala programming language. Understand Spark RDD operations. Acquire hands-on experiences using Spark for analytics.   In this chapter, you will learn about Spark, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem through the interactive shell.
+Spark is mainly developed with Scala, a functional programming language on JVM." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/spark/" />
+
+<title>Spark | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="active">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Spark</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="overview-of-spark">Overview of Spark</h1>
+<blockquote class="book-hint info">
+  <strong>Learning Objectives</strong></p>
+<ul>
+<li>Learn basics about Scala programming language.</li>
+<li>Understand Spark RDD operations.</li>
+<li>Acquire hands-on experiences using Spark for analytics.</li>
+</ul>
+</blockquote>
+
+<p>In this chapter, you will learn about <a href="http://spark.apache.org">Spark</a>, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem  through the interactive shell.</p>
+<p><img src="/bigdata-bootcamp/spark_images/spark-ecosystem.jpg" alt="spark-ecosystem" title="Spark Ecosystem"/></p>
+<p>Spark is mainly developed with <a href="http://www.scala-lang.org/">Scala</a>, a functional programming language on JVM. Though most of the Spark functions also have Python and Java API, we will only present examples in Scala for its conciseness and simplicity. Interested students can learn more about Python and Java in Spark from the <a href="https://spark.apache.org/docs/latest/programming-guide.html">official Spark document</a>.</p>
+<p>This chapter is divided into following sections:</p>
+<ol>
+<li><strong><a href="/spark/scala-basic.html">Scala Basics</a></strong>: You will learn basic Scala syntax via interactive shell, including declaring variables of different types, making function calls as well as how to compile and run a standalone Scala program.</li>
+<li><strong><a href="/spark/spark-basic.html">Spark Basics</a></strong>: You will learn how to load data into Spark and how to conduct some basic processing, e.g., converting data from raw string into a predefined class, filtering out those items with missing fields and statistics calculation.</li>
+<li><strong><a href="/spark/spark-sql.html">Spark SQL</a></strong>: You will learn how to use SQL like syntax for data processing in Spark. You will see how the data processing tasks can be achieved with Spark SQL.</li>
+<li><strong><a href="/spark/spark-application.html">Spark Application</a></strong>: You will learn how to preprocess data using spark for predictive modeling. Specifically, you will setup patient features and target for later heart failure prediction using MLlib and using Scikit-learn (Python machine learning module).</li>
+<li><strong><a href="/spark/spark-mllib.html">Spark MLlib and Scikit-learn</a></strong>: With the pre-processed data from the previous section, you will have a dataset suitable for Machine Learning tasks. In this section, you will learn how to apply existing algorithms in MLlib and in Scikit-learn to predict whether a patient will have heart failure.</li>
+<li><strong><a href="/spark/spark-graphx.html">Spark GraphX</a></strong>: GraphX is a Spark component for graph data processing. In this section, you will learn how to construct a graph and run graph algorithms such as PageRank, connected components on large graph.</li>
+</ol>
+<!-- raw HTML omitted -->
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

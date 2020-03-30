@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unuseds on GT Big Data Bootcamp</title>
+    <link>http://franticnerd/bigdata-bootcamp/unused/</link>
+    <description>Recent content in Unuseds on GT Big Data Bootcamp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://franticnerd/bigdata-bootcamp/unused/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</guid>
+      <description>Docker in AWS EC2 We developed a Docker image which pre-installed all modules in this bootcamp. You can directly use it in your own environment if you have docker. This page describes how to launch an EC2 instance on AWS and run docker container within it.
+Launch an AWS EC2 instance  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</guid>
+      <description>Docker Compose ::: tip This is an optional section. Docker Compose is just a utility, which does NOT affect the functionality of the docker image and our course.
+You can simply ignore it if you believe the docker commands are enough. :::
+Docker Compose is a tool for defining and running multi-container Docker applications. We can write a simple docker-compose.yml file as configure file, and launch a docker container as a service easily.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Docker Compose ::: tip This is an optional section. Docker Compose is just a utility, which does NOT affect the functionality of the docker image and our course.
+You can simply ignore it if you believe the docker commands are enough. :::
+Docker Compose is a tool for defining and running multi-container Docker applications. We can write a simple docker-compose.yml file as configure file, and launch a docker container as a service easily."><meta property="og:title" content="" />
+<meta property="og:description" content="Docker Compose ::: tip This is an optional section. Docker Compose is just a utility, which does NOT affect the functionality of the docker image and our course.
+You can simply ignore it if you believe the docker commands are enough. :::
+Docker Compose is a tool for defining and running multi-container Docker applications. We can write a simple docker-compose.yml file as configure file, and launch a docker container as a service easily." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/" />
+
+<title>Env Docker Compose | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Env Docker Compose</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#official-guides">Official Guides</a></li>
+    <li><a href="#install-docker-compose">Install Docker Compose</a></li>
+    <li><a href="#create-a-docker-composeyml">Create A <code>docker-compose.yml</code></a></li>
+    <li><a href="#basic-operation">Basic Operation</a>
+      <ul>
+        <li><a href="#up-and-down-start-and-stop-how-to-control-the-virtual-environment">Up and Down, Start and Stop. How to control the virtual environment</a></li>
+        <li><a href="#run-exec-and-ssh-how-to-access-the-environment">Run, Exec and SSH. How to access the environment</a></li>
+        <li><a href="#logs">Logs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="docker-compose">Docker Compose</h1>
+<p>::: tip
+This is an optional section. Docker Compose is just a utility, which does <strong>NOT</strong> affect the functionality of the docker image and our course.</p>
+<p>You can simply ignore it if you believe the docker commands are enough.
+:::</p>
+<p><a href="https://docs.docker.com/compose/">Docker Compose</a> is a tool for defining and running multi-container Docker applications. We can write a simple <code>docker-compose.yml</code> file as configure file, and launch a docker container as a service easily.</p>
+<p>This means you can fix all your parameters in your configure file, and start/stop them using more biref commands.</p>
+<h2 id="official-guides">Official Guides</h2>
+<ul>
+<li><a href="https://docs.docker.com/compose/overview/">Compose Overview</a></li>
+<li><a href="https://docs.docker.com/compose/install/">Install Compose</a></li>
+<li><a href="https://docs.docker.com/compose/gettingstarted/">Getting Started</a></li>
+<li><a href="https://docs.docker.com/compose/reference/">Compose command-line reference</a></li>
+<li><a href="https://docs.docker.com/compose/compose-file/">Compose file version 3 reference</a>
+<ul>
+<li><a href="https://docs.docker.com/compose/compose-file/#compose-file-structure-and-examples">Compose file structure and examples</a></li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/compose/env-file/">Environment file</a></li>
+</ul>
+<h2 id="install-docker-compose">Install Docker Compose</h2>
+<p>If you are a Windows/macOS user, the <code>docker-compose</code> should installed with your docker application.</p>
+<p>If this command is missing in your machine</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># docker-compose</span>
+-bash: docker-compose: command not found
+</code></pre></div><p>It is also pretty easy.</p>
+<p>Please visit the <a href="https://github.com/docker/compose/releases">Docker Compose Release Page</a>, following the guide and download the latest binary release.</p>
+<h2 id="create-a-docker-composeyml">Create A <code>docker-compose.yml</code></h2>
+<p>You can go to an empty folder in somewhere, and create a text file named as <code>docker-compose.yml</code>. The content may as follow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+
+<span style="color:#66d9ef">services</span>:
+  <span style="color:#66d9ef">bootcamp</span>:
+    <span style="color:#66d9ef">image</span>: sunlab/bigbox:latest
+    <span style="color:#66d9ef">hostname</span>: bootcamp
+    <span style="color:#66d9ef">domainname</span>: local
+    <span style="color:#66d9ef">restart</span>: <span style="color:#e6db74">&#34;no&#34;</span>
+    <span style="color:#66d9ef">volumes</span>:
+    <span style="color:#75715e"># Volumes section defined the mappings between host machine and</span>
+    <span style="color:#75715e"># virtual machine.</span>
+    <span style="color:#75715e"># &#34;:&#34; split each element into 2 parts</span>
+    <span style="color:#75715e"># the left part is the folder in host machine</span>
+    <span style="color:#75715e"># the right part is the folder in virtual machine</span>
+    <span style="color:#75715e"># docker-compose support relative path</span>
+    <span style="color:#75715e"># Please refer to</span>
+    <span style="color:#75715e"># https://docs.docker.com/compose/compose-file/#volumes</span>
+    <span style="color:#75715e"># for more detail if you are interested</span>
+      - ./data/logs:/var/log
+      - ./data/host:/mnt/host
+    <span style="color:#66d9ef">environment</span>:
+      - CONTAINER=docker
+    <span style="color:#75715e"># /scripts/entrypoint.sh will start all the services</span>
+    <span style="color:#75715e"># and then finally listen to port 22.</span>
+    <span style="color:#66d9ef">command</span>: [ <span style="color:#e6db74">&#34;/scripts/entrypoint.sh&#34;</span> ]
+    <span style="color:#66d9ef">ports</span>:
+    <span style="color:#75715e"># Ports section defined a few rules and forward the network</span>
+    <span style="color:#75715e"># stream between host machine and vm.</span>
+    <span style="color:#75715e"># As the rules in volumes section</span>
+    <span style="color:#75715e"># The left part is for your host machine.</span>
+    <span style="color:#75715e"># This means you can visit localhost:2333</span>
+    <span style="color:#75715e"># and then get the response from the app</span>
+    <span style="color:#75715e"># listening port 22 in docker container </span>
+      - <span style="color:#e6db74">&#34;2333:22&#34;</span>
+      - <span style="color:#e6db74">&#34;7077:7077&#34;</span> <span style="color:#75715e"># spark</span>
+      - <span style="color:#e6db74">&#34;4040:4040&#34;</span>
+      - <span style="color:#e6db74">&#34;4041:4041&#34;</span>
+      - <span style="color:#e6db74">&#34;8888:8888&#34;</span>
+      <span style="color:#75715e"># - &#34;8983:8983&#34; # for solr</span>
+</code></pre></div><p><a href="https://github.com/yuikns/bigbox/tree/master/example">Here</a> is a example.</p>
+<h2 id="basic-operation">Basic Operation</h2>
+<p>Similar to other parts. If you are a linux user, you should always add an &lsquo;sudo&rsquo; before the command <code>docker-compose</code>.</p>
+<h3 id="up-and-down-start-and-stop-how-to-control-the-virtual-environment">Up and Down, Start and Stop. How to control the virtual environment</h3>
+<p>If you wish to create and start the container(s).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+</code></pre></div><p>This command will search the configure file <code>docker-compose.yml</code> or <code>docker-compose.yaml</code> in current folder, and start the corresponding services.</p>
+<p>It will pull the image described in the yml file if there is no local cache. Otherwise it will create a container through local image.</p>
+<p>In this case, if you close the terminal, the service may be stopped but not destroyed.</p>
+<p>You an pass a parameter <code>-d</code>. This parameter indices the docker-compose will run the containers in the background after started.</p>
+<p>Please type the following command for more introduction.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose help up
+</code></pre></div><p>If you wish to clearly terminate everything. You may type</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down
+</code></pre></div><p>This command will stops containers and removes containers, networks, volumes, and images created by <code>up</code>.</p>
+<p>Everything inside the container are vanished.</p>
+<p>If you have a container created. You may use <code>docker-compose start/stop/restart</code> to start/stop/restart the service. The container will stay over there</p>
+<h3 id="run-exec-and-ssh-how-to-access-the-environment">Run, Exec and SSH. How to access the environment</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose run bootcamp bash
+</code></pre></div><p><code>run</code> will launch a brand new container based on the configuration. <code>bootcamp</code> is name of the service in the config. This may useful in debugging or somewhere else, but may not fit for this course.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose exec bootcamp bash
+</code></pre></div><p><code>exec</code> will reuse the container and execute a specific command. The command is <code>bash</code> in this case. You should make sure the service is already started before typing this command.</p>
+<p>You can also access the environment through <a href="https://www.openssh.com/">SSH</a>.</p>
+<p>We have also initialized the SSH RSA Keys <a href="https://github.com/yuikns/bigbox/tree/master/config/ssh">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://raw.githubusercontent.com/yuikns/bigbox/master/config/ssh/id_rsa -o bigbox-private-key
+chmod <span style="color:#ae81ff">0600</span> bigbox-private-key <span style="color:#75715e"># prevent error: Permissions 0644 for &#39;./bigbox-private-key&#39; are too open.</span>
+ssh -p <span style="color:#ae81ff">2333</span> -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -o UserKnownHostsFile<span style="color:#f92672">=</span>/dev/null -i bigbox-private-key root@127.0.0.1
+</code></pre></div><p>If you are running your docker compose in remote. This identity file may unsafe. You can generate a pair by yourself.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf ~/.ssh/</span>
+<span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># ssh-keygen</span>
+Generating public/private rsa key pair.
+Enter file in which to save the key <span style="color:#f92672">(</span>/root/.ssh/id_rsa<span style="color:#f92672">)</span>:
+Created directory <span style="color:#e6db74">&#39;/root/.ssh&#39;</span>.
+Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: <span style="color:#75715e"># type enter here</span>
+Enter same passphrase again: <span style="color:#75715e"># type enter here again</span>
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:2NYgKW6bCmLvFPAug868hXBAIW6PhWlJeRK6LeYCHJ0 root@bootcamp.local
+The key<span style="color:#960050;background-color:#1e0010">&#39;</span>s randomart image is:
++---<span style="color:#f92672">[</span>RSA 2048<span style="color:#f92672">]</span>----+
+|.<span style="color:#f92672">=</span>+              |
+|*o<span style="color:#f92672">=</span>..  .         |
+|oXoE. o .        |
+|++B. . + o       |
+|<span style="color:#f92672">=</span>+o+o . S .      |
+|*oo..o .         |
+|<span style="color:#f92672">=</span>* +o            |
+|B.*.             |
+| <span style="color:#f92672">=</span>+o             |
++----<span style="color:#f92672">[</span>SHA256<span style="color:#f92672">]</span>-----+
+<span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># cd .ssh/</span>
+<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># cp id_rsa.pub authorized_keys</span>
+<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># chmod 0600 authorized_keys</span>
+<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># ls -alh</span>
+total 20K
+drwx------ <span style="color:#ae81ff">2</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:42 .
+dr-xr-x--- <span style="color:#ae81ff">1</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:41 ..
+-rw------- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:42 authorized_keys
+-rw------- <span style="color:#ae81ff">1</span> root root 1.7K Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa.pub
+</code></pre></div><p>You may copy the <code>id_rsa</code> file to local as your key file.</p>
+<h3 id="logs">Logs</h3>
+<h4 id="logs-for-hadoop-ecosystem">Logs for Hadoop Ecosystem</h4>
+<p>You may noticed, the sample <code>docker-compose.yml</code> mapped the folder from <code>/var/log</code> in vm to <code>./data/logs</code> in physical machine. You may simply check the files in your folder <code>./data/logs</code>.</p>
+<h4 id="logs-from-docker-container">Logs from docker container</h4>
+<p>You may trace it using command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose logs -f --tail<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#official-guides">Official Guides</a></li>
+    <li><a href="#install-docker-compose">Install Docker Compose</a></li>
+    <li><a href="#create-a-docker-composeyml">Create A <code>docker-compose.yml</code></a></li>
+    <li><a href="#basic-operation">Basic Operation</a>
+      <ul>
+        <li><a href="#up-and-down-start-and-stop-how-to-control-the-virtual-environment">Up and Down, Start and Stop. How to control the virtual environment</a></li>
+        <li><a href="#run-exec-and-ssh-how-to-access-the-environment">Run, Exec and SSH. How to access the environment</a></li>
+        <li><a href="#logs">Logs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

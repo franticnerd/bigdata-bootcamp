@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
+You may follow the guide, go to the Imagine login page to download the Windows image for free.
+ Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
+Download the image from this link and follow the installer step by step.
+Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above"><meta property="og:title" content="" />
+<meta property="og:description" content="Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
+You may follow the guide, go to the Imagine login page to download the Windows image for free.
+ Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
+Download the image from this link and follow the installer step by step.
+Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/" />
+
+<title>Env Local Docker Windows | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="active">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Env Local Docker Windows</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</a></li>
+    <li><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="install-docker-in-microsoft-windows">Install Docker In Microsoft Windows</h1>
+<blockquote class="book-hint info">
+  <p>If you are interested in software from Microsoft (excluding Microsoft Office products), <a href="https://support.cc.gatech.edu/resources/downloads">this link</a> may helps.</p>
+<p>You may follow the guide, go to the <a href="https://e5.onthehub.com/WebStore/Welcome.aspx?vsro=8&amp;ws=82FE585A-DB9B-E011-969D-0030487D8897">Imagine</a> login page to download the Windows image for free.</p>
+
+</blockquote>
+
+<h2 id="windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</h2>
+<p>An official guide for Windows Docker Desktop could be found <a href="https://docs.docker.com/docker-for-windows/install/">here</a>.</p>
+<p>Download the image from <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">this link</a> and follow the installer step by step.</p>
+<p><strong>Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above</strong></p>
+<p>If your windows is not fulfill the prerequisite, you may see the image as follow. Please use <em><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a></em> instead.</p>
+<p><img src="/bigdata-bootcamp/env_images/docker-for-windows-10-prerequisite-not-fullfilled.png" alt="" /></p>
+<p>Once you successfully installed docker desktop, you may click the button &ldquo;Docker Desktop&rdquo;. It may take a few minutes to start the service. You may keep a watch on the whale on the right button.</p>
+<p>Double click the whale button, we may able to find a window to modify some of the properties.</p>
+<p><img src="/bigdata-bootcamp/env_images/docker-desktop-general.png" alt="" /></p>
+<p>Please go to the advanced tab, and click the drivers <strong>you wish to share with the docker container</strong>. Note: if your homework is located on Disk-D, you may not select Disk-C, this could make your operation system more safe.</p>
+<p><img src="./images/docker-desktop-shared-drives.png" alt="" /></p>
+<p>Going to the advanced tab, and you can edit the maximum memory used by docker.</p>
+<p><img src="./images/docker-desktop-resources.png" alt="" /></p>
+<p>If you can execute command <code>docker ps -a</code> and <code>docker-compose</code> normally, and no error message returned. Your configuration is fine.</p>
+<h2 id="docker-toolbox-on-windows">Docker Toolbox on Windows</h2>
+<p>You may install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox on Windows</a> instead.</p>
+<p>Going to the instruction page, click &lsquo;<a href="https://download.docker.com/win/stable/DockerToolbox.exe">Get Docker Toolbox for Windows</a>', you will download a installer. You are supposed to install Docker and VirtualBox during this wizard.</p>
+<p><img src="./images/terminal-and-virtualbox.png" alt="" /></p>
+<p>Click &lsquo;Docker Quickstart Terminal&rsquo;, you should able to start a bash session. Close it, click virtual box. You may find there is one virtual machine is in running. Close this machine, update the maximum base memory.</p>
+<p><img src="./images/poweroff-vm.png" alt="" /></p>
+<p><img src="./images/set-max-ram.png" alt="" /></p>
+<p>Click the &lsquo;Docker Quickstart Terminal&rsquo; and your docker is ready.</p>
+<h3 id="faq">FAQ</h3>
+<h5 id="q--virtualbox-wont-boot-a-64bits-vm-when-hyper-v-is-activated"><strong>Q:</strong>  VirtualBox won&rsquo;t boot a 64bits VM when Hyper-V is activated</h5>
+<p>You may meet message as follow:</p>
+<blockquote>
+<p>Error with pre-create check: &ldquo;This computer is running Hyper-V. VirtualBox won&rsquo;t boot a 64bits VM when Hyper-V is activated.
+Either use Hyper-V as a driver, or disable the Hyper-V hypervisor. (To skip this check, use &ndash;virtualbox-no-vtx-check)</p>
+</blockquote>
+<p>You can’t run VirtualBox on a Hyper-V enabled system. Hyper-V is a tier-1 hypervisor, which doesn’t accept other hypervisors (from <a href="https://forums.docker.com/t/unable-to-run-the-docker-toolbox/37403/3">here</a>)</p>
+<ol>
+<li>It seems like Docker for Windows has already resolved this issue</li>
+<li>Try to <a href="https://superuser.com/questions/540055/convenient-way-to-enable-disable-hyper-v-in-windows-8">disable Hyper-V</a>. <strong>Caution:</strong> According to some reports, this operation may damage his/her network and had to reinstall all network adapters to get Internet back, or even getting a blue screen error.</li>
+<li>Try to use hyperv as your backend driver. <a href="https://docs.docker.com/machine/drivers/hyper-v/">https://docs.docker.com/machine/drivers/hyper-v/</a></li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</a></li>
+    <li><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

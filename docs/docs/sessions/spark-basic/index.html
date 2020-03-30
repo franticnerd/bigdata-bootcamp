@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spark Basics Learning Objectives
+ Invoke command in Spark interactive shell. Be familiar with RDD concept. Know basic RDD operations.   Spark Shell Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads."><meta property="og:title" content="" />
+<meta property="og:description" content="Spark Basics Learning Objectives
+ Invoke command in Spark interactive shell. Be familiar with RDD concept. Know basic RDD operations.   Spark Shell Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/spark-basic/" />
+
+<title>Spark Basic | GT Big Data Bootcamp</title>
+<link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
+
+
+<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/bigdata-bootcamp"><span>GT Big Data Bootcamp</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Environment</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="">Env Local Docker Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <span>Sessions</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-basic/" class="">Scala Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/scala-intro/" class="">Scala Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-application/" class="">Spark Application</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-basic/" class="active">Spark Basic</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-graphx/" class="">Spark Graphx</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-mllib/" class="">Spark Mllib</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-intro/" class="">Zeppelin Intro</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/" class="">Zeppelin Tutorial</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Spark Basic</strong>
+
+  <label for="toc-control">
+    <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spark-shell">Spark Shell</a></li>
+    <li><a href="#rdd">RDD</a>
+      <ul>
+        <li><a href="#parallelized-collections">Parallelized Collections</a></li>
+        <li><a href="#external-datasets">External Datasets</a></li>
+      </ul>
+    </li>
+    <li><a href="#rdd-operations">RDD Operations</a>
+      <ul>
+        <li><a href="#count">Count</a></li>
+        <li><a href="#take">Take</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#distinct">Distinct</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#reduce-by-key">Reduce By Key</a></li>
+        <li><a href="#sort">Sort</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#set-operation">Set Operation</a></li>
+        <li><a href="#datasets">Datasets</a></li>
+      </ul>
+    </li>
+    <li><a href="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="spark-basics">Spark Basics</h1>
+<blockquote class="book-hint info">
+  <strong>Learning Objectives</strong></p>
+<ul>
+<li>Invoke command in Spark interactive shell.</li>
+<li>Be familiar with RDD concept.</li>
+<li>Know basic RDD operations.</li>
+</ul>
+</blockquote>
+
+<h2 id="spark-shell">Spark Shell</h2>
+<p>Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads. Then you will see</p>
+<pre><code>&gt; spark-shell --master &quot;local[2]&quot; --driver-memory 6G
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+...
+[messages]
+...
+Spark context available as sc.
+scala&gt;
+</code></pre><p>Here you can set <code>--driver-memory</code> according to your local setting. If your setting of driver memory is larger than the VM memory, don&rsquo;t forget to change the VM memory setting first.</p>
+<p>In Spark, we call the main entrance of a Spark program the <strong>driver</strong> and Spark distribute computation to <strong>worker</strong>s to compute. Here in the interactive shell, the Spark shell program is the driver. In above example we set the memory of driver program to 3GB as in local mode driver and worker are together. A driver program can access Spark through a <code>SparkContext</code> object, which represents a connection to a computing cluster. In the above interactive shell, <code>SparkContext</code> is already created for you as variable <code>sc</code>. You can input <code>sc</code> to see its type.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> sc
+res0<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.SparkContext</span> <span style="color:#f92672">=</span> org<span style="color:#f92672">.</span>apache<span style="color:#f92672">.</span>spark<span style="color:#f92672">.</span><span style="color:#a6e22e">SparkContext</span><span style="color:#66d9ef">@</span><span style="color:#ae81ff">27896</span>d3b
+</code></pre></div><!-- raw HTML omitted -->
+<p>You may find the logging statements that get printed in the shell distracting. You can control the verbosity of the logging. To do this, you can create a file in the conf directory called <code>log4j.properties</code>. The Spark developers already include a template for this file called <code>log4j.properties.template</code>. To make the logging less verbose, make a copy of <code>conf/log4j.properties.template</code> called <code>conf/log4j.properties</code> and find the following line:</p>
+<pre><code>log4j.rootCategory=INFO, console
+</code></pre><p>Replace <code>INFO</code> with <code>WARN</code> so that only WARN messages and above are shown.</p>
+<!-- raw HTML omitted -->
+<h2 id="rdd">RDD</h2>
+<p>Resilient Distributed Dataset (RDD) is Spark&rsquo;s core abstraction for working with data. An RDD is simply a fault-tolerant <strong>distributed</strong> collection of elements. You can imagine RDD as a large array but you cannot access elements randomly but you can apply the same operations to all elements in the array easily. In Spark, all the work is expressed as either creating new RDDs, transforming existing RDDs, or calling operations on RDDs to compute results. There are two ways to create RDDs: by distributing a collection of objects (e.g., a list or set), or by referencing a dataset in an external storage system, such as a shared filesystem, HDFS, HBase, or any data source offering a Hadoop InputFormat.</p>
+<h3 id="parallelized-collections">Parallelized Collections</h3>
+<p>For the demo purpose, the simplest way to create an RDD is to take an existing collection (e.g. a Scala Array) in your program and pass it to SparkContext&rsquo;s <code>parallelize()</code> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> data <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>
+data<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>
+
+scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> distData <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>parallelize<span style="color:#f92672">(</span>data<span style="color:#f92672">)</span>
+distData<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.rdd.RDD</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Int</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">ParallelCollectionRDD</span><span style="color:#f92672">[</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#f92672">]</span> at parallelize at <span style="color:#f92672">&lt;</span>console<span style="color:#66d9ef">&gt;:</span><span style="color:#ae81ff">23</span>
+</code></pre></div><p>Once created, the distributed dataset (<code>distData</code>) can be operated in parallel. For example, we can add up the elements by calling <code>distData.reduce((a, b) =&gt; a + b)</code>. You will see more operations on RDD later on.</p>
+<blockquote class="book-hint warning">
+  Parallelizing a collection is useful when you are learning Spark. However, this is not encouraged in production since it requires the entire dataset to be in memory of the driver&rsquo;s machine first. Instead, importing data from <a href="#external-datasets">external datasets</a> should be employed.
+</blockquote>
+
+<h3 id="external-datasets">External Datasets</h3>
+<p>A common way for creating RDDs is loading data from external storage. Below you will learn how to load data from a file system. Assuming you have put some data into HDFS as described in the <a href="/hadoop/hdfs-basic.html">HDFS Basic</a> section. If not, please do that first.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> lines <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/case.csv&#34;</span><span style="color:#f92672">)</span>
+lines<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.rdd.RDD</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">README</span><span style="color:#f92672">.</span>md <span style="color:#a6e22e">MapPartitionsRDD</span><span style="color:#f92672">[</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#f92672">]</span> at textFile at <span style="color:#f92672">&lt;</span>console<span style="color:#66d9ef">&gt;:</span><span style="color:#ae81ff">21</span>
+</code></pre></div><p>Here in the above example, each line of the original file will become an element in the <code>lines</code> RDD.</p>
+<blockquote class="book-hint info">
+  Reading data from a file system, Spark relies on the HDFS library. In above example we assume HDFS is well configured through environmental variables or configuration files so that data is ready in HDFS.
+</blockquote>
+
+<h2 id="rdd-operations">RDD Operations</h2>
+<p>RDDs offer two types of operations: <strong>transformations</strong> and <strong>actions</strong>:</p>
+<ul>
+<li><strong>Transformations</strong> are operations on RDDs that return a new RDD, such as <code>map()</code> and <code>filter()</code>.</li>
+<li><strong>Actions</strong> are operations that return a result to the driver program or write it to storage, such as <code>first()</code> and <code>count()</code>.</li>
+</ul>
+<p>Spark treats <strong>transformations</strong> and <strong>actions</strong> very differently, so understanding which type of operation you are performing is very important.
+You can check whether a function is a transformation or an action by looking at its return type: <strong>transformations</strong> return RDDs, whereas <strong>actions</strong> return some other data type.</p>
+<p>All <strong>transformations</strong> in Spark are lazy, in that they do not compute the results right away. Instead, they just remember the operations applied to some base dataset (e.g. an Array or a file). The <strong>transformations</strong> are only computed when an action requires a result to be returned to the driver program.
+Therefore, the above command of reading in a file has not actually been executed yet.
+We can force the evaluation of RDDs by calling any <strong>actions</strong>.</p>
+<p>Let&rsquo;s go through some common RDD operations using the healthcare dataset.
+Recall that in the file <strong>case.csv</strong>, each line is a 4-field tuple <code>(patient-id, event-id, timestamp, value)</code>.</p>
+<h3 id="count">Count</h3>
+<p>In order to know how large is our raw event sequence data, we can count the number of lines in the input file using <code>count</code> operation, i.e.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>count<span style="color:#f92672">()</span>
+res1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Long</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">14046</span>
+</code></pre></div><p>Clearly, <code>count</code> is an <strong>action</strong>.</p>
+<h3 id="take">Take</h3>
+<p>You may wonder what the loaded data looks like, you can take a peek at the data. The <code>take(k)</code> will return the first k elements in the RDD. Spark also provides <code>collect()</code> which brings all the elements in the RDD back to the driver program. Note that <code>collect()</code> should only be used when the data is small. Both <code>take</code> and <code>collect</code> are <strong>actions</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>take<span style="color:#f92672">(</span><span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>
+res2<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG78820</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAGV4501</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span>heartfailure<span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG2720</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG4019</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">)</span>  
+</code></pre></div><p>We got the first 5 records in this RDD. However, this is hard to read due to a poor format. We can make it more readable by traversing the array to print each record on its own line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>take<span style="color:#f92672">(</span><span style="color:#ae81ff">5</span><span style="color:#f92672">).</span>foreach<span style="color:#f92672">(</span>println<span style="color:#f92672">)</span>
+<span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG78820</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span>
+<span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAGV4501</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span>
+<span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span>heartfailure<span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span>
+<span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG2720</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span>
+<span style="color:#ae81ff">00013</span>D2EFD8E45D1<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG4019</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1166</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span>
+</code></pre></div><p>Note that in above 3 code block examples, the RDD <code>lines</code> has been computed (i.e. read in from file) 3 times. We can prevent this by calling <code>lines.cache()</code>, which will cache the RDD in memory to avoid reloading.</p>
+<p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>take<span style="color:#f92672">(</span><span style="color:#ae81ff">5</span><span style="color:#f92672">).</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)).</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)).</span>foreach<span style="color:#f92672">(</span>println<span style="color:#f92672">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="map">Map</h3>
+<p>The <code>map</code> operation in Spark is similar to that of Hadoop. It&rsquo;s a <strong>transformation</strong> that transforms each item in the RDD into a new item by applying the provided function. Notice this <code>map</code> will map exactly one element from source to target. For example, suppose we are only interested in knowing IDs of patients, we use <code>map</code> like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> line<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">))</span>
+</code></pre></div><p>It is also possible to write a more complex, multiple-lines map function. In this case, curly braces should be used in place of parentheses. For example, we can get both <code>patient-id</code> and <code>event-id</code> as a tuple at the same time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>map<span style="color:#f92672">{</span>line <span style="color:#66d9ef">=&gt;</span>
+  <span style="color:#66d9ef">val</span> s <span style="color:#66d9ef">=</span> line<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>s<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">),</span> s<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">))</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="filter">Filter</h3>
+<p>As indicated by its name, <code>filter</code> can <strong>transform</strong> an RDD to another RDD by keeping only elements that satisfy the filtering condition. For example, we want to count the number of events collected for a particular patient to verify amount of the data from that patient. We can use a <code>filter</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> line<span style="color:#f92672">.</span>contains<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;00013D2EFD8E45D1&#34;</span><span style="color:#f92672">)).</span>count<span style="color:#f92672">()</span>
+res4<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Long</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</code></pre></div><h3 id="distinct">Distinct</h3>
+<p><code>distinct</code> is a transformation that transforms a RDD to another by eliminating duplications. We can use that to count the number of distinct patients. In order to do this, we first extract the patient ID from each line.
+We use the <code>map()</code> function as described above. In this example, we transform each line into the corresponding patient ID by extracting only the first column. We then eliminate duplicate IDs by the <code>distinct()</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> line<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)).</span>distinct<span style="color:#f92672">().</span>count<span style="color:#f92672">()</span>
+res5<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Long</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</code></pre></div><h3 id="group">Group</h3>
+<p>Sometimes, you will need to group the input events according to <code>patient-id</code> to put everything about each patient together. For example, in order to extract index date for predictive modeling, you may first group input data by patient then handle each patient seperately in parallel. We can see each element in RDD is a (Key, Value) pair <code>(patient-id, iterable[event])</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> patientIdEventPair <span style="color:#66d9ef">=</span> lines<span style="color:#f92672">.</span>map<span style="color:#f92672">{</span>line <span style="color:#66d9ef">=&gt;</span>
+  <span style="color:#66d9ef">val</span> patientId <span style="color:#66d9ef">=</span> line<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
+  <span style="color:#f92672">(</span>patientId<span style="color:#f92672">,</span> line<span style="color:#f92672">)</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> groupedPatientData <span style="color:#66d9ef">=</span> patientIdEventPair<span style="color:#f92672">.</span>groupByKey
+<span style="color:#f92672">&gt;</span> groupedPatientData<span style="color:#f92672">.</span>take<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+res1<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[(</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">Iterable</span><span style="color:#f92672">[</span><span style="color:#66d9ef">String</span><span style="color:#f92672">])]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">((</span><span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">CompactBuffer</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG29181</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG29212</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG34590</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG30000</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG2920</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG412</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG28800</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG30391</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAGRG894</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">PAYMENT</span><span style="color:#f92672">,</span><span style="color:#ae81ff">562</span><span style="color:#f92672">,</span><span style="color:#ae81ff">6000.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG5781</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG53010</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAGE8490</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG27651</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG78559</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG56210</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG5856</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span>heartfailure<span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAG5070</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0102353632</span>C5E0D0<span style="color:#f92672">,</span><span style="color:#a6e22e">DIAGRG346</span><span style="color:#f92672">,</span><span style="color:#ae81ff">570</span><span style="color:#f92672">,</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">,...</span>
+<span style="color:#f92672">....</span>
+</code></pre></div><h3 id="reduce-by-key">Reduce By Key</h3>
+<p><code>reduceByKey</code> <em>transforms</em> an <code>RDD[(K, V)]</code> into <code>RDD[(K, List[V])]</code> (like what groupByKey does) and then apply <code>reduce</code> function on <code>List[V]</code> to get final output <code>RDD[(K, V)]</code>. Please be careful that we intentionally denote <code>V</code> as return type of <code>reduce</code> which should be same as input type of the list element. Suppose now we want to calculate the total payment by each patient. A payment record in the dataset is in the form of <code>(patient-id, PAYMENT, timestamp, value)</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> payment_events <span style="color:#66d9ef">=</span> lines<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>line <span style="color:#66d9ef">=&gt;</span> line<span style="color:#f92672">.</span>contains<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PAYMENT&#34;</span><span style="color:#f92672">))</span>
+<span style="color:#66d9ef">val</span> payments <span style="color:#66d9ef">=</span> payment_events<span style="color:#f92672">.</span>map<span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span>
+                                   <span style="color:#66d9ef">val</span> s <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)</span>
+                                   <span style="color:#f92672">(</span>s<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">),</span> s<span style="color:#f92672">(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">).</span>toFloat<span style="color:#f92672">)</span>
+                                 <span style="color:#f92672">}</span>
+<span style="color:#66d9ef">val</span> paymentPerPatient <span style="color:#66d9ef">=</span> payments<span style="color:#f92672">.</span>reduceByKey<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">+</span><span style="color:#66d9ef">_</span><span style="color:#f92672">)</span>
+</code></pre></div><p>The <code>payment_events</code> RDD returned by <code>filter</code> contains those records associated with payment. Each item is then transformed to a key-value pair <code>(patient-id, payment)</code> with <code>map</code>. Because each patient can have multiple payments, we need to use <code>reduceByKey</code> to sum up the payments for each patient. Here in this example, <code>patient-id</code> will be served as the key, and <code>payment</code> will be the value to sum up for each patient. The figure below shows the process of <code>reduceByKey</code> in our example</p>
+<p><img src="./images/reducebykey-payment.jpg" alt="reducebykey-payment" title="reduceByKey on payment"/></p>
+<h3 id="sort">Sort</h3>
+<p>We can then find the top-3 patients with the highest payment by using <code>sortBy</code> first.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> paymentPerPatient<span style="color:#f92672">.</span>sortBy<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>_2<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">).</span>take<span style="color:#f92672">(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">).</span>foreach<span style="color:#f92672">(</span>println<span style="color:#f92672">)</span>
+</code></pre></div><p>and output is</p>
+<pre><code>(0085B4F55FFA358D,139880.0)
+(019E4729585EF3DD,108980.0)
+(01AC552BE839AB2B,108530.0)
+</code></pre><p>Again in <code>sortBy</code> we use the <code>_</code> placeholder, so that <code>_._2</code> is an anonymous function that returns the second element of a tuple, which is the total payment a patient. The second parameter of <code>sortBy</code> controls the order of sorting. In above example, <code>false</code> means decreasing order.</p>
+<p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> maxPaymentPerPatient <span style="color:#66d9ef">=</span> payments<span style="color:#f92672">.</span>reduceByKey<span style="color:#f92672">(</span>math<span style="color:#f92672">.</span>max<span style="color:#f92672">)</span>
+</code></pre></div><p>Here, <code>reduceByKey(math.max)</code> is the simplified expression of <code>reduceByKey(math.max(_,_))</code> or <code>reduceByKey((a,b) =&gt; math.max(a,b))</code>. <code>math.max</code> is a function in scala that turns the larger one of two parameters.</p>
+<!-- raw HTML omitted -->
+<p>&lt;ExerciseComponent
+question=&quot;Count the number of records for each drug (event-id starts with &ldquo;DRUG&rdquo;)&rdquo;
+answer=&quot;&ldquo;&gt;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> drugFrequency <span style="color:#66d9ef">=</span> lines<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>contains<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DRUG&#34;</span><span style="color:#f92672">)).</span>
+                                 map<span style="color:#f92672">{</span> x <span style="color:#66d9ef">=&gt;</span>
+                                   <span style="color:#66d9ef">val</span> s <span style="color:#66d9ef">=</span> x<span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)</span>
+                                   <span style="color:#f92672">(</span>s<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">),</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+                                 <span style="color:#f92672">}.</span>reduceByKey<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">+</span><span style="color:#66d9ef">_</span><span style="color:#f92672">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="statistics">Statistics</h3>
+<p>Now we have total payment information of patients, we can run some basic statistics. For RDD consists of numeric values, Spark provides some useful statistical primitives.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> payment_values <span style="color:#66d9ef">=</span> paymentPerPatient<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>payment <span style="color:#66d9ef">=&gt;</span> payment<span style="color:#f92672">.</span>_2<span style="color:#f92672">).</span>cache<span style="color:#f92672">()</span>
+scala<span style="color:#f92672">&gt;</span> payment_values<span style="color:#f92672">.</span>max<span style="color:#f92672">()</span>
+res6<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Float</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">139880.0</span>
+
+scala<span style="color:#f92672">&gt;</span> payment_values<span style="color:#f92672">.</span>min<span style="color:#f92672">()</span>
+res7<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Float</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3910.0</span>
+
+scala<span style="color:#f92672">&gt;</span> payment_values<span style="color:#f92672">.</span>sum<span style="color:#f92672">()</span>
+res8<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Double</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2842480.0</span>
+
+scala<span style="color:#f92672">&gt;</span> payment_values<span style="color:#f92672">.</span>mean<span style="color:#f92672">()</span>
+res9<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Double</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">28424.8</span>
+
+scala<span style="color:#f92672">&gt;</span> payment_values<span style="color:#f92672">.</span>stdev<span style="color:#f92672">()</span>
+res10<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Double</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">26337.091771112468</span>
+</code></pre></div><h3 id="set-operation">Set Operation</h3>
+<p>RDDs support many of the set operations, such as <code>union</code> and <code>intersection</code>, even when the RDDs themselves are not properly sets. For example, we can combine the two files by the <code>union</code> function. Please notice that <code>union</code> here is not strictly identical to union operation in mathematics as Spark will not remove duplications.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> linesControl <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/control.csv&#34;</span><span style="color:#f92672">)</span>
+scala<span style="color:#f92672">&gt;</span> lines<span style="color:#f92672">.</span>union<span style="color:#f92672">(</span>linesControl<span style="color:#f92672">).</span>count<span style="color:#f92672">()</span>
+res11<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Long</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31144</span>
+
+</code></pre></div><blockquote class="book-hint info">
+  <p>Here, a more straightforward way is to use directory name to read in multiple files of that directory into a single RDD.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> lines <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div>
+</blockquote>
+
+<p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> drugCase <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/case.csv&#34;</span><span style="color:#f92672">).</span>
+                     filter<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>contains<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DRUG&#34;</span><span style="color:#f92672">)).</span>
+                     map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)).</span>
+                     distinct<span style="color:#f92672">()</span>
+scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> drugControl <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>textFile<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/control.csv&#34;</span><span style="color:#f92672">).</span>
+                     filter<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>contains<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DRUG&#34;</span><span style="color:#f92672">)).</span>  
+                     map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>split<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">)(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)).</span>
+                     distinct<span style="color:#f92672">()</span>
+scala<span style="color:#f92672">&gt;</span> drugCase<span style="color:#f92672">.</span>intersection<span style="color:#f92672">(</span>drugControl<span style="color:#f92672">).</span>count<span style="color:#f92672">()</span>
+res<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Long</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">396</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="datasets">Datasets</h3>
+<blockquote class="book-hint warning">
+  <ul>
+<li>This section is work in progress</li>
+<li>Dataset is added from <strong><a href="https://spark.apache.org/docs/1.6.0/sql-programming-guide.html#datasets">Spark 1.6+</a></strong></li>
+</ul>
+</blockquote>
+
+<p>A Dataset is a new interface added from <strong>Spark 1.6</strong> that tries to provide the benefits of RDDs (strong typing, ability to use powerful lambda functions) with the benefits of Spark SQL’s optimized execution engine.</p>
+<p>A Dataset has a concrete type of a Scala primitive type (Integer, Long, Boolean, etc) or a subclass of a Product - a case class.  The case class is preferred for Spark because it handles
+the serialization code for you thus allowing Spark to shuffle data between workers.  This can additional be handled implementing Externalizable which is a much more efficient mechanism to handle serialization, or by using a compact serializer like Kryos.</p>
+<p>Additionally, Spark no longer uses SparkContext directly but prefers the use of a SparkSession that encapsulates a SparkContext and a SqlContext.  The SparkSession is a member of the <code>sql</code> package.</p>
+<p>There is a wealth of great documentation on the Spark development site.</p>
+<h4 id="creation-of-datasets">Creation of Datasets</h4>
+<p>Datasets can be created explicitly or loaded form a source (e.g. file, stream, parquet, etc).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>firstName<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> lastName<span style="color:#66d9ef">:</span><span style="color:#66d9ef">String</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e">// wire-in spark implicits
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> spark.implicits._
+
+<span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>firstName<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">,</span> lastName<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)</span>
+
+<span style="color:#66d9ef">val</span> ds <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Seq</span><span style="color:#f92672">(</span><span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Daniel&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Williams&#34;</span><span style="color:#f92672">)).</span>toDS<span style="color:#f92672">()</span>
+
+<span style="color:#75715e">// here you can perform operations that are deferred until an action is invoked.
+</span><span style="color:#75715e">// creates a anonymous lambda that looks at the 
+</span><span style="color:#75715e">// firstName of the Dataset[Person] type and invokes a collect
+</span><span style="color:#75715e">// to pull data back to the driver as an Array[Person]
+</span><span style="color:#75715e">// the foreach then will invoke a println on each Person
+</span><span style="color:#75715e">// instance and implicit apply the toString operation that is 
+</span><span style="color:#75715e">// held in the Product trait
+</span><span style="color:#75715e"></span>ds<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>firstName <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Daniel&#34;</span><span style="color:#f92672">).</span>collect<span style="color:#f92672">().</span>foreach<span style="color:#f92672">(</span>println<span style="color:#f92672">)</span>
+
+</code></pre></div><ul>
+<li><a href="https://spark.apache.org/docs/latest/sql-programming-guide.html#creating-datasets">Spark SQL, DataFrames and Datasets Guide</a></li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<p>For the complete list of RDD operations, please see the <a href="https://spark.apache.org/docs/latest/programming-guide.html#rdd-operations">Spark Programming Guide</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spark-shell">Spark Shell</a></li>
+    <li><a href="#rdd">RDD</a>
+      <ul>
+        <li><a href="#parallelized-collections">Parallelized Collections</a></li>
+        <li><a href="#external-datasets">External Datasets</a></li>
+      </ul>
+    </li>
+    <li><a href="#rdd-operations">RDD Operations</a>
+      <ul>
+        <li><a href="#count">Count</a></li>
+        <li><a href="#take">Take</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#distinct">Distinct</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#reduce-by-key">Reduce By Key</a></li>
+        <li><a href="#sort">Sort</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#set-operation">Set Operation</a></li>
+        <li><a href="#datasets">Datasets</a></li>
+      </ul>
+    </li>
+    <li><a href="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

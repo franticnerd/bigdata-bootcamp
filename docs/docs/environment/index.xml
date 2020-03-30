@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GT Big Data Bootcamp</title>
+    <link>http://franticnerd/bigdata-bootcamp/docs/environment/</link>
+    <description>Recent content on GT Big Data Bootcamp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://franticnerd/bigdata-bootcamp/docs/environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</guid>
+      <description>Docker in Azure We could use Azure as a virtual machine provider. If you have no enough resource to host our envornment in local, you can also launch an Azure instance, start a docker service inside, and host our docker image.
+We can create a Docker on Ubuntu Server in Azure, and then pull image from hub.docker.com.
+Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo;Docker on Ubuntu Server&amp;rdquo; is a container based on Ubuntu Server 16.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</guid>
+      <description>Install Docker In Linux Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, after updated your system, you can simply type the follow commands:
+sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start up automatically FAQ  If your SELinux and BTRFS are on working, you may meet an error message as follow:  # systemctl status docker.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
+      <description>Install Docker In macOS If you are using macOS, you are supposed to prepare a virtual machine/service to host a real Linux instance, and then control it in the remote.
+Currently, there are at least 2 solutions to achieve it.
+Option One: Docker.app If you are using macOS, you could follow this guide. Download an image, and drag to your &amp;lsquo;Applications&amp;rsquo; folder, click and run.
+ Stable channel Edge channel  Currently, both of them are working pretty fine.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
+      <description>Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
+You may follow the guide, go to the Imagine login page to download the Windows image for free.
+ Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
+Download the image from this link and follow the installer step by step.
+Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
+      <description>Docker in Local OS For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
+ Make sure you have enough resource:  It requires at least 8GB Physical RAM, 16GB or greater would be better It requires at least 15GB hard disk storage   Install a docker environment in local machine Start Docker Service, pull images and create a instance Just rock it!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,14 +1,197 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Introduction on GT Big Data Bootcamp</title>
     <link>http://franticnerd/bigdata-bootcamp/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content in Introduction on GT Big Data Bootcamp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="http://franticnerd/bigdata-bootcamp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</guid>
+      <description>Docker in Azure We could use Azure as a virtual machine provider. If you have no enough resource to host our envornment in local, you can also launch an Azure instance, start a docker service inside, and host our docker image.
+We can create a Docker on Ubuntu Server in Azure, and then pull image from hub.docker.com.
+Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo;Docker on Ubuntu Server&amp;rdquo; is a container based on Ubuntu Server 16.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</guid>
+      <description>Install Docker In Linux Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, after updated your system, you can simply type the follow commands:
+sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start up automatically FAQ  If your SELinux and BTRFS are on working, you may meet an error message as follow:  # systemctl status docker.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
+      <description>Install Docker In macOS If you are using macOS, you are supposed to prepare a virtual machine/service to host a real Linux instance, and then control it in the remote.
+Currently, there are at least 2 solutions to achieve it.
+Option One: Docker.app If you are using macOS, you could follow this guide. Download an image, and drag to your &amp;lsquo;Applications&amp;rsquo; folder, click and run.
+ Stable channel Edge channel  Currently, both of them are working pretty fine.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
+      <description>Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
+You may follow the guide, go to the Imagine login page to download the Windows image for free.
+ Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
+Download the image from this link and follow the installer step by step.
+Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
+      <description>Docker in Local OS For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
+ Make sure you have enough resource:  It requires at least 8GB Physical RAM, 16GB or greater would be better It requires at least 15GB hard disk storage   Install a docker environment in local machine Start Docker Service, pull images and create a instance Just rock it!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</guid>
+      <description>Scala Basics Learning Objectives
+ Learn how to work with Scala interactive shell. Understand var and val. Define variables, functions and classes, and make function calls Understand Simple Build Tool (SBT).   In this section we will briefly go through the essential knowledge about Scala. You will first learn how to work with Scala shell, then learn how to use variables, functions with examples. Finally, we give instructions about how to compile and run a standalone program using sbt.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-intro/</guid>
+      <description>Scala Introduction Learning Objectives
+ Provide more details of scala language   Basic Gramma Start using Scala After installed scala, you can type scala in command line and get result as follow:
+$ scalaWelcome to Scala version 2.11.7Type in expressions to have them evaluated.Type :help for more information.scala&amp;gt; println(&amp;#34;Hello, World!&amp;#34;)Hello, World!The synopsis of a varialbe is:
+scala&amp;gt; val i:String = &amp;#34;abc&amp;#34;i: String = abc val means it it is immutable variable, you can use &amp;ldquo;var&amp;rdquo; to define a mutable variable i is the name of this variable String is the type of this string, it can be omitted here &amp;ldquo;abc&amp;rdquo; is the value of this variable  Define a function:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-application/</guid>
+      <description>Spark Application Learning Objectives
+ Prepare data for machine learning applications. Save/load constructed data to external storage.   In this section, we will show how to prepare suitable data for building predictive models to predict heart failure (HF). We will first briefly introduce data types involved. Then we show how to construct training/testing samples from the input data using Spark. Finally we will export data in suitable format for modeling later.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-basic/</guid>
+      <description>Spark Basics Learning Objectives
+ Invoke command in Spark interactive shell. Be familiar with RDD concept. Know basic RDD operations.   Spark Shell Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-graphx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-graphx/</guid>
+      <description>Spark GraphX Learning Objectives
+ Understand composition of a graph in Spark GraphX. Being able to create a graph. Being able to use the built-in graph algorithm.   In this section we begin by creating a graph with patient and diagnostic codes. Later we will show how to run graph algorithms on the the graph you will create.
+Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, which means that each edge and vertex is associated with some properties.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-mllib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-mllib/</guid>
+      <description>Spark MLlib and Scikit-learn Learning Objectives
+ Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module.   In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</guid>
+      <description>Spark Sql Learning Objectives
+ Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF).   Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark/</guid>
+      <description>Overview of Spark Learning Objectives
+ Learn basics about Scala programming language. Understand Spark RDD operations. Acquire hands-on experiences using Spark for analytics.   In this chapter, you will learn about Spark, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem through the interactive shell.
+Spark is mainly developed with Scala, a functional programming language on JVM.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/</guid>
+      <description>How to start Zeppelin Learning Objectives
+ Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/</guid>
+      <description>Zeppelin Basic Tutorial Learning Objectives
+ Try to follow the official tutorial of Zeppelin Notebook step-by-step.   1. Create a new Notebook Click on &amp;lsquo;Create new note&amp;rsquo;, and give a name, click on &amp;lsquo;Create Note&amp;rsquo;: Then, you will see a new blank note:
+Next, click the gear icon on the top-right, interpreter binding setting will be unfolded. Default interpreters will be enough for the most of cases, but you can add/remove at &amp;lsquo;interpreter&amp;rsquo; menu if you want to.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</guid>
+      <description>Docker in AWS EC2 We developed a Docker image which pre-installed all modules in this bootcamp. You can directly use it in your own environment if you have docker. This page describes how to launch an EC2 instance on AWS and run docker container within it.
+Launch an AWS EC2 instance  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</guid>
+      <description>Docker Compose ::: tip This is an optional section. Docker Compose is just a utility, which does NOT affect the functionality of the docker image and our course.
+You can simply ignore it if you believe the docker commands are enough. :::
+Docker Compose is a tool for defining and running multi-container Docker applications. We can write a simple docker-compose.yml file as configure file, and launch a docker container as a service easily.</description>
+    </item>
     
   </channel>
 </rss>
