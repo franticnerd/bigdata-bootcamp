@@ -7,24 +7,32 @@ type: docs
 
 ## Welcome
 
-Welcome to the Big Data Bootcamp. This training material is has been developed by Sunlab and Polo Club. By the end of the training, you will learn about the big data tools that are part of the Hadoop and Spark ecosystems.
+Welcome to the Big Data Bootcamp.  In this bootcamp training, you will learn about big data analytics, including Python data analytics tools and the Spark ecosystem for large-scale data.
 
-The training material sample data is for healthcare applications, but you can adapt what you learned to other domains. There is no requirement of healthcare background knowledge.
+The training materials are developed by [Dr. Chao Zhang](http://chaozhang.org)'s lab, [Sunlab](http://www.sunlab.org), and [Polo Club](https://poloclub.github.io). To get started, please follow the instructions on the left to setup the learning environment first.
 
+## Logistics
 
-To get started, please setup the learning environment first.
+- Date: April 04, 2020 (Saturday) and April 05, 2020 (Sunday) 
+- Time: 9:00 A.M. - 4:00 P.M.
+- Location: Bluejeans
+- Instructor: [Dr. Chao Zhang](http://chaozhang.org)
+- TAs: Ms. Wendi Ren and Mr. Yinghao Li
 
 ## Schedule
+
+This bootcamp consists of a set of mini-lectures and practice sessions designed to help you quickly learn big data analytids tools. Below is the detailed schedule of this two-day bootcamp.
+
 | Date       | Time           | Topic                          |
 |------------|----------------|--------------------------------|
-| 04/05/2020 | 9am - 9:50am     | Bootcamp Overview              |
+| 04/04/2020 | 9am - 9:50am     | Bootcamp Overview              |
 |            | 10am - 10:50am   | Python Tools for Data Analysis |
 |            | 11am - 11:50am   | Practice Session               |
 |            | 12pm - 1pm     | Lunch                          |
 |            | 1pm - 1:50pm   | Spark Introduction             |
 |            | 2pm - 2:50pm   | Environment Setup              |
 |            | 3pm - 3:50pm   | Practice Session               |
-| 04/06/2020 | 9am - 9:50am   | Scala & Spark Basics           |
+| 04/05/2020 | 9am - 9:50am   | Scala & Spark Basics           |
 |            | 10am - 10:50am | Spark SQL & GraphX             |
 |            | 11am - 11:50am | Practice Session               |
 |            | 12pm - 1pm     | Lunch                          |
