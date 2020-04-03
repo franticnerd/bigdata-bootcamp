@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.a4b639872ee4731f63abdebc112d1fcf203f09ea359dea1e454959cba9773ac9.js" integrity="sha256-pLY5hy7kcx9jq968ES0fzyA/Ceo1neoeRUlZy6l3Osk="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.f8354302ce6dd1f6bee0355631b04b8e040a8c82baac14663ebd5545df496b38.js" integrity="sha256-&#43;DVDAs5t0fa&#43;4DVWMbBLjgQKjIK6rBRmPr1VRd9Jazg="></script>
 
 <!--
 Made with Book Theme
@@ -237,7 +237,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  <a href="/bigdata-bootcamp/docs/sessions/spark-overview/" class="">Spark Overview</a>
   
 
 </li>
@@ -247,7 +247,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
   
 
 </li>
@@ -354,11 +354,10 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#9-optional-use-docker-compose">(9) Optional: use docker-compose</a></li>
       </ul>
     </li>
-    <li><a href="#3-logs-and-diagnosis">3. Logs and Diagnosis</a>
+    <li><a href="#3-configurations-and-logs">3. Configurations and Logs</a>
       <ul>
         <li><a href="#system-configurations">System Configurations</a></li>
         <li><a href="#logs">Logs</a></li>
-        <li><a href="#misc">Misc.</a></li>
       </ul>
     </li>
   </ul>
@@ -555,7 +554,7 @@ sunlab/bigbox       latest              bfd258e00de3        <span style="color:#
 <h3 id="9-optional-use-docker-compose">(9) Optional: use docker-compose</h3>
 <p><a href="https://docs.docker.com/compose/">Docker Compose</a> is a tool for defining and running multi-container Docker applications. A simple <code>docker-compose.yml</code> could <em><strong>simplify</strong></em> the parameters, and make the life easier.</p>
 <p>Please refer to <a href="/env/env-docker-compose.html#docker-compose">this link</a> for some further instruction.</p>
-<h2 id="3-logs-and-diagnosis">3. Logs and Diagnosis</h2>
+<h2 id="3-configurations-and-logs">3. Configurations and Logs</h2>
 <h3 id="system-configurations">System Configurations</h3>
 <pre><code>## cat /proc/meminfo  | grep Mem ## Current Memory
 MemTotal:        8164680 kB ## Note: This value shoud no less than 4GB
@@ -592,37 +591,8 @@ java    3165 zeppelin  189u  IPv4 229945      0t0  TCP *:9530 (LISTEN)
 <li><strong>zookeeper</strong> &ndash; /var/log/zookeeper/*</li>
 <li><strong>zeppelin</strong> &ndash; /usr/local/zeppelin/logs/*</li>
 </ul>
-<h3 id="misc">Misc.</h3>
-<h4 id="user-and-role">User and Role</h4>
-<pre><code>[root@bootcamp1 /]# su hdfs  ## This command is used to switch your current user to hdfs
-					## Note: switch user requires special permission
-					## You can not switch back using su root again
-bash-4.2$ whoami ## check current user
-hdfs
-bash-4.2$ exit ## role is a stack, you can quit your role from hdfs to root
-[root@bootcamp1 /]#
-[root@bootcamp1 /]# sudo -u hdfs whoami ## execute a command 'whoami' using user 'hdfs'
-hdfs
-[root@bootcamp1 /]#
-
-</code></pre><p>User <code>hdfs</code> is the super user in HDFS system. User <code>root</code> is the super user in Linux system.</p>
-<pre><code>[root@bootcamp1 /]# sudo -u hdfs hdfs dfs -mkdir /tmp
-</code></pre><p>In this case, user root has no permission to write data in <code>/</code>, but it could ask user hdfs to process it.</p>
-<h4 id="relative-path-and-absolute-path">Relative Path and Absolute Path</h4>
-<p>An absolute or full path points to the same location in a file system, regardless of the current working directory. To do that, it must include the root directory. <a href="https://en.wikipedia.org/wiki/Path_%28computing%29#Absolute_and_relative_paths">wiki</a>.</p>
-<p>When we are talking about <code>/mnt/host</code>, it always pointing to the path <code>/mnt/host</code>. However, if the path is not startswith &ldquo;/&quot;, it means to start from &ldquo;current working path&rdquo;.</p>
-<p>In Linux system, you can get your &ldquo;current working path&rdquo; using command</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## pwd</span>
-/root
-</code></pre></div><p>In HDFS system, the &ldquo;current working path&rdquo; would be <code>/user/&lt;your-name&gt;</code>.</p>
-<p>A relative path would be the result of <code>cwd</code> plus your string.</p>
-<p>When we are coding in hadoop, we may required to fill in a location pointing to the path of input files. The synopsis of this path is is</p>
-<p><code>[schema://]your-path</code></p>
-<p>An HDFS path <code>hdfs:///hw1/test.csv</code> is combined by <code>hdfs://</code> and  <code>/hw1/test.csv</code>. There are 3 slashes over there. If you only filled 2 slashes over there (<code>hdfs://hw1/test.csv</code>), it is equal to <code>hdfs:///user/root/hw1/test.csv</code>, which may not be expected.</p>
-<p>Ditto for <code>file:///path/to/your/local/file.csv</code>.</p>
-<h4 id="other-linux-commands">Other Linux Commands</h4>
-<p>This environment is based on CentOS 7. This course does not requires you have too much knowledge in Linux, but if you can use some basic commands, that would be better.</p>
-<p>If you are interested, please refer to <a href="https://files.fosswire.com/2007/08/fwunixref.pdf">this link</a> for a Unix/Linux Command Cheat Sheet.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 </article>
  
       
@@ -673,11 +643,10 @@ hdfs
         <li><a href="#9-optional-use-docker-compose">(9) Optional: use docker-compose</a></li>
       </ul>
     </li>
-    <li><a href="#3-logs-and-diagnosis">3. Logs and Diagnosis</a>
+    <li><a href="#3-configurations-and-logs">3. Configurations and Logs</a>
       <ul>
         <li><a href="#system-configurations">System Configurations</a></li>
         <li><a href="#logs">Logs</a></li>
-        <li><a href="#misc">Misc.</a></li>
       </ul>
     </li>
   </ul>
