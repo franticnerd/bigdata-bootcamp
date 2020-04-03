@@ -131,23 +131,23 @@ Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, 
     
     <item>
       <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-overview/</guid>
-      <description>Overview of Spark Learning Objectives
- Learn basics about Scala programming language. Understand Spark RDD operations. Acquire hands-on experiences using Spark for analytics.   In this chapter, you will learn about Spark, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem through the interactive shell.
-Spark is mainly developed with Scala, a functional programming language on JVM.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</guid>
       <description>Spark Sql Learning Objectives
  Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF).   Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/spark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark/</guid>
+      <description>Overview of Spark Learning Objectives
+ Learn basics about Scala programming language. Understand Spark RDD operations. Acquire hands-on experiences using Spark for analytics.   In this chapter, you will learn about Spark, an in-memory big data computing framework for parallel data processing and analytics. In this training we will illustrate several components of Spark ecosystem through the interactive shell.
+Spark is mainly developed with Scala, a functional programming language on JVM.</description>
     </item>
     
     <item>
