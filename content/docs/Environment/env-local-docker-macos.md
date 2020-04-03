@@ -23,9 +23,9 @@ Either of them could satisfy the requirements in this course.
 
 If you wish to host our image using Docker.app, you are supposed to click the icon for docker in the toolbar, and set the maximum memory to 4G-8G.
 
-![](./images/docker-app-toolbar-preferences.png)
+![](/bigdata-bootcamp/env_images/docker-app-toolbar-preferences.png)
 
-![](./images/docker-app-toolbar-preferences-advanced.png)
+![](/bigdata-bootcamp/env_images/docker-app-toolbar-preferences-advanced.png)
 
 Docker.app requires sudo access, and the data will stored in `$HOME/Library/Containers/com.docker.docker`
 
