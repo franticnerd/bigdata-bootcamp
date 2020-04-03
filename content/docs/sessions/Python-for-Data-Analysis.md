@@ -124,7 +124,7 @@ Access elements
 ```python
 print(_list[0], _list[-2], _list[1: 3])
 print(_tuple[1], _tuple[-2])
-print(_set[0], _set[-1])
+print(_set[0], _set[-1])  # This will throw an error
 print(_dict[1], _dict['1'], _dict[2.2])
 ```
 
