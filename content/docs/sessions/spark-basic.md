@@ -74,7 +74,33 @@ Parallelizing a collection is useful when you are learning Spark. However, this 
 
 ### External Datasets
 
-A common way for creating RDDs is loading data from external storage. Below you will learn how to load data from a file system. Assuming you have put some data into HDFS as described in the [HDFS Basic](/hadoop/hdfs-basic.html) section. If not, please do that first.
+A common way for creating RDDs is loading data from external storage. Below you will learn how to load data from a file system. 
+
+Here, we choose to read data from HDFS, which stands for Hadoop Distributed File System. (For more details, you could refer to [HDFS Basics.](http://www.sunlab.org/teaching/cse6250/spring2020/hadoop/hdfs-basic.html#hdfs-operations))
+
+When you use HDFS for the first time, it's likely that your home directory in HDFS has not been created yet.
+In the environment that we provide, there's a special user `hdfs` who is an HDFS administrator and has the permission to create new home directories.
+
+We need to put the data case.csv into HDFS, and to do this, run the following commands:
+
+```bash
+> cd /bigdata-bootcamp/data
+> sudo su - hdfs
+> hdfs dfs -mkdir -p /input/
+> hdfs dfs -chown -R root /input
+> exit 
+> hdfs dfs -put case.csv /input
+```
+
+What you do above is that first, you switch to the `hdfs` user. Then, you can create a directory and change ownership of the newly created folder.
+(Pay attention that here since it is a virtual environment, you don't need to worry about using root user and its permission.)
+Next, similar to creating local directory via linux command `mkdir`, you creating a folder named `input` in HDFS. 
+In `hdfs dfs -mkdir`, `hdfs` is the HDFS utility program, `dfs` is the subcommand to handle basic HDFS operations, 
+`-mkdir` means you want to create a directory and the directory name is specified as `input`. 
+These commands actually create the input directory in your home directory in HDFS. Of course, you can create it to other place with absolute or relative path.
+Finally, after exiting HDFS, you copy data from local file system to HDFS using `-put`.
+
+<!--Assuming you have put some data into HDFS as described in the [HDFS Basic](/hadoop/hdfs-basic.html) section. If not, please do that first.-->
 
 ```scala
 scala> val lines = sc.textFile("input/case.csv")
