@@ -111,7 +111,7 @@ The `groupBy` operation can be illustrated with the example below
 ![applicaion-groupby](/bigdata-bootcamp/spark_images/application-groupby.jpg "Groupby illustrative example")
 
 
-![test](/bigdata-bootcamp/scala-reduce.png)
+![test](/bigdata-bootcamp/spark_images/scala-reduce.png)
 
 Please recall that `_._2` will return second field of a tuple. In this case it will return the `List[event]` for a given patient. Finally the `grpPatients` will be `RDD[List[event]]` 
 

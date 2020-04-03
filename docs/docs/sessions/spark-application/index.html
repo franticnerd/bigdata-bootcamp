@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.306a218de5cbff928d11701b2beb4917940175229803318a6ecbec500b84ba26.js" integrity="sha256-MGohjeXL/5KNEXAbK&#43;tJF5QBdSKYAzGKbsvsUAuEuiY="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.4be952a84b764cb2dff68668a9c499eaedb4ef13bde7e85213dcc7a0e03c4dba.js" integrity="sha256-S&#43;lSqEt2TLLf9oZoqcSZ6u207xO95&#43;hSE9zHoOA8Tbo="></script>
 
 <!--
 Made with Book Theme
@@ -247,7 +247,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
+  <a href="/bigdata-bootcamp/docs/sessions/spark-overview/" class="">Spark Overview</a>
   
 
 </li>
@@ -257,7 +257,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/bigdata-bootcamp/docs/sessions/spark/" class="">Spark</a>
+  <a href="/bigdata-bootcamp/docs/sessions/spark-sql/" class="">Spark Sql</a>
   
 
 </li>
@@ -444,7 +444,7 @@ Note that each patient can have multiple records with the same <code>event-id</c
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> grpPatients <span style="color:#66d9ef">=</span> rawData<span style="color:#f92672">.</span>groupBy<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>patientId<span style="color:#f92672">).</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>_2<span style="color:#f92672">)</span>
 </code></pre></div><p>The <code>groupBy</code> operation can be illustrated with the example below</p>
 <p><img src="/bigdata-bootcamp/spark_images/application-groupby.jpg" alt="applicaion-groupby" title="Groupby illustrative example"/></p>
-<p><img src="/bigdata-bootcamp/scala-reduce.png" alt="test" /></p>
+<p><img src="/bigdata-bootcamp/spark_images/scala-reduce.png" alt="test" /></p>
 <p>Please recall that <code>_._2</code> will return second field of a tuple. In this case it will return the <code>List[event]</code> for a given patient. Finally the <code>grpPatients</code> will be <code>RDD[List[event]]</code></p>
 <h3 id="3-define-target-and-feature-values">3. Define target and feature values</h3>
 <p>Now, we can practice our <strong>patient level</strong> parallelization. For each patient, we first find the prediction target, which is encoded into an event with name <code>heartfailure</code>, then we identify the index date and keep only useful events before the index date for feature construction. In feature construction, we aggregate the event value into features using <code>sum</code> function and use the event name as the feature name.</p>

@@ -215,7 +215,7 @@ val paymentPerPatient = payments.reduceByKey(_+_)
 
 The `payment_events` RDD returned by `filter` contains those records associated with payment. Each item is then transformed to a key-value pair `(patient-id, payment)` with `map`. Because each patient can have multiple payments, we need to use `reduceByKey` to sum up the payments for each patient. Here in this example, `patient-id` will be served as the key, and `payment` will be the value to sum up for each patient. The figure below shows the process of `reduceByKey` in our example
 
-![reducebykey-payment](./images/reducebykey-payment.jpg "reduceByKey on payment")
+![reducebykey-payment](/bigdata-bootcamp/spark_images/reducebykey-payment.jpg "reduceByKey on payment")
 
 ### Sort
 
