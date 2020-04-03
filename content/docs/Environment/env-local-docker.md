@@ -317,7 +317,7 @@ Please refer to [this link](https://docs.docker.com/v17.09/engine/userguide/stor
 Please refer to [this link](/env/env-docker-compose.html#docker-compose) for some further instruction.
 
 
-## 3. Logs and Diagnosis
+## 3. Configurations and Logs
 
 
 ### System Configurations
@@ -360,6 +360,7 @@ java    3165 zeppelin  189u  IPv4 229945      0t0  TCP *:9530 (LISTEN)
 + **zookeeper** -- /var/log/zookeeper/*
 + **zeppelin** -- /usr/local/zeppelin/logs/*
 
+<!--
 ### Misc.
 
 #### User and Role
@@ -417,3 +418,4 @@ This environment is based on CentOS 7. This course does not requires you have to
 
 If you are interested, please refer to [this link](https://files.fosswire.com/2007/08/fwunixref.pdf) for a Unix/Linux Command Cheat Sheet.
 
+-->

@@ -31,11 +31,11 @@ Double click the whale button, we may able to find a window to modify some of th
 
 Please go to the advanced tab, and click the drivers **you wish to share with the docker container**. Note: if your homework is located on Disk-D, you may not select Disk-C, this could make your operation system more safe.
 
-![](./images/docker-desktop-shared-drives.png)
+![](/bigdata-bootcamp/env_images/docker-desktop-shared-drives.png)
 
 Going to the advanced tab, and you can edit the maximum memory used by docker.
 
-![](./images/docker-desktop-resources.png)
+![](/bigdata-bootcamp/env_images/docker-desktop-resources.png)
 
 
 If you can execute command `docker ps -a` and `docker-compose` normally, and no error message returned. Your configuration is fine.
@@ -47,13 +47,13 @@ You may install [Docker Toolbox on Windows](https://docs.docker.com/toolbox/tool
 
 Going to the instruction page, click '[Get Docker Toolbox for Windows](https://download.docker.com/win/stable/DockerToolbox.exe)', you will download a installer. You are supposed to install Docker and VirtualBox during this wizard.
 
-![](./images/terminal-and-virtualbox.png)
+![](/bigdata-bootcamp/env_images/terminal-and-virtualbox.png)
 
 Click 'Docker Quickstart Terminal', you should able to start a bash session. Close it, click virtual box. You may find there is one virtual machine is in running. Close this machine, update the maximum base memory.
 
-![](./images/poweroff-vm.png)
+![](/bigdata-bootcamp/env_images/poweroff-vm.png)
 
-![](./images/set-max-ram.png)
+![](/bigdata-bootcamp/env_images/set-max-ram.png)
 
 Click the 'Docker Quickstart Terminal' and your docker is ready.
 
