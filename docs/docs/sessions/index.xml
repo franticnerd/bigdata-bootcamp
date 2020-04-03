@@ -12,6 +12,18 @@
     
     <item>
       <title></title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</guid>
+      <description>Python Tools for Data Analysis 1. Python Installation: Anaconda If you already have a python environment, ignore this session.
+Anaconda is a complete, open source data science package with a community of over 6 million users. It is easy to download and install, and it is supported on Linux, MacOS, and Windows (source).
+We&amp;rsquo;ll use Miniconda for minimal installation.
+Windows and macOS  Download the Python 3.7 distribution packages from this website.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
