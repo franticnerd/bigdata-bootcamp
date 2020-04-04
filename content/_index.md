@@ -16,8 +16,8 @@ The training materials are developed by [Dr. Chao Zhang](http://chaozhang.org)'s
 - Date: April 04, 2020 (Saturday) and April 05, 2020 (Sunday) 
 - Time: 9:00 A.M. - 4:00 P.M.
 - Location: Bluejeans
-- Instructor: [Dr. Chao Zhang](http://chaozhang.org)
-- TAs: Ms. Wendi Ren and Mr. Yinghao Li
+- Instructor: [Dr. Chao Zhang](http://chaozhang.org) (chaozhang@gatech.edu)
+- TAs: Ms. Wendi Ren (wren44@gatech.edu) and Mr. Yinghao Li (yinghaoli@gatech.edu)
 
 ## Schedule
 
