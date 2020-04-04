@@ -28,8 +28,6 @@ You may try [Azure](/env/env-azure-docker.html) instead.
 {{< /hint >}}
 
 
-[[toc]]
-
 ## 0. System Environment
 
 You should have enough system resource if you are planning to start a container in your local OS.
