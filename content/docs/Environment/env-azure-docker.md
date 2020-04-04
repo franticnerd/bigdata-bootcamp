@@ -29,7 +29,7 @@ The `D2S_V3` is just an example. You may choose anyone fulfill the requirement (
 
 
 ### Option 2: Launch a clear linux
-
+some detail information of docker.
 "Docker on Ubuntu Server" is using "[classic deployment](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-deployment-model)". It seems like there are too few choise in "classic deployment" now. If you wish to have different option.
 Or, if you are more familiar with CentOS, SUSE or some other [distributions](https://en.wikipedia.org/wiki/Linux_distribution), you can simply choose them.
 
@@ -76,10 +76,10 @@ sudo docker run -it --privileged=true \
   /bin/bash
 ```
 
-Please refer to [this section](/env/env-local-docker.html#_2-pull-and-run-docker-image) for some detail information of docker.
+<!--Please refer to [this section](/env/env-local-docker.html#_2-pull-and-run-docker-image) for some detail information of docker.
 
 If you are interested, you may also use [docker-compose](/env/env-docker-compose.html#docker-compose) to manage the service easier.
-
+-->
 
 ## Login remotely and the corresponding security issue
 
