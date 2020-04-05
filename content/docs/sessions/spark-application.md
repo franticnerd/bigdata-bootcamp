@@ -19,7 +19,7 @@ For many machine learning tasks, such as classification, regression, and cluster
 
 ### Feature Vector
 
-MLlib, the machine learning modThis feature construction is similar to what we did in Hadoop Pig, but will be more concise since we are programming in Scala on Spark.ule of Spark, supports two types of vectors: dense and sparse.
+MLlib, the machine learning module of Spark, supports two types of vectors: dense and sparse.
 A dense vector is basically a `Double` array of length equals to the dimension of the vector.
 If a vector contains only a few non-zero entries, we can then more efficiently represent the vector by a sparse vector with non-zero indices and the corresponding values only.
 For example, a vector `(1.0, 0.0, 3.0)` can be represented in dense format as `[1.0, 0.0, 3.0]` or in sparse format as `(3, [0, 2], [1.0, 3.0])`, where 3 is the size of the vector.
