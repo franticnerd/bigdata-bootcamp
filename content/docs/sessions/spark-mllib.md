@@ -116,6 +116,11 @@ hdfs dfs -getmerge samples patients.svmlight
 
 In later steps, you will use python interactive shell. To open a python interactive shell, just type  `python` in bash. You will get prompt similar to the sample below 
 
+Since the default library does not have `sklearn`, you need to install it by
+```bash
+pip install sklearn
+```
+ 
 ``` python
 [hang@bootcamp1 ~]$ python
 Python 2.7.10 |Continuum Analytics, Inc.| (default, Oct 19 2015, 18:04:42)
@@ -133,7 +138,7 @@ which show version and distribution of the python installation you are using. He
 Now we can load data and split it into training and testing set in similar way as the MLlib approach.
 
 ```python
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_svmlight_file
 
 X, y = load_svmlight_file("patients.svmlight")
@@ -147,7 +152,7 @@ Let's train a linear SVM model again on the training set to predict heart failur
 
 ```python
 from sklearn.svm import LinearSVC
-model = LinearSVC(C=1.0, random_state=42)
+model = LinearSVC(C=1.0, random_state=42, max_iter=10000)
 model.fit(X_train, y_train)
 ```
 
@@ -162,7 +167,7 @@ accuracy = model.score(X_test, y_test)
 y_score = model.decision_function(X_test)
 auc = roc_auc_score(y_test, y_score)
 
-print "accuracy = %.3f, AUC = %.3f" % (accuracy, auc)
+print("accuracy = ", accuracy, "AUC = ", auc)
 ```
 
 ### Save & load model
@@ -194,8 +199,7 @@ accuracy = l1_model.score(X_test, y_test)
 
 y_score = l1_model.decision_function(X_test)
 auc = roc_auc_score(y_test, y_score)
-
-print "for sparse model, accuracy = %.3f, auc = %.3f" % (accuracy, auc)
+print("for sparse model, accuracy = ", accuracy, "AUC = ", auc)
 ```
 
 Before fitting a model, we scaled the data to make sure weights of features are comparable. With the sparse model we get from previous example, we can actually identify predictive features according to their coefficients. Here we assume you did the last exercise of previous section about Spark Application. If not, please do that first.
@@ -214,7 +218,7 @@ with open('mapping.txt') as f:
 top_10 =np.argsort(l1_model.coef_[0])[-10:]
 
 for index, fid in enumerate(top_10[::-1]): #read in reverse order
-    print "%d: feature [%s] with coef %.3f" % (index, mapping[fid], l1_model.coef_[0][fid])
+    print("%d: feature [%s] with coef %.3f" % (index, mapping[fid], l1_model.coef_[0][fid]) )
 ```
 
 <NotInUse>
