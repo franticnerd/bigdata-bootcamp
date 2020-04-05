@@ -221,6 +221,7 @@ for index, fid in enumerate(top_10[::-1]): #read in reverse order
     print("%d: feature [%s] with coef %.3f" % (index, mapping[fid], l1_model.coef_[0][fid]) )
 ```
 
+<!--
 <NotInUse>
 
 ## Regression
@@ -273,3 +274,4 @@ scala> println("testing Mean Squared Error = " + MSE)
 ```
 
 </NotInUse>
+-->
