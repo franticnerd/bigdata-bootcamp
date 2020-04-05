@@ -37,7 +37,7 @@ This bootcamp consists of a set of mini-lectures and practice sessions designed 
 |            | 11am - 11:50am | Practice Session               | |
 |            | 12pm - 1pm     | Lunch                          ||
 |            | 1pm - 1:50pm   | Predictive Models              |Chao |
-|            | 2pm - 2:50pm   | Spark ML Lib                   | Wendi |
+|            | 2pm - 2:50pm   | Spark Application & ML Lib                   | Wendi |
 |            | 3pm - 3:50pm   | Practice Session               | |
 |            | 3:50pm - 4pm   | Wrapup                         |Chao |
 
