@@ -86,10 +86,10 @@ We need to put the data case.csv into HDFS, and to do this, run the following co
 ```bash
 > cd /bigdata-bootcamp/data
 > sudo su - hdfs
-> hdfs dfs -mkdir -p /input/
-> hdfs dfs -chown -R root /input
+> hdfs dfs -mkdir -p input
+> hdfs dfs -chown -R root input
 > exit 
-> hdfs dfs -put case.csv /input
+> hdfs dfs -put case.csv input
 ```
 
 What you do above is that first, you switch to the `hdfs` user. Then, you can create a directory and change ownership of the newly created folder.
