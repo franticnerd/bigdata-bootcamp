@@ -19,7 +19,7 @@ For many machine learning tasks, such as classification, regression, and cluster
 
 ### Feature Vector
 
-MLlib, the machine learning module of Spark, supports two types of vectors: dense and sparse.
+MLlib, the machine learning modThis feature construction is similar to what we did in Hadoop Pig, but will be more concise since we are programming in Scala on Spark.ule of Spark, supports two types of vectors: dense and sparse.
 A dense vector is basically a `Double` array of length equals to the dimension of the vector.
 If a vector contains only a few non-zero entries, we can then more efficiently represent the vector by a sparse vector with non-zero indices and the corresponding values only.
 For example, a vector `(1.0, 0.0, 3.0)` can be represented in dense format as `[1.0, 0.0, 3.0]` or in sparse format as `(3, [0, 2], [1.0, 3.0])`, where 3 is the size of the vector.
@@ -55,7 +55,7 @@ scala> val labeled0 = LabeledPoint(0, Vectors.sparse(3, Seq((0, 1.0), (2, 3.0)))
 
 ### Overview
 
-To apply machine learning algorithms, we need to transform our data into `RDD[LabeledPoint]`. This feature construction is similar to what we did in [Hadoop Pig](/hadoop/hadoop-pig.html), but will be more concise since we are programming in Scala on Spark. We will need to consider an one-year prediction window. Specifically, we will only use data one year before HF diagnosis. The figure below depicts relationship between prediction window and target.
+To apply machine learning algorithms, we need to transform our data into `RDD[LabeledPoint]`. We will need to consider an one-year prediction window. Specifically, we will only use data one year before HF diagnosis. The figure below depicts relationship between prediction window and target.
 
 We can also specify an observation window, inside which data will be used to construct feature vectors.
 
