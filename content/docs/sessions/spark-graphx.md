@@ -53,7 +53,7 @@ case class PatientEvent(patientId: String, eventName: String, date: Int, value: 
 Load patient event data and filter out diagnostic related events only
 
 ```scala
-val allEvents = sc.textFile("data/").
+val allEvents = sc.textFile("input/").
   map(_.split(",")).
   map(splits => PatientEvent(splits(0), splits(1), splits(2).toInt, splits(3).toDouble))
 
