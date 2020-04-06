@@ -23,29 +23,30 @@ The training materials are developed by [Dr. Chao Zhang](http://chaozhang.org)'s
 
 This bootcamp consists of a set of mini-lectures and practice sessions designed to help you quickly learn big data analytids tools. Below is the detailed schedule of this two-day bootcamp.
 
-| Date       | Time           | Topic                          | |
-|------------|----------------|--------------------------------|---|
-| 04/04/2020 | 9am - 9:50am     | Bootcamp Overview              | Chao |
-|            | 10am - 10:50am   | Python Tools for Data Analysis | Yinghao |
-|            | 11am - 11:50am   | Practice Session               |  |
-|            | 12pm - 1pm     | Lunch                          | |
-|            | 1pm - 1:50pm   | Spark Introduction             | Chao |
-|            | 2pm - 2:50pm   | Environment Setup              | Yinghao & Wendi |
-|            | 3pm - 3:50pm   | Practice Session               |  |
-| 04/05/2020 | 9am - 9:50am   | Scala & Spark Basics           |Yinghao  |
-|            | 10am - 10:50am | Spark SQL & GraphX             | Wendi  |
-|            | 11am - 11:50am | Practice Session               | |
-|            | 12pm - 1pm     | Lunch                          ||
-|            | 1pm - 1:50pm   | Predictive Models              |Chao |
-|            | 2pm - 2:50pm   | Spark ML Lib                   | Wendi |
-|            | 3pm - 3:50pm   | Practice Session               | |
-|            | 3:50pm - 4pm   | Wrapup                         |Chao |
+| Date       | Time           | Topic                          |
+|------------|----------------|--------------------------------|
+| 04/04/2020 | 9am - 9:50am     | Bootcamp Overview              |
+|            | 10am - 10:50am   | Python Tools for Data Analysis |
+|            | 11am - 11:50am   | Practice Session               |
+|            | 12pm - 1pm     | Lunch                          |
+|            | 1pm - 1:50pm   | Spark Introduction             |
+|            | 2pm - 2:50pm   | Environment Setup              |
+|            | 3pm - 3:50pm   | Practice Session               |
+| 04/05/2020 | 9am - 9:50am   | Scala & Spark Basics           |
+|            | 10am - 10:50am | Spark SQL & GraphX             |
+|            | 11am - 11:50am | Practice Session               |
+|            | 12pm - 1pm     | Lunch                          |
+|            | 1pm - 1:50pm   | Predictive Models              |
+|            | 2pm - 2:50pm   | Spark ML Lib                   |
+|            | 3pm - 3:50pm   | Practice Session               |
+|            | 3:50pm - 4pm   | Wrapup                         |
 
 ## Resources
 
 Recordings:
 - [Bootcamp Overview](https://bluejeans.com/s/2y4ZH)
 - [Intro to Spark](https://bluejeans.com/s/sTNso/)
+- [Predictive Modeling](https://bluejeans.com/s/5uXXg)
 
 Notebooks:
 - [Word Embedding](https://www.dropbox.com/s/f9x670g5kclok3a/word-embedding.ipynb?dl=0)
