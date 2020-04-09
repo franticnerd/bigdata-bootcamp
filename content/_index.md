@@ -9,7 +9,7 @@ type: docs
 
 Welcome to the Big Data Bootcamp.  In this bootcamp training, you will learn about big data analytics, including Python data analytics tools and the Spark ecosystem for large-scale data.
 
-The training materials are developed by [Dr. Chao Zhang](http://chaozhang.org)'s lab, [Sunlab](http://www.sunlab.org), and [Polo Club](https://poloclub.github.io). To get started, please follow the instructions on the left to setup the learning environment first.
+The training materials are developed by [Sunlab](http://www.sunlab.org), [Polo Club](https://poloclub.github.io), and [Dr. Chao Zhang](http://chaozhang.org)'s lab. To get started, please follow the instructions on the left to setup the learning environment first.
 
 ## Logistics
 
@@ -41,12 +41,12 @@ This bootcamp consists of a set of mini-lectures and practice sessions designed 
 |            | 3pm - 3:50pm   | Practice Session               |
 |            | 3:50pm - 4pm   | Wrapup                         |
 
-## Resources
+<!-- ## Resources -->
 
-Recordings:
-- [Bootcamp Overview](https://bluejeans.com/s/2y4ZH)
-- [Intro to Spark](https://bluejeans.com/s/sTNso/)
-- [Predictive Modeling](https://bluejeans.com/s/5uXXg)
+<!-- Recordings: -->
+<!-- - [Bootcamp Overview](https://bluejeans.com/s/2y4ZH) -->
+<!-- - [Intro to Spark](https://bluejeans.com/s/sTNso/) -->
+<!-- - [Predictive Modeling](https://bluejeans.com/s/5uXXg) -->
 
-Notebooks:
-- [Word Embedding](https://www.dropbox.com/s/f9x670g5kclok3a/word-embedding.ipynb?dl=0)
+<!-- Notebooks: -->
+<!-- - [Word Embedding](https://www.dropbox.com/s/f9x670g5kclok3a/word-embedding.ipynb?dl=0) -->
