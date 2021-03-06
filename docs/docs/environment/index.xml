@@ -5,11 +5,7 @@
     <link>http://franticnerd/bigdata-bootcamp/docs/environment/</link>
     <description>Recent content on GT Big Data Bootcamp</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="http://franticnerd/bigdata-bootcamp/docs/environment/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="http://franticnerd/bigdata-bootcamp/docs/environment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</link>

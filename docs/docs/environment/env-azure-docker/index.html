@@ -20,7 +20,7 @@ Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &ldquo;Doc
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.f4c3f7c644e631c0caa0cd25ac7313a95fac3b140a70212b9cfefe02d978a250.js" integrity="sha256-9MP3xkTmMcDKoM0lrHMTqV&#43;sOxQKcCErnP7&#43;Atl4olA="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.7969ff8ebbcf762f23ab99ac5243cd65d7212f01b58f3324da0f9a9cf038c2bf.js" integrity="sha256-eWn/jrvPdi8jq5msUkPNZdchLwG1jzMk2g&#43;anPA4wr8="></script>
 
 <!--
 Made with Book Theme
@@ -382,7 +382,7 @@ https://github.com/alex-shpak/hugo-book
 
 <h3 id="option-2-launch-a-clear-linux">Option 2: Launch a clear linux</h3>
 <p>some detail information of docker.
-&ldquo;Docker on Ubuntu Server&rdquo; is using &ldquo;<a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-deployment-model">classic deployment</a>&quot;. It seems like there are too few choise in &ldquo;classic deployment&rdquo; now. If you wish to have different option.
+&ldquo;Docker on Ubuntu Server&rdquo; is using &ldquo;<a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-deployment-model">classic deployment</a>&rdquo;. It seems like there are too few choise in &ldquo;classic deployment&rdquo; now. If you wish to have different option.
 Or, if you are more familiar with CentOS, SUSE or some other <a href="https://en.wikipedia.org/wiki/Linux_distribution">distributions</a>, you can simply choose them.</p>
 <p>In this case, you could unlocked more options in Azure Instance Type. Whatever your choise is, it is just a docker container, which does not matter the detail in your environment.</p>
 <ol>
@@ -410,13 +410,13 @@ Or, if you are more familiar with CentOS, SUSE or some other <a href="https://en
 <p>For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install git tmux
 </code></pre></div><p>And then, start a new docker instance</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\</span>
-  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\</span>
-  -m 6144m -h bootcamp.local <span style="color:#ae81ff">\</span>
-  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\</span>
-  -v /:/mnt/host <span style="color:#ae81ff">\</span>
-  sunlab/bigbox:latest <span style="color:#ae81ff">\</span>
-  /bin/bash
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -m 6144m -h bootcamp.local <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /:/mnt/host <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  /bin/bash
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="login-remotely-and-the-corresponding-security-issue">Login remotely and the corresponding security issue</h2>
@@ -432,6 +432,7 @@ Or, if you are more familiar with CentOS, SUSE or some other <a href="https://en
 <li>The spending in Azure is calculated by time usage. Launch a better instance and fully destroy it instance once you finish your job will reduce your time in any dimension</li>
 <li>You may use <a href="https://tmux.github.io/">tmux</a> to make your life better</li>
 </ol>
+
 </blockquote>
 
 </article>

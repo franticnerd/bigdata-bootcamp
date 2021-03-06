@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.63eb88daa545365405ecdbb21033286a325c60a36cfa6d22d21e7c3bc9286941.css" integrity="sha256-Y&#43;uI2qVFNlQF7NuyEDMoajJcYKNs&#43;m0i0h58O8koaUE=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.f4c3f7c644e631c0caa0cd25ac7313a95fac3b140a70212b9cfefe02d978a250.js" integrity="sha256-9MP3xkTmMcDKoM0lrHMTqV&#43;sOxQKcCErnP7&#43;Atl4olA="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.7969ff8ebbcf762f23ab99ac5243cd65d7212f01b58f3324da0f9a9cf038c2bf.js" integrity="sha256-eWn/jrvPdi8jq5msUkPNZdchLwG1jzMk2g&#43;anPA4wr8="></script>
 
 <!--
 Made with Book Theme
@@ -368,11 +368,12 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="spark-application">Spark Application</h1>
 <blockquote class="book-hint info">
-  <strong>Learning Objectives</strong></p>
+  <p><strong>Learning Objectives</strong></p>
 <ul>
 <li>Prepare data for machine learning applications.</li>
 <li>Save/load constructed data to external storage.</li>
 </ul>
+
 </blockquote>
 
 <p>In this section, we will show how to prepare suitable data for building predictive models to predict heart failure (HF). We will first briefly introduce data types involved. Then we show how to construct training/testing samples from the input data using Spark. Finally we will export data in suitable format for modeling later.</p>
@@ -416,7 +417,7 @@ scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">import<
 ....
 </code></pre><p>Each line is a 4-tuple <code>(patient-id, event-id, timestamp, value)</code>. Suppose now our goal is to predict if a patient will have heart failure. We can use the value associated with the event <code>heartfailure</code> as the label. This value can be either 1.0 (the patient has heart failure) or 0.0 (the patient does not have heart failure). We call a patient with heart failure a <strong>positive example</strong> or <strong>case patient</strong>, and a patient without heart failure a <strong>negative example</strong> or <strong>control patient</strong>.
 For example, in the above snippet we can see that patient <code>00013D2EFD8E45D1</code> is a positive example. The file <strong>case.csv</strong> consists of only positive examples, and the file <strong>control.csv</strong> consists of only negative examples.</p>
-<p>We will use the values associated with events other than <code>heartfailure</code> to construct feature vector for each patient. Specifically, the length of the feature vector is the number of distinct <code>event-id</code>'s, and each coordinate of the vector stores the aggregated value corresponds to a particular <code>event-id</code>. The values associated with events not shown in the file are assume to be 0. Since each patient typically has only a few hundreds of records (lines) compared to thousands of distinct events, it is more efficient to use <code>SparseVector</code>.
+<p>We will use the values associated with events other than <code>heartfailure</code> to construct feature vector for each patient. Specifically, the length of the feature vector is the number of distinct <code>event-id</code>&rsquo;s, and each coordinate of the vector stores the aggregated value corresponds to a particular <code>event-id</code>. The values associated with events not shown in the file are assume to be 0. Since each patient typically has only a few hundreds of records (lines) compared to thousands of distinct events, it is more efficient to use <code>SparseVector</code>.
 Note that each patient can have multiple records with the same <code>event-id</code>. In this case we sum up the values associated with a same <code>event-id</code> as feature value and use <code>event-id</code> as feature name.</p>
 <h3 id="1-load-data">1. Load data</h3>
 <p>The file <strong>input/case.csv</strong> consists of only positive examples, and the file <strong>input/control.csv</strong> consists of only negative examples. We will load them together. Since the data will be used more than once, we use <code>cache()</code> to prevent reading in the file multiple times.</p>

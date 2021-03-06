@@ -5,11 +5,7 @@
     <link>http://franticnerd/bigdata-bootcamp/</link>
     <description>Recent content in Introduction on GT Big Data Bootcamp</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="http://franticnerd/bigdata-bootcamp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="http://franticnerd/bigdata-bootcamp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</link>
@@ -96,8 +92,8 @@ Windows and macOS  Download the Python 3.7 distribution packages from this websi
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-intro/</guid>
       <description>Scala Introduction Learning Objectives
  Provide more details of scala language   Basic Gramma Start using Scala After installed scala, you can type scala in command line and get result as follow:
-$ scalaWelcome to Scala version 2.11.7Type in expressions to have them evaluated.Type :help for more information.scala&amp;gt; println(&amp;#34;Hello, World!&amp;#34;)Hello, World!The synopsis of a varialbe is:
-scala&amp;gt; val i:String = &amp;#34;abc&amp;#34;i: String = abc val means it it is immutable variable, you can use &amp;ldquo;var&amp;rdquo; to define a mutable variable i is the name of this variable String is the type of this string, it can be omitted here &amp;ldquo;abc&amp;rdquo; is the value of this variable  Define a function:</description>
+$ scala Welcome to Scala version 2.11.7 Type in expressions to have them evaluated. Type :help for more information. scala&amp;gt; println(&amp;#34;Hello, World!&amp;#34;) Hello, World! The synopsis of a varialbe is:
+scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc  val means it it is immutable variable, you can use &amp;ldquo;var&amp;rdquo; to define a mutable variable i is the name of this variable String is the type of this string, it can be omitted here &amp;ldquo;abc&amp;rdquo; is the value of this variable  Define a function:</description>
     </item>
     
     <item>
