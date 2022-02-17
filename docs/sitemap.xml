@@ -1,101 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-intro/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-application/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-basic/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-graphx/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-mllib/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/tags/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/unused/</loc>
   </url>
-  
 </urlset>
