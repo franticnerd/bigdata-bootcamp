@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://franticnerd/bigdata-bootcamp/docs/environment/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Docker in Local OS</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
+      <description>For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
+ Make sure you have enough resources:  It requires at least 8GB of Physical RAM; 16GB or larger would be better It requires at least 15GB of hard disk storage   Install a docker environment in the local machine Start Docker Service, pull images, and create an instance Just rock it!</description>
+    </item>
+    
+    <item>
       <title>Install Docker in Linux</title>
       <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</link>
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
@@ -24,11 +34,9 @@ sudo yum install docker-ce -y # install docker package sudo service docker start
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
-      <description>{% include user_def %}
- References: [original website, official tutorial].
+      <description>References: [original website, official tutorial].
  Currently, there are at least two approaches to running Docker services on macOS.
-1. Option One: Docker.app {{ &amp;lt; hint info&amp;gt; }} We recommend this installation approach. {{ &amp;lt; /hint &amp;gt; }}
-You can visit the official website to download Docker Desktop and installation instructions. Select and download a proper version of docker image and drag it to your &amp;ldquo;Applications&amp;rdquo; folder to install Docker software.</description>
+1. Option One: Docker.app We recommend this installation approach.  You can visit the official website to download Docker Desktop and installation instructions. Select and download a proper version of docker image and drag it to your &amp;ldquo;Applications&amp;rdquo; folder to install Docker software. After installation, you can click the Docker icon in the toolbar and set the maximum memory to 4G-8G, as recommended.</description>
     </item>
     
     <item>
@@ -52,16 +60,6 @@ Once you have successfully installed docker desktop, you may click the button &a
       <description>Docker in Azure We could use Azure as a virtual machine provider. If you have no enough resource to host our envornment in local, you can also launch an Azure instance, start a docker service inside, and host our docker image.
 We can create a Docker on Ubuntu Server in Azure, and then pull image from hub.docker.com.
 Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo;Docker on Ubuntu Server&amp;rdquo; is a container based on Ubuntu Server 16.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
-      <description>Docker in Local OS For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
- Make sure you have enough resource:  It requires at least 8GB Physical RAM, 16GB or greater would be better It requires at least 15GB hard disk storage   Install a docker environment in local machine Start Docker Service, pull images and create a instance Just rock it!</description>
     </item>
     
   </channel>

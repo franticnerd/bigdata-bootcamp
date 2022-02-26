@@ -8,6 +8,9 @@
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/</loc>
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,8 +30,6 @@
     <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</loc>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</loc>
   </url><url>

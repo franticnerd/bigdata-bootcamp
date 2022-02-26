@@ -10,17 +10,15 @@ toc: true
 show: false
 ---
 
-{% include user_def %}
-
 > References: [[original website](http://chaozhang.org/bigdata-bootcamp/docs/environment/env-local-docker-macos/), [official tutorial](https://docs.docker.com/desktop/mac/install/)].
 
 Currently, there are at least two approaches to running Docker services on macOS.
 
 ## 1. Option One:  Docker.app
 
-{{ < hint info> }}
+{{< hint info >}}
 We recommend this installation approach.
-{{ < /hint > }}
+{{< /hint >}}
 
 You can visit the [official website](https://docs.docker.com/docker-for-mac/install/) to download Docker Desktop and installation instructions.
 Select and download a proper version of docker image and drag it to your "Applications" folder to install Docker software.
