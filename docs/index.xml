@@ -37,11 +37,10 @@ You can visit the official website to download Docker Desktop and installation i
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
-      <description>{% include user_def %}
- References: [original website, official tutorial].
- 1. Windows Docker Desktop (recommended) {{ &amp;lt; hint warning&amp;gt; }} Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
-{{ &amp;lt; /hint &amp;gt; }}
-Download the image from this link and follow the installer step by step.</description>
+      <description>References: [original website, official tutorial].
+ 1. Windows Docker Desktop (recommended) Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
+ Download the image from this link and follow the installer step by step.
+Once you have successfully installed docker desktop, you may click the button &amp;ldquo;Docker Desktop&amp;rdquo;.</description>
     </item>
     
     <item>

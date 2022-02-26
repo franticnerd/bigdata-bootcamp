@@ -10,18 +10,17 @@ toc: true
 show: false
 ---
 
-{% include user_def %}
 
 > References: [[original website](http://chaozhang.org/bigdata-bootcamp/docs/environment/env-local-docker-windows/), [official tutorial](https://docs.docker.com/docker-for-windows/install/)].
 
 ## 1. Windows Docker Desktop (recommended)
 
-{{ < hint warning> }}
+{{< hint warning>}}
 Before installation, please check [this page](https://docs.docker.com/desktop/windows/install/#system-requirements) for system requirements.
 If your system does not fulfill the prerequisite, you may see the image as follow. Please use *[Docker Toolbox on Windows](#docker-toolbox-on-windows)* instead.
 
 ![](/bigdata-bootcamp/env_images/docker-for-windows-10-prerequisite-not-fullfilled.png)
-{{ < /hint > }}
+{{< /hint >}}
 
 Download the image from [this link](https://hub.docker.com/editions/community/docker-ce-desktop-windows) and follow the installer step by step.
 
