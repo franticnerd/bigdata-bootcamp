@@ -1,47 +1,48 @@
 ---
+title: "Install Docker in macOS"
+collection: teaching
+type: "Bootcamp"
+permalink: /teaching/0023-docker-macos
+venue: "Georgia Tech, School of CSE"
+date: 2022-02-26
+location: "Atlanta, GA"
+toc: true
+show: false
 ---
-# Install Docker In macOS
 
-If you are using macOS, you are supposed to prepare a virtual machine/service to host a real Linux instance, and then control it in the remote.
+{% include user_def %}
 
-Currently, there are at least 2 solutions to achieve it.
+> References: [[original website](http://chaozhang.org/bigdata-bootcamp/docs/environment/env-local-docker-macos/), [official tutorial](https://docs.docker.com/desktop/mac/install/)].
 
-## Option One:  Docker.app
+Currently, there are at least two approaches to running Docker services on macOS.
 
-If you are using macOS, you could follow [this guide](https://docs.docker.com/docker-for-mac/install/). Download an image, and drag to your 'Applications' folder, click and run.
+## 1. Option One:  Docker.app
 
-+ [Stable channel](https://download.docker.com/mac/stable/Docker.dmg)
-+ [Edge channel](https://download.docker.com/mac/edge/Docker.dmg)
+{{ < hint info> }}
+We recommend this installation approach.
+{{ < /hint > }}
 
-Currently, both of them are working pretty fine. 
-
-+ Kubernetes is only available in Docker for Mac 17.12 CE Edge and higher, on the Edge channel. 
-+ Edge can not disable "Sending usage statistics"
-+ [For more](https://docs.docker.com/docker-for-mac/faqs/#questions-about-dockerapp)
-
-Either of them could satisfy the requirements in this course.
-
-If you wish to host our image using Docker.app, you are supposed to click the icon for docker in the toolbar, and set the maximum memory to 4G-8G.
+You can visit the [official website](https://docs.docker.com/docker-for-mac/install/) to download Docker Desktop and installation instructions.
+Select and download a proper version of docker image and drag it to your "Applications" folder to install Docker software.
+After installation, you can click the Docker icon in the toolbar and set the maximum memory to 4G-8G, as recommended.
 
 ![](/bigdata-bootcamp/env_images/docker-app-toolbar-preferences.png)
 
 ![](/bigdata-bootcamp/env_images/docker-app-toolbar-preferences-advanced.png)
 
-Docker.app requires sudo access, and the data will stored in `$HOME/Library/Containers/com.docker.docker`
+`Docker.app` requires `sudo` access, and the container data are stored at `$HOME/Library/Containers/com.docker.docker`.
 
-
-## Option Two: Homebrew + VirtualBox + Docker
+## 2. Option Two: Homebrew + VirtualBox + Docker
 
 However, here is an alternative solution.
 
 First of all, you should make sure you have already installed [HomeBrew](http://brew.sh/).
-
 Secondly, you are supposed to make sure your brew is up-to-date.
 
 ```bash
-brew update # update brew repository
-brew upgrade # update all packages for brew
-brew doctor # check the status of your brew, it will provide some guide to make your brew be normal
+brew update  # update brew repository
+brew upgrade  # update all packages for brew
+brew doctor  # check your brew status
 ```
 
 Finally, you can install VirtualBox and Docker by using the following commands:
@@ -73,19 +74,19 @@ Create a default instance using the following command:
 docker-machine create --driver virtualbox --virtualbox-memory 8192  default
 ```
 
-Please refer to [this link](https://docs.docker.com/machine/reference/create/) for some detail instruction.
+Please refer to [this link](https://docs.docker.com/machine/reference/create/) for detailed instructions.
 
-Every time you created a new terminal window, and before you execute any command of 'docker *', you are supposed to run the following command:
+Each time you create a new terminal window, you need to execute the following command before you use any docker commands `docker *`:
 
 ```bash
 eval $(docker-machine env default)
 ```
 
-This command will append some environment variables to your current sessions.
+This command appends some environment variables to your current sessions.
 
 ### FAQ
 
-##### **Q:** Can not connect to docker
+**Q: Can not connect to Docker** 
 
 Error Message:
 
@@ -96,11 +97,13 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 Please make sure you have already started your session.
 
-##### **Q:** Start docker-machine Failed, Can Not Get IP Address
+**Q: Start docker-machine Failed, Can Not Get IP Address** 
 
-The default manager by vbox is conflict with vpn [AnyConnect](https://faq.oit.gatech.edu/content/how-do-i-get-started-campus-vpn), if you are using it, just disconnect it.
+The default manager conflicts with vpn [AnyConnect](https://faq.oit.gatech.edu/content/how-do-i-get-started-campus-vpn).
+Please disconnect your AnyConnect VPN before starting the Docker server.
+Whether Docker is compatible with GlobalProtect VPN has not been tested yet.
 
-##### **Q:** Invalid Active Developer Path
+**Q: Invalid Active Developer Path** 
 
 ```
 xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
@@ -109,8 +112,6 @@ Error: Failure while executing: git config --local --replace-all homebrew.analyt
 
 try `xcode-select --install` and then `brew update`, `brew upgrade`, and `brew doctor` again
 
-##### **Q:** Where are the data for the images and hard disks?
+**Q: Where are the data for the images and hard disks?** 
 
 They are in `$HOME/.docker`
-
-

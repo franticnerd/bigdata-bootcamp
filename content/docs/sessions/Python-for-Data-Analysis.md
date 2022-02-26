@@ -1,54 +1,78 @@
-# Python Tools for Data Analysis
+---
+title: "Python Tools for Data Analysis"
+collection: teaching
+type: "Bootcamp"
+permalink: /teaching/001-bigdata-bootcamp-python
+venue: "Georgia Tech, School of CSE"
+date: 2022-02-26
+location: "Atlanta, GA"
+toc: true
+show: true
+---
 
 ## 1. Python Installation: Anaconda
 
-**If you already have a python environment, ignore this session.**
+> **If you don't feel like using the local environment**, you can try [Google Colab](https://colab.research.google.com/) for a *free* online python environment.
+> The examples are also available on Colab:  
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1J2rCfbQm5heCt5LN1t8RZHA1O9VaT8b-?usp=sharing)
 
-[Anaconda](https://www.anaconda.com/) is a complete, [open source](https://docs.anaconda.com/anaconda/eula) data science package with a community of over 6 million users. It is easy to [download](https://www.anaconda.com/download/) and install, and it is supported on Linux, MacOS, and Windows ([source](https://opensource.com/article/18/4/getting-started-anaconda-python)).
+**Ignore this session if you already have a python environment.**
 
-We'll use [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for minimal installation.
+[Anaconda](https://www.anaconda.com/) is a complete, [open source](https://docs.anaconda.com/anaconda/eula) data science package with a community of over 6 million users.
+It is easy to [download](https://www.anaconda.com/download/) and install;
+and it supports Linux, macOS, and Windows ([source](https://opensource.com/article/18/4/getting-started-anaconda-python)).
 
-### Windows and macOS
+In this tutorial, we'll use [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for minimal installation.
+Please refer to [this page](https://conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda) for the difference between Anaconda and Miniconda and which one to choose.
 
-1. Download the Python 3.7 distribution packages from [this website](https://docs.conda.io/en/latest/miniconda.html).
+### 1.1. Windows and macOS
+
+1. Download the latest Miniconda installer (with Python 3.9) from the [official website](https://docs.conda.io/en/latest/miniconda.html#windows-installers).
 2. Install the package according to the instructions.
-3. Start to use conda environment with *Anaconda Prompt* or other shells if you enabled this feature during installation.
+3. Start to use *conda* environment with *Anaconda Prompt* or other shells if you enabled this feature during installation.
 
-### Linux with  terminal 
+> Notice: To use `conda` command in other shells/prompts, you need to add the conda directory to your `PATH` environment variable.
+
+> Reference: [[1](https://docs.anaconda.com/anaconda/install/windows/), [2](https://docs.anaconda.com/anaconda/install/mac-os/)].
+
+### 1.2. Linux with terminal 
 
 1. Start the terminal.
-
 2. Switch to `~/Download/` with command `cd ~/Download/`. If the path does not exist, create one using `mkdir ~/Download/`.
-
 3. Download the latest Linux Miniconda distribution using `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`.
-
-4. Install by `bash Miniconda3-latest-Linux-x86_64.sh`.
-
+4. Once download is complete, install Miniconda using `bash Miniconda3-latest-Linux-x86_64.sh`.
 5. Follow the prompts on the installer screens.
-
    If you are unsure about any setting, accept the defaults. You can change them later.
-
-6. To make the changes take effect, close and then re-open your terminal window or use the command `source bashrc`.
-
+6. To make the changes take effect, close and then re-open your terminal window or use the command `source ~/.bashrc`.
 7. If you are using *zsh* or other shells, make sure conda is initiated. To do this, switch back to bash and type the command `conda init <shell name>`.
 
-### Check your installation
+> Reference: [[1](https://docs.anaconda.com/anaconda/install/linux/)].
 
-You can use the command `conda list` to check your conda installation. If the terminal returns a bunch of python packages, then your installation is success.
+### 1.3. Verify your installation
 
-### Conda environment
+You can use the command `conda list` to check your conda installation.
+If the terminal returns a bunch of python packages, then your installation is successful.
 
-With conda, you can create, export, list, remove, and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called activating the environment. You can also share an environment file.
+> Reference: [[1](https://docs.anaconda.com/anaconda/install/verify-install/)].
 
-This part is not necessary as you can directly use your *base* environment. However, for those who wants to know more, refer to [this website](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for details and instructions.
+### 1.4. Conda environment
+
+With conda, you can create, remove, and update environments, each with an independent version of Python interpreter and Python packages.
+Switching or moving between environments is called activating the environment.
+
+This part is not necessary as you can directly *base* environment, which is the default conda environment.
+For those who want to know more, please refer to [conda: managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for details and instructions.
 
 ## 2. Package Installation
 
-If you are using anaconda, you can directly use the anaconda package manager. Otherwise, you can use other managers such as *pip*. We'll only demonstrate how to install packages with `conda` instructions.
+If you are using Anaconda or Miniconda, you can use the Anaconda package manager `conda`.
+You can also use other managers such as `pip` when the packages are not provided by any conda sources.
+However, in this tutorial, we'll only cover how to install packages with `conda` instructions.
 
-To look for a specific package, you can visit [this website](https://anaconda.org/) and type the name of that package in the search box. For today's instruction, we need to install `numpy`, `matplotlib`,  `scikit-learn` and `pandas`. 
+To look for a specific package, you can visit [this website](https://anaconda.org/) and type the name of that package in the search box.
+For today's instruction, we need to install `numpy`, `matplotlib`,  `scikit-learn` and `pandas`. 
 
-First, switch to your conda environment, then install those packages by typing these instructions one by one:
+First, switch to your conda environment using `conda activate <env name>` (not necessary if you are using the default *base* environment), then install those packages by executing these instructions:
 
 ```bash
 conda install -c conda-forge numpy
@@ -57,7 +81,8 @@ conda install -c conda-forge scikit-learn
 conda install -c conda-forge pandas
 ```
 
-The package manager will automatically install all the dependencies. So if you choose to install scikit-learn first, then you  don't have to install numpy manually as scikit-learn depends on numpy.
+The package manager will automatically install all dependencies.
+So if you choose to install scikit-learn first, then you don't have to install numpy manually as scikit-learn depends on numpy.
 
 If you prefer a fancier and more powerful python shell, you can choose to install `ipython` and even `jupyter notebook`, which allows you to run your commands in your browser.
 
@@ -68,11 +93,19 @@ conda install jupyter
 
 ## 3. Basic Python Concepts
 
-> A more comprehensive tutorial can be found at [this website](http://cs231n.github.io/python-numpy-tutorial/#python-basic). In this and the following sections we'll just introduce the surface due to time limitation.
+> A more comprehensive tutorial can be found at the [Stanford CS231n website](http://cs231n.github.io/python-numpy-tutorial/#python-basic).
+In this and the following sections, we'll introduce the basic concepts due to time limitations.
 
-First, in your terminal, type `python` or `ipython` or `jupyter notebook` to start a python shell. `ipython` or `jupyter notebook` is recommended.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1J2rCfbQm5heCt5LN1t8RZHA1O9VaT8b-?usp=sharing)
 
-### Variable definition, input and print
+We use **Python 3.9** in this tutorial.
+> Notice that previous Python interpreter versions may behave differently.
+> Please refer to the [official document](https://docs.python.org/dev/whatsnew/index.html) for more details.
+
+First, in your terminal, type `python` or `ipython` or `jupyter notebook` to start an interactive python shell.
+`ipython` or `jupyter notebook` is recommended.
+
+### 3.1. Variable definition, input and output (print)
 
 There's no type constraint for a variable, i.e., a variable can be of any type.
 
@@ -99,12 +132,22 @@ x = input('Input something: ')
 print(x, type(x))
 ```
 
-### List, tuple, set and dictionary
+> Notice that this input method is rarely used in big data scenarios.
+> A more practical input method is [argparse](https://docs.python.org/3/library/argparse.html).
 
-- **List** is a collection which is ordered and changeable. Allows duplicate members.
-- **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
-- **Set** is a collection which is unordered and unindexed. No duplicate members.
-- **Dictionary** is a collection which is unordered, changeable and indexed. No duplicate members.
+### 3.2. List, tuple, set and dictionary
+
+- **List** is a collection that is *ordered* and *changeable*.
+It allows duplicate members.
+- **Tuple** is a collection which is *ordered* but *not changeable*.
+It also allows duplicate members.
+- **Set** is a collection which is *unordered* and *unindexed*.
+It does not allow duplicate members.
+Elements in a set cannot be retrieved by index.
+- **Dictionary** is a collection which is *ordered*, *changeable* and *indexed*.
+It does not allow duplicate members.  
+
+> Notice that Dictionary used to be unordered before Python 3.7. 
 
 ```python
 _list = [1, 2, 1.2, '1', '2', 1]  # this is a list
@@ -124,7 +167,7 @@ Access elements
 ```python
 print(_list[0], _list[-2], _list[1: 3])
 print(_tuple[1], _tuple[-2])
-print(_set[0], _set[-1])  # This will throw an error
+print(_set[0], _set[-1])
 print(_dict[1], _dict['1'], _dict[2.2])
 ```
 
@@ -136,7 +179,7 @@ a[0] = 888
 print(a, '\n', _list)
 ```
 
-### If else
+### 3.3. If else
 
 ```python
 if 888 not in _dict.keys():
@@ -147,7 +190,7 @@ else:
     _dict['qwert'] = 'poiuy'
 ```
 
-### Loops
+### 3.4. Loops
 
 `for` loop:
 
@@ -168,7 +211,7 @@ while i != len(_list):
     i += 1
 ```
 
-### Function
+### 3.5 Function
 
 Define a function:
 
@@ -189,9 +232,10 @@ print(f'out of funciton, t: {t}, tt: {tt}')
 
 ## 4. Basic Numpy Usage
 
-### Array creation
+### 4.1. Array creation
 
-A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the *rank* of the array; the *shape* of an array is a tuple of integers giving the size of the array along each dimension.
+A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers.
+The number of dimensions is the *rank* of the array; the *shape* of an array is a tuple of integers giving the size of the array along each dimension.
 
 We can initialize numpy arrays from nested Python lists, and access elements using square brackets:
 
@@ -212,7 +256,7 @@ Change the type of an array:
 
 ```python
 print(a.dtype)
-a = a.astype(np.float)
+a = a.astype(float)
 print(a.dtype)
 ```
 
@@ -231,12 +275,13 @@ e = np.random.random((3,3))  # Create an array filled with random values
 print(e)
 ```
 
-### Array indexing
+### 4.2. Array indexing
 
 Similar to Python lists, numpy arrays can be sliced. Since arrays may be multidimensional, you must specify a slice for each dimension of the array:
 
 ```python
-a = np.arange(12).reshape(3, 4)		# Create a rank 1 array and reshape it to a 3x4 matrix
+# Create a rank 1 array and reshape it to a 3x4 matrix
+a = np.arange(12).reshape(3, 4)
 b = a[:2, 1:3]
 print(a)
 print(b)
@@ -246,7 +291,7 @@ b[0, 0] = 888
 print(a)
 ```
 
-You can mix integer indexing with slice indexing. However, doing so will yield an array of lower rank than the original array:
+You can mix integer indexing with slice indexing. However, integer indexing will yield an array of lower rank than the original array:
 
 ```python
 row_r1 = a[1, :]    # Rank 1 view of the second row of a
@@ -255,7 +300,7 @@ print(row_r1, row_r1.shape)
 print(row_r2, row_r2.shape)
 ```
 
-You can also access element in the array via list:
+You can also access element in the array through lists:
 
 ```python
 x = [0, 1, 2]
@@ -263,7 +308,7 @@ y = [3, 1, 0]
 print(a[x, y])
 ```
 
-Or via boolean array:
+Or through a boolean array:
 
 ```python
 b = a > 4
@@ -271,9 +316,9 @@ print(b)
 print(a[b])
 ```
 
-### Array math
+### 4.3. Array math
 
-Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:
+Basic mathematical functions operate element-wise on arrays, and are available both as operator overloads and as functions in the numpy module:
 
 ```python
 x = np.arange(1, 5, dtype=np.float).reshape(2, 2)
@@ -333,7 +378,7 @@ print(np.dot(x, y))
 print(x @ y)
 ```
 
-**Attention:** `np.dot()` and `@` behaves differently when the rank of matrix is larger than or equal to 3.
+**Attention:** `np.dot()` and `@` behaves differently when the matrix rank is greater than 2.
 
 Numpy provides many useful functions for performing computations on arrays such as  `sum`:
 
@@ -344,12 +389,12 @@ print(np.sum(x, axis=0))  # Compute sum of each column; prints "[4 6]"
 print(np.sum(x, axis=1))  # Compute sum of each row; prints "[3 7]"
 ```
 
-To transpose a matrix, simply use the `T` attribute of an array object:
+To transpose a matrix, use the `T` attribute of an array object:
 
 ```python
 print(x.T)
 
-# Note that taking the transpose of a rank 1 array does nothing:
+# Note that taking the transpose of a rank one array does nothing:
 print(v)
 print(v.T)
 ```
@@ -370,7 +415,8 @@ plt.plot(x, y)
 plt.show()  # You must call plt.show() to make graphics appear.
 ```
 
-**Note: **if you are using jupyter notebook, you can use the command `%matplotlib inline` to make the graphics embedded in the editor or `%matplotlib qt` to make them pop out.
+> Note: for jupyter notebook, you can use the command `%matplotlib inline` to make the graphics embedded in the editor or `%matplotlib qt` to make them pop out.
+
 
 To plot multiple lines at once, and add a title, legend, and axis labels:
 
@@ -411,9 +457,10 @@ plt.show()
 
 ## 6. Pandas and Scikit-Learn for Data Science
 
-In this section, we will look at a data science example using pandas as data management tool and scikit-learn (sklearn) as algorithm implementation. This section is modified from [here](https://elitedatascience.com/python-machine-learning-tutorial-scikit-learn).
+In this section, we will look at a data science example using pandas as data management tool and scikit-learn (sklearn) as algorithm implementation.
+This section is modified from [this tutorial](https://elitedatascience.com/python-machine-learning-tutorial-scikit-learn).
 
-### Package import
+### 6.1. Import packages
 
 ```python
 import numpy as np
@@ -437,9 +484,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 ```
 
-### Load data
+### 6.2. Load data
 
-You can download the [data](http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv) by clicking the link or using `wget`: `wget http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv` and move the file to your current folder. Then, load the `csv` data through `pandas`:
+You can download the [data](https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv) by clicking the link or using `wget`: `wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv` and move the file to your current folder.
+Then, load the `csv` data into memory through `pandas`:
 
 ```python
 data = pd.read_csv('winequality-red.csv', sep=';')
@@ -448,17 +496,18 @@ data = pd.read_csv('winequality-red.csv', sep=';')
 Or, you can directly load the data through URL.
 
 ```python
-dataset_url = 'http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv'
+dataset_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv'
 data = pd.read_csv(dataset_url, sep=';')
 ```
 
-You can also manipulate other data formats with `pandas`. A detailed document is [here](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html).
+You can also load datasets stored in other formats with `pandas`.
+A detailed document is at [pandas: io](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html).
 
-### Take a look of the loaded data
+### 6.3. Take a look of the loaded data
 
 The data loaded is stored in the type of `pandas.core.frame.DataFrame`
 
-To give a peak of the data, we can simply use
+To give a peak of the data, we can use
 
 ```python
 print(data)
@@ -492,7 +541,7 @@ We can also easily print some summary statistics:
 print(data.describe())
 ```
 
-### Split data
+### 6.4. Split data
 
 First, let's separate our target (y) feature from our input (X) features and divide the dataset into training and test sets using the `train_test_split` function:
 
@@ -506,7 +555,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 Stratify your sample by the target variable will ensure your training set looks similar to your test set, making your evaluation metrics more reliable.
 
-### Pre-processing
+### 6.5. Pre-processing
 
 Standardization is the process of subtracting the means from each feature and then dividing by the feature standard deviations. It is a common requirement for machine learning tasks. Many algorithms assume that all features are centered around zero and have approximately the same variance.
 
@@ -522,7 +571,7 @@ print(X_test_scaled.mean(axis=0))
 print(X_test_scaled.std(axis=0))
 ```
 
-### Fit the model
+### 6.6. Fit the model
 
 If we do not need to fine-tune the hyperparameters, we can define a random forest regression model with the default hyperparameters and fit the model using
 
@@ -540,7 +589,7 @@ print(r2_score(y_test, pred))
 print(mean_squared_error(y_test, pred))
 ```
 
-### Define the cross-validation pipeline
+### 6.7. Define the cross-validation pipeline
 
 Fine-tuning hyperparameters is an important job in Machine Learning since a set of carefully chosen hyperparameters may greatly improve the performance of the model.
 
@@ -597,7 +646,7 @@ print(r2_score(y_test, pred))
 print(mean_squared_error(y_test, pred))
 ```
 
-### Saving and loading model
+### 6.8. Save and load models
 
 After training, we may want to save the trained model for future use. For this purpose, we can use
 
@@ -616,7 +665,4 @@ clf2.predict(X_test)
 
 ---
 
-Another more comprehensive example can be found [here](https://scikit-learn.org/stable/tutorial/statistical_inference/index.html).
-
-
-
+A more comprehensive example of scikit-learn can be found [here](https://scikit-learn.org/stable/tutorial/statistical_inference/index.html).
