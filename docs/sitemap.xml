@@ -3,20 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/environment/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</loc>
+    <lastmod>2022-02-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</loc>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</loc>
   </url><url>
@@ -41,10 +54,6 @@
     <loc>http://franticnerd/bigdata-bootcamp/unused/env-docker-compose/</loc>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/categories/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/docs/</loc>
-  </url><url>
-    <loc>http://franticnerd/bigdata-bootcamp/</loc>
   </url><url>
     <loc>http://franticnerd/bigdata-bootcamp/tags/</loc>
   </url><url>

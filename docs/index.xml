@@ -5,7 +5,68 @@
     <link>http://franticnerd/bigdata-bootcamp/</link>
     <description>Recent content in Introduction on GT Big Data Bootcamp</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://franticnerd/bigdata-bootcamp/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://franticnerd/bigdata-bootcamp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker in Local OS</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
+      <description>{{ &amp;lt; hint info &amp;gt; }} For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages. {{ &amp;lt; /hint &amp;gt; }}
+The whole progress would seem as follow:
+ Make sure you have enough resources:  It requires at least 8GB of Physical RAM; 16GB or larger would be better It requires at least 15GB of hard disk storage   Install a docker environment in the local machine Start Docker Service, pull images, and create an instance Just rock it!</description>
+    </item>
+    
+    <item>
+      <title>Install Docker in Linux</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</guid>
+      <description>Reference: [original website, official tutorial]
+ 1. Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, you can install Docker and start the service with the following commands:
+sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start-up automatically FAQ If your SELinux and BTRFS are on working, you may meet an error message as follow:</description>
+    </item>
+    
+    <item>
+      <title>Install Docker in macOS</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
+      <description>{% include user_def %}
+ References: [original website, official tutorial].
+ Currently, there are at least two approaches to running Docker services on macOS.
+1. Option One: Docker.app {{ &amp;lt; hint info&amp;gt; }} We recommend this installation approach. {{ &amp;lt; /hint &amp;gt; }}
+You can visit the official website to download Docker Desktop and installation instructions. Select and download a proper version of docker image and drag it to your &amp;ldquo;Applications&amp;rdquo; folder to install Docker software.</description>
+    </item>
+    
+    <item>
+      <title>Install Docker in Mircosoft Windows</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
+      <description>{% include user_def %}
+ References: [original website, official tutorial].
+ 1. Windows Docker Desktop (recommended) {{ &amp;lt; hint warning&amp;gt; }} Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
+{{ &amp;lt; /hint &amp;gt; }}
+Download the image from this link and follow the installer step by step.</description>
+    </item>
+    
+    <item>
+      <title>Python Tools for Data Analysis</title>
+      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</guid>
+      <description>1. Python Installation: Anaconda  If you don&amp;rsquo;t feel like using the local environment, you can try Google Colab for a free online python environment. The examples are also available on Colab:
+
+ Ignore this session if you already have a python environment.
+Anaconda is a complete, open source data science package with a community of over 6 million users. It is easy to download and install; and it supports Linux, macOS, and Windows (source).</description>
+    </item>
+    
     <item>
       <title></title>
       <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-azure-docker/</link>
@@ -15,63 +76,6 @@
       <description>Docker in Azure We could use Azure as a virtual machine provider. If you have no enough resource to host our envornment in local, you can also launch an Azure instance, start a docker service inside, and host our docker image.
 We can create a Docker on Ubuntu Server in Azure, and then pull image from hub.docker.com.
 Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo;Docker on Ubuntu Server&amp;rdquo; is a container based on Ubuntu Server 16.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</guid>
-      <description>Install Docker In Linux Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, after updated your system, you can simply type the follow commands:
-sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start up automatically FAQ  If your SELinux and BTRFS are on working, you may meet an error message as follow:  # systemctl status docker.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
-      <description>Install Docker In macOS If you are using macOS, you are supposed to prepare a virtual machine/service to host a real Linux instance, and then control it in the remote.
-Currently, there are at least 2 solutions to achieve it.
-Option One: Docker.app If you are using macOS, you could follow this guide. Download an image, and drag to your &amp;lsquo;Applications&amp;rsquo; folder, click and run.
- Stable channel Edge channel  Currently, both of them are working pretty fine.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
-      <description>Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
-You may follow the guide, go to the Imagine login page to download the Windows image for free.
- Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
-Download the image from this link and follow the installer step by step.
-Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
-      <description>Docker in Local OS For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
- Make sure you have enough resource:  It requires at least 8GB Physical RAM, 16GB or greater would be better It requires at least 15GB hard disk storage   Install a docker environment in local machine Start Docker Service, pull images and create a instance Just rock it!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</guid>
-      <description>Python Tools for Data Analysis 1. Python Installation: Anaconda If you already have a python environment, ignore this session.
-Anaconda is a complete, open source data science package with a community of over 6 million users. It is easy to download and install, and it is supported on Linux, MacOS, and Windows (source).
-We&amp;rsquo;ll use Miniconda for minimal installation.
-Windows and macOS  Download the Python 3.7 distribution packages from this website.</description>
     </item>
     
     <item>

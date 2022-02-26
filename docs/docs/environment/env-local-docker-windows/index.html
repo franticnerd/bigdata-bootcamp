@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
-You may follow the guide, go to the Imagine login page to download the Windows image for free.
- Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
-Download the image from this link and follow the installer step by step.
-Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above"><meta property="og:title" content="" />
-<meta property="og:description" content="Install Docker In Microsoft Windows If you are interested in software from Microsoft (excluding Microsoft Office products), this link may helps.
-You may follow the guide, go to the Imagine login page to download the Windows image for free.
- Windows Docker Desktop (recommended) An official guide for Windows Docker Desktop could be found here.
-Download the image from this link and follow the installer step by step.
-Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above" />
+<meta name="description" content="{% include user_def %}
+ References: [original website, official tutorial].
+ 1. Windows Docker Desktop (recommended) {{ &lt; hint warning&gt; }} Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
+{{ &lt; /hint &gt; }}
+Download the image from this link and follow the installer step by step."><meta property="og:title" content="Install Docker in Mircosoft Windows" />
+<meta property="og:description" content="{% include user_def %}
+ References: [original website, official tutorial].
+ 1. Windows Docker Desktop (recommended) {{ &lt; hint warning&gt; }} Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
+{{ &lt; /hint &gt; }}
+Download the image from this link and follow the installer step by step." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-02-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-26T00:00:00+00:00" />
 
-
-
-<title>Env Local Docker Windows | GT Big Data Bootcamp</title>
+<title>Install Docker in Mircosoft Windows | GT Big Data Bootcamp</title>
 <link rel="icon" href="/bigdata-bootcamp/favicon.png" type="image/x-icon">
 
 
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.1215f1deaaef4f64b888e771a52d614a32e2241b5e4abb7452eb3c0a8e5e890c.js" integrity="sha256-EhXx3qrvT2S4iOdxpS1hSjLiJBteSrt0Uus8Co5eiQw="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.6c931a8447aa9ee8b5be4ff60b34abcd0daf96a60c6daa38b3b5b17d29686db6.js" integrity="sha256-bJMahEeqnui1vk/2CzSrzQ2vlqYMbao4s7WxfSlobbY="></script>
 
 <!--
 Made with Book Theme
@@ -106,47 +106,47 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Docker in Local OS</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Install Docker in Linux</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Install Docker in macOS</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="active">Install Docker in Mircosoft Windows</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
   <a href="/bigdata-bootcamp/docs/environment/env-azure-docker/" class="">Env Azure Docker</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-linux/" class="">Env Local Docker Linux</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-macos/" class="">Env Local Docker Macos</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/bigdata-bootcamp/docs/environment/env-local-docker-windows/" class="active">Env Local Docker Windows</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/bigdata-bootcamp/docs/environment/env-local-docker/" class="">Env Local Docker</a>
   
 
 </li>
@@ -185,7 +185,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/bigdata-bootcamp/docs/sessions/python-for-data-analysis/" class="">Python for Data Analysis</a>
+  <a href="/bigdata-bootcamp/docs/sessions/python-for-data-analysis/" class="">Python Tools for Data Analysis</a>
   
 
 </li>
@@ -332,7 +332,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/bigdata-bootcamp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Env Local Docker Windows</strong>
+  <strong>Install Docker in Mircosoft Windows</strong>
 
   <label for="toc-control">
     <img src="/bigdata-bootcamp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -346,8 +346,8 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</a></li>
-    <li><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a>
+    <li><a href="#1-windows-docker-desktop-recommended">1. Windows Docker Desktop (recommended)</a></li>
+    <li><a href="#2-docker-toolbox-on-windows">2. Docker Toolbox on Windows</a>
       <ul>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -363,47 +363,53 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="install-docker-in-microsoft-windows">Install Docker In Microsoft Windows</h1>
-<blockquote class="book-hint info">
-  <p>If you are interested in software from Microsoft (excluding Microsoft Office products), <a href="https://support.cc.gatech.edu/resources/downloads">this link</a> may helps.</p>
-<p>You may follow the guide, go to the <a href="https://e5.onthehub.com/WebStore/Welcome.aspx?vsro=8&amp;ws=82FE585A-DB9B-E011-969D-0030487D8897">Imagine</a> login page to download the Windows image for free.</p>
-
+  <article class="markdown"><p>{% include user_def %}</p>
+<blockquote>
+<p>References: [<a href="http://chaozhang.org/bigdata-bootcamp/docs/environment/env-local-docker-windows/">original website</a>, <a href="https://docs.docker.com/docker-for-windows/install/">official tutorial</a>].</p>
 </blockquote>
-
-<h2 id="windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</h2>
-<p>An official guide for Windows Docker Desktop could be found <a href="https://docs.docker.com/docker-for-windows/install/">here</a>.</p>
+<h2 id="1-windows-docker-desktop-recommended">1. Windows Docker Desktop (recommended)</h2>
+<p>{{ &lt; hint warning&gt; }}
+Before installation, please check <a href="https://docs.docker.com/desktop/windows/install/#system-requirements">this page</a> for system requirements.
+If your system does not fulfill the prerequisite, you may see the image as follow. Please use <em><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a></em> instead.</p>
+<p><img src="/bigdata-bootcamp/env_images/docker-for-windows-10-prerequisite-not-fullfilled.png" alt="" />
+{{ &lt; /hint &gt; }}</p>
 <p>Download the image from <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">this link</a> and follow the installer step by step.</p>
-<p><strong>Windows Docker Desktop requires Windows 10 Pro or Enterprise version 1586/2016 RTM or above</strong></p>
-<p>If your windows is not fulfill the prerequisite, you may see the image as follow. Please use <em><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a></em> instead.</p>
-<p><img src="/bigdata-bootcamp/env_images/docker-for-windows-10-prerequisite-not-fullfilled.png" alt="" /></p>
-<p>Once you successfully installed docker desktop, you may click the button &ldquo;Docker Desktop&rdquo;. It may take a few minutes to start the service. You may keep a watch on the whale on the right button.</p>
-<p>Double click the whale button, we may able to find a window to modify some of the properties.</p>
+<p>Once you have successfully installed docker desktop, you may click the button &ldquo;Docker Desktop&rdquo;.
+It may take a few minutes to start the service.
+You may keep a watch on the whale on the right button.</p>
+<p>Double click the whale button, and we can find a window to modify some of the properties.</p>
 <p><img src="/bigdata-bootcamp/env_images/docker-desktop-general.png" alt="" /></p>
-<p>Please go to the advanced tab, and click the drivers <strong>you wish to share with the docker container</strong>. Note: if your homework is located on Disk-D, you may not select Disk-C, this could make your operation system more safe.</p>
+<p>Please go to the advanced tab and click the drivers <strong>you wish to share with the docker container</strong>.
+Note: if your homework is located on Disk-D, you may not select Disk-C, this could make your operation system safer.</p>
 <p><img src="/bigdata-bootcamp/env_images/docker-desktop-shared-drives.png" alt="" /></p>
-<p>Going to the advanced tab, and you can edit the maximum memory used by docker.</p>
+<p>Go to the advanced tab, and you can edit the maximum memory used by docker.</p>
 <p><img src="/bigdata-bootcamp/env_images/docker-desktop-resources.png" alt="" /></p>
-<p>If you can execute command <code>docker ps -a</code> and <code>docker-compose</code> normally, and no error message returned. Your configuration is fine.</p>
-<h2 id="docker-toolbox-on-windows">Docker Toolbox on Windows</h2>
+<p>If you can execute the command <code>docker ps -a</code> and <code>docker-compose</code> without any error message returned, your configuration is successful.</p>
+<h2 id="2-docker-toolbox-on-windows">2. Docker Toolbox on Windows</h2>
 <p>You may install <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Docker Toolbox on Windows</a> instead.</p>
-<p>Going to the instruction page, click &lsquo;<a href="https://download.docker.com/win/stable/DockerToolbox.exe">Get Docker Toolbox for Windows</a>&rsquo;, you will download a installer. You are supposed to install Docker and VirtualBox during this wizard.</p>
+<p>Going to the instruction page, click &ldquo;<a href="https://download.docker.com/win/stable/DockerToolbox.exe">Get Docker Toolbox for Windows</a>&rdquo;, you will download an installer.
+You are supposed to install Docker and VirtualBox during this wizard.</p>
 <p><img src="/bigdata-bootcamp/env_images/terminal-and-virtualbox.png" alt="" /></p>
-<p>Click &lsquo;Docker Quickstart Terminal&rsquo;, you should able to start a bash session. Close it, click virtual box. You may find there is one virtual machine is in running. Close this machine, update the maximum base memory.</p>
+<p>Click &ldquo;Docker Quickstart Terminal&rdquo;, you should be able to start a bash session.
+Close it, click virtual box.
+You may find there is one virtual machine is running.
+Close this machine, update the maximum base memory.</p>
 <p><img src="/bigdata-bootcamp/env_images/poweroff-vm.png" alt="" /></p>
 <p><img src="/bigdata-bootcamp/env_images/set-max-ram.png" alt="" /></p>
-<p>Click the &lsquo;Docker Quickstart Terminal&rsquo; and your docker is ready.</p>
+<p>Click the &ldquo;Docker Quickstart Terminal&rdquo; and your docker is ready.</p>
 <h3 id="faq">FAQ</h3>
-<h5 id="q--virtualbox-wont-boot-a-64bits-vm-when-hyper-v-is-activated"><strong>Q:</strong>  VirtualBox won&rsquo;t boot a 64bits VM when Hyper-V is activated</h5>
+<p><strong>Q:  VirtualBox will not boot a 64bits VM when Hyper-V is activated</strong></p>
 <p>You may meet message as follow:</p>
 <blockquote>
 <p>Error with pre-create check: &ldquo;This computer is running Hyper-V. VirtualBox won&rsquo;t boot a 64bits VM when Hyper-V is activated.
 Either use Hyper-V as a driver, or disable the Hyper-V hypervisor. (To skip this check, use &ndash;virtualbox-no-vtx-check)</p>
 </blockquote>
-<p>You can’t run VirtualBox on a Hyper-V enabled system. Hyper-V is a tier-1 hypervisor, which doesn’t accept other hypervisors (from <a href="https://forums.docker.com/t/unable-to-run-the-docker-toolbox/37403/3">here</a>)</p>
+<p>You can not run VirtualBox on a system with Hyper-V enabled.
+Hyper-V is a tier-1 hypervisor, which does not accept other hypervisors (from <a href="https://forums.docker.com/t/unable-to-run-the-docker-toolbox/37403/3">here</a>)</p>
 <ol>
 <li>It seems like Docker for Windows has already resolved this issue</li>
 <li>Try to <a href="https://superuser.com/questions/540055/convenient-way-to-enable-disable-hyper-v-in-windows-8">disable Hyper-V</a>. <strong>Caution:</strong> According to some reports, this operation may damage his/her network and had to reinstall all network adapters to get Internet back, or even getting a blue screen error.</li>
-<li>Try to use hyperv as your backend driver. <a href="https://docs.docker.com/machine/drivers/hyper-v/">https://docs.docker.com/machine/drivers/hyper-v/</a></li>
+<li>Try to use Hyper-V as your backend driver. <a href="https://docs.docker.com/machine/drivers/hyper-v/">https://docs.docker.com/machine/drivers/hyper-v/</a></li>
 </ol>
 </article>
  
@@ -439,8 +445,8 @@ Either use Hyper-V as a driver, or disable the Hyper-V hypervisor. (To skip this
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#windows-docker-desktop-recommended">Windows Docker Desktop (recommended)</a></li>
-    <li><a href="#docker-toolbox-on-windows">Docker Toolbox on Windows</a>
+    <li><a href="#1-windows-docker-desktop-recommended">1. Windows Docker Desktop (recommended)</a></li>
+    <li><a href="#2-docker-toolbox-on-windows">2. Docker Toolbox on Windows</a>
       <ul>
         <li><a href="#faq">FAQ</a></li>
       </ul>
