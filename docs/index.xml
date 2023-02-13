@@ -13,8 +13,8 @@
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker/</guid>
-      <description>For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages.  The whole progress would seem as follow:
- Make sure you have enough resources:  It requires at least 8GB of Physical RAM; 16GB or larger would be better It requires at least 15GB of hard disk storage   Install a docker environment in the local machine Start Docker Service, pull images, and create an instance Just rock it!</description>
+      <description>For the purpose of the environment normalization, we provide a simple docker image for you, which contains most of the software required by this course. We also provide a few scripts to install some optional packages. The whole progress would seem as follow:
+Make sure you have enough resources: It requires at least 8GB of Physical RAM; 16GB or larger would be better It requires at least 15GB of hard disk storage Install a docker environment in the local machine Start Docker Service, pull images, and create an instance Just rock it!</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/</guid>
       <description>Reference: [original website, official tutorial]
- 1. Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, you can install Docker and start the service with the following commands:
+1. Install Docker on RHEL/CentOS/Fedora Get Docker CE for CentOS Get Docker CE for Fedora In brief, you can install Docker and start the service with the following commands:
 sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start-up automatically FAQ If your SELinux and BTRFS are on working, you may meet an error message as follow:</description>
     </item>
     
@@ -35,8 +35,8 @@ sudo yum install docker-ce -y # install docker package sudo service docker start
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-macos/</guid>
       <description>References: [original website, official tutorial].
- Currently, there are at least two approaches to running Docker services on macOS.
-1. Option One: Docker.app We recommend this installation approach.  You can visit the official website to download Docker Desktop and installation instructions. Select and download a proper version of docker image and drag it to your &amp;ldquo;Applications&amp;rdquo; folder to install Docker software. After installation, you can click the Docker icon in the toolbar and set the maximum memory to 4G-8G, as recommended.</description>
+Currently, there are at least two approaches to running Docker services on macOS.
+1. Option One: Docker.app We recommend this installation approach. You can visit the official website to download Docker Desktop and installation instructions. Select and download a proper version of docker image and drag it to your &amp;ldquo;Applications&amp;rdquo; folder to install Docker software. After installation, you can click the Docker icon in the toolbar and set the maximum memory to 4G-8G, as recommended.</description>
     </item>
     
     <item>
@@ -46,9 +46,9 @@ sudo yum install docker-ce -y # install docker package sudo service docker start
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-windows/</guid>
       <description>References: [original website, official tutorial].
- 1. Windows Docker Desktop (recommended) Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
- Download the image from this link and follow the installer step by step.
-Once you have successfully installed docker desktop, you may click the button &amp;ldquo;Docker Desktop&amp;rdquo;.</description>
+1. Windows Docker Desktop (recommended) Before installation, please check this page for system requirements. If your system does not fulfill the prerequisite, you may see the image as follow. Please use Docker Toolbox on Windows instead.
+Download the image from this link and follow the installer step by step.
+Once you have successfully installed docker desktop, you may click the button &amp;ldquo;Docker Desktop&amp;rdquo;. It may take a few minutes to start the service.</description>
     </item>
     
     <item>
@@ -57,9 +57,8 @@ Once you have successfully installed docker desktop, you may click the button &a
       <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/python-for-data-analysis/</guid>
-      <description>1. Python Installation: Anaconda  If you don&amp;rsquo;t feel like using the local environment, you can try Google Colab for a free online python environment. The examples are also available on Colab:
-
- Ignore this session if you already have a python environment.
+      <description>1. Python Installation: Anaconda If you don&amp;rsquo;t feel like using the local environment, you can try Google Colab for a free online python environment. The examples are also available on Colab:
+Ignore this session if you already have a python environment.
 Anaconda is a complete, open source data science package with a community of over 6 million users. It is easy to download and install; and it supports Linux, macOS, and Windows (source).</description>
     </item>
     
@@ -81,7 +80,7 @@ Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-basic/</guid>
       <description>Scala Basics Learning Objectives
- Learn how to work with Scala interactive shell. Understand var and val. Define variables, functions and classes, and make function calls Understand Simple Build Tool (SBT).   In this section we will briefly go through the essential knowledge about Scala. You will first learn how to work with Scala shell, then learn how to use variables, functions with examples. Finally, we give instructions about how to compile and run a standalone program using sbt.</description>
+Learn how to work with Scala interactive shell. Understand var and val. Define variables, functions and classes, and make function calls Understand Simple Build Tool (SBT). In this section we will briefly go through the essential knowledge about Scala. You will first learn how to work with Scala shell, then learn how to use variables, functions with examples. Finally, we give instructions about how to compile and run a standalone program using sbt.</description>
     </item>
     
     <item>
@@ -91,9 +90,9 @@ Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &amp;ldquo
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/scala-intro/</guid>
       <description>Scala Introduction Learning Objectives
- Provide more details of scala language   Basic Gramma Start using Scala After installed scala, you can type scala in command line and get result as follow:
+Provide more details of scala language Basic Gramma Start using Scala After installed scala, you can type scala in command line and get result as follow:
 $ scala Welcome to Scala version 2.11.7 Type in expressions to have them evaluated. Type :help for more information. scala&amp;gt; println(&amp;#34;Hello, World!&amp;#34;) Hello, World! The synopsis of a varialbe is:
-scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc  val means it it is immutable variable, you can use &amp;ldquo;var&amp;rdquo; to define a mutable variable i is the name of this variable String is the type of this string, it can be omitted here &amp;ldquo;abc&amp;rdquo; is the value of this variable  Define a function:</description>
+scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc val means it it is immutable variable, you can use &amp;ldquo;var&amp;rdquo; to define a mutable variable i is the name of this variable String is the type of this string, it can be omitted here &amp;ldquo;abc&amp;rdquo; is the value of this variable Define a function:</description>
     </item>
     
     <item>
@@ -103,7 +102,8 @@ scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc  val means it
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-application/</guid>
       <description>Spark Application Learning Objectives
- Prepare data for machine learning applications. Save/load constructed data to external storage.   In this section, we will show how to prepare suitable data for building predictive models to predict heart failure (HF). We will first briefly introduce data types involved. Then we show how to construct training/testing samples from the input data using Spark. Finally we will export data in suitable format for modeling later.</description>
+Prepare data for machine learning applications. Save/load constructed data to external storage. In this section, we will show how to prepare suitable data for building predictive models to predict heart failure (HF). We will first briefly introduce data types involved. Then we show how to construct training/testing samples from the input data using Spark. Finally we will export data in suitable format for modeling later.
+Data Types For many machine learning tasks, such as classification, regression, and clustering, a data point is often represented as a feature vector.</description>
     </item>
     
     <item>
@@ -113,7 +113,7 @@ scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc  val means it
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-basic/</guid>
       <description>Spark Basics Learning Objectives
- Invoke command in Spark interactive shell. Be familiar with RDD concept. Know basic RDD operations.   Spark Shell Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads.</description>
+Invoke command in Spark interactive shell. Be familiar with RDD concept. Know basic RDD operations. Spark Shell Spark can run in several modes, including YARN client/server, Standalone, Mesos and Local. For this training, we will use local mode. Specifically, you can start the Spark interactive shell by invoking the command below in the terminal to run Spark in the local mode with two threads. Then you will see</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ scala&amp;gt; val i:String = &amp;#34;abc&amp;#34; i: String = abc  val means it
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-graphx/</guid>
       <description>Spark GraphX Learning Objectives
- Understand composition of a graph in Spark GraphX. Being able to create a graph. Being able to use the built-in graph algorithm.   In this section we begin by creating a graph with patient and diagnostic codes. Later we will show how to run graph algorithms on the the graph you will create.
+Understand composition of a graph in Spark GraphX. Being able to create a graph. Being able to use the built-in graph algorithm. In this section we begin by creating a graph with patient and diagnostic codes. Later we will show how to run graph algorithms on the the graph you will create.
 Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, which means that each edge and vertex is associated with some properties.</description>
     </item>
     
@@ -134,7 +134,7 @@ Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, 
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-mllib/</guid>
       <description>Spark MLlib and Scikit-learn Learning Objectives
- Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module.   In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose.</description>
+Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module. In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose.</description>
     </item>
     
     <item>
@@ -144,7 +144,7 @@ Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, 
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/</guid>
       <description>Spark Sql Learning Objectives
- Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF).   Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc.</description>
+Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF). Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc.</description>
     </item>
     
     <item>
@@ -154,7 +154,7 @@ Basic concept Spark GraphX abstracts a graph as a concept named Property Graph, 
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/</guid>
       <description>How to start Zeppelin Learning Objectives
- Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Learn how to work with Zeppelin Notebook. You can skip this section, if you use your locally installed Zeppelin 1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
 Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment.</description>
     </item>
     
@@ -165,7 +165,7 @@ Shared Folder You can use shared folder between your local OS and the virtual en
       
       <guid>http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-tutorial/</guid>
       <description>Zeppelin Basic Tutorial Learning Objectives
- Try to follow the official tutorial of Zeppelin Notebook step-by-step.   1. Create a new Notebook Click on &amp;lsquo;Create new note&amp;rsquo;, and give a name, click on &amp;lsquo;Create Note&amp;rsquo;: Then, you will see a new blank note:
+Try to follow the official tutorial of Zeppelin Notebook step-by-step. 1. Create a new Notebook Click on &amp;lsquo;Create new note&amp;rsquo;, and give a name, click on &amp;lsquo;Create Note&amp;rsquo;: Then, you will see a new blank note:
 Next, click the gear icon on the top-right, interpreter binding setting will be unfolded. Default interpreters will be enough for the most of cases, but you can add/remove at &amp;lsquo;interpreter&amp;rsquo; menu if you want to.</description>
     </item>
     
@@ -176,7 +176,7 @@ Next, click the gear icon on the top-right, interpreter binding setting will be 
       
       <guid>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</guid>
       <description>Docker in AWS EC2 We developed a Docker image which pre-installed all modules in this bootcamp. You can directly use it in your own environment if you have docker. This page describes how to launch an EC2 instance on AWS and run docker container within it.
-Launch an AWS EC2 instance  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
+Launch an AWS EC2 instance Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
     </item>
     
     <item>

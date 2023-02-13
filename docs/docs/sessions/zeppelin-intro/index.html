@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="How to start Zeppelin Learning Objectives
- Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Learn how to work with Zeppelin Notebook. You can skip this section, if you use your locally installed Zeppelin 1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
 Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment."><meta property="og:title" content="" />
 <meta property="og:description" content="How to start Zeppelin Learning Objectives
- Learn how to work with Zeppelin Notebook.   You can skip this section, if you use your locally installed Zeppelin  1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
+Learn how to work with Zeppelin Notebook. You can skip this section, if you use your locally installed Zeppelin 1. Run provided Docker image Please prepare your docker environment and refer to this section to start your zeppelin service.
 Shared Folder You can use shared folder between your local OS and the virtual environment on Docker. This shared folder can be used to get data from your local and/or to save data without losing it after you exit/destroy your virtual environment." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/zeppelin-intro/" /><meta property="article:section" content="docs" />
@@ -22,7 +22,7 @@ Shared Folder You can use shared folder between your local OS and the virtual en
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -314,7 +314,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -383,24 +383,24 @@ Use <code>-v</code> option to make shared folder from an existing local folder a
 <p>-v &lt;local_folder:vm_folder&gt;</p>
 </blockquote>
 <p>You should use absolute path for <code>vm_folder</code>, but it does not need to be an existing folder. For example, if want to use <code>~/Data/</code> in my local OS as shared folder connected with <code>/sample_data/</code> in VM, I can start a container as following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -m 8192m -h bootcamp1.docker <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -v /path/to/Data/:/sample_data/ <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  /bin/bash
-</code></pre></div><h2 id="2-start-zeppelin-service-and-create-hdfs-folder">2. Start Zeppelin service and create HDFS folder</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -m 8192m -h bootcamp1.docker <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /path/to/Data/:/sample_data/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  /bin/bash
+</span></span></code></pre></div><h2 id="2-start-zeppelin-service-and-create-hdfs-folder">2. Start Zeppelin service and create HDFS folder</h2>
 <p>If you have not started Zeppelin service,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/scripts/start-zeppelin.sh
-</code></pre></div><p>We need to create a HDFS folder for the user <code>zeppelin</code> as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo su - hdfs <span style="color:#75715e"># switch to user &#39;hdfs&#39;</span>
-hdfs dfs -mkdir -p /user/zeppelin <span style="color:#75715e"># create folder in hdfs</span>
-hdfs dfs -chown zeppelin /user/zeppelin <span style="color:#75715e">#  change the folder owner</span>
-exit
-</code></pre></div><p>You can check whether it has been created or not by using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hdfs dfs -ls /user/
-</code></pre></div><h2 id="3-open-zeppelin-notebook-in-your-browser">3. Open Zeppelin Notebook in your browser</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/scripts/start-zeppelin.sh
+</span></span></code></pre></div><p>We need to create a HDFS folder for the user <code>zeppelin</code> as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su - hdfs <span style="color:#75715e"># switch to user &#39;hdfs&#39;</span>
+</span></span><span style="display:flex;"><span>hdfs dfs -mkdir -p /user/zeppelin <span style="color:#75715e"># create folder in hdfs</span>
+</span></span><span style="display:flex;"><span>hdfs dfs -chown zeppelin /user/zeppelin <span style="color:#75715e">#  change the folder owner</span>
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><p>You can check whether it has been created or not by using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdfs dfs -ls /user/
+</span></span></code></pre></div><h2 id="3-open-zeppelin-notebook-in-your-browser">3. Open Zeppelin Notebook in your browser</h2>
 <p>Once you have started Zeppelin service and have created HDFS folder for Zeppelin, you can access Zeppelin Notebook by using your local web browser.</p>
 <p>Open your web browser, and type in the address:
 <code>host-ip:port-for-zeppelin</code>

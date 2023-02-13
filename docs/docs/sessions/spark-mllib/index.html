@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Spark MLlib and Scikit-learn Learning Objectives
- Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module.   In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose."><meta property="og:title" content="" />
+Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module. In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose."><meta property="og:title" content="" />
 <meta property="og:description" content="Spark MLlib and Scikit-learn Learning Objectives
- Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module.   In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose." />
+Understand input to MLlib. Learn to run basic classification algorithms. Learn to export/load trained models. Develop models using python machine learning module. In this section, you will learn how to build a heart failure (HF) predictive model. You should have finished previous Spark Application section. You will first learn how to train a model using Spark MLlib and save it. Next, you will learn how to achieve same goal using Python Scikit-learn machine learning module for verification purpose." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/spark-mllib/" /><meta property="article:section" content="docs" />
 
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -312,7 +312,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -390,133 +390,133 @@ https://github.com/alex-shpak/hugo-book
 statistics, then train a classifier to predict heart failure.</p>
 <h3 id="load-samples">Load Samples</h3>
 <p>Loading data from previously saved data can be achieved by</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.apache.spark.mllib.util.MLUtils
-<span style="color:#66d9ef">val</span> data <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">MLUtils</span><span style="color:#f92672">.</span>loadLibSVMFile<span style="color:#f92672">(</span>sc<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;samples&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><h3 id="basic-statistics">Basic Statistics</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.apache.spark.mllib.util.MLUtils
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> data <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">MLUtils</span><span style="color:#f92672">.</span>loadLibSVMFile<span style="color:#f92672">(</span>sc<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;samples&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="basic-statistics">Basic Statistics</h3>
 <p>Spark MLlib provides various functions to compute summary statistics that are useful when doing machine learning and data analysis tasks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.apache.spark.mllib.stat.<span style="color:#f92672">{</span><span style="color:#a6e22e">MultivariateStatisticalSummary</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Statistics</span><span style="color:#f92672">}</span>
-
-<span style="color:#75715e">// colStats() calculates the column statistics for RDD[Vector]
-</span><span style="color:#75715e">// we need to extract only the features part of each LabeledPoint:
-</span><span style="color:#75715e">//   RDD[LabeledPoint] =&gt; RDD[Vector] 
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> summary <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Statistics</span><span style="color:#f92672">.</span>colStats<span style="color:#f92672">(</span>data<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>features<span style="color:#f92672">))</span>
-
-<span style="color:#75715e">// summary.mean: a dense vector containing the mean value for each feature (column)
-</span><span style="color:#75715e">// the mean of the first feature is 0.3
-</span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>mean<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// the variance of the first feature
-</span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>variance<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
-
-<span style="color:#75715e">// the number of non-zero values of the first feature
-</span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>numNonzeros<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
-</code></pre></div><h3 id="split-data">Split data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.apache.spark.mllib.stat.<span style="color:#f92672">{</span><span style="color:#a6e22e">MultivariateStatisticalSummary</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">Statistics</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// colStats() calculates the column statistics for RDD[Vector]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// we need to extract only the features part of each LabeledPoint:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//   RDD[LabeledPoint] =&gt; RDD[Vector] 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> summary <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Statistics</span><span style="color:#f92672">.</span>colStats<span style="color:#f92672">(</span>data<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span><span style="color:#66d9ef">_</span><span style="color:#f92672">.</span>features<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// summary.mean: a dense vector containing the mean value for each feature (column)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the mean of the first feature is 0.3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>mean<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the variance of the first feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>variance<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the number of non-zero values of the first feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>summary<span style="color:#f92672">.</span>numNonzeros<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="split-data">Split data</h3>
 <p>In a typical machine learning problem, we need to split data into training (60%) and testing (40%) set.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> splits <span style="color:#66d9ef">=</span> data<span style="color:#f92672">.</span>randomSplit<span style="color:#f92672">(</span><span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0.6</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0.4</span><span style="color:#f92672">),</span> seed <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">15L</span><span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> train <span style="color:#66d9ef">=</span> splits<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">).</span>cache<span style="color:#f92672">()</span>
-<span style="color:#66d9ef">val</span> test <span style="color:#66d9ef">=</span> splits<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">).</span>cache<span style="color:#f92672">()</span>
-</code></pre></div><h3 id="train-classifier">Train classifier</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> splits <span style="color:#66d9ef">=</span> data<span style="color:#f92672">.</span>randomSplit<span style="color:#f92672">(</span><span style="color:#a6e22e">Array</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0.6</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0.4</span><span style="color:#f92672">),</span> seed <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">15L</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> train <span style="color:#66d9ef">=</span> splits<span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">).</span>cache<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> test <span style="color:#66d9ef">=</span> splits<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">).</span>cache<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h3 id="train-classifier">Train classifier</h3>
 <p>Let&rsquo;s train a linear SVM model using Stochastic Gradient Descent (SGD) on the training set to predict heart failure</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.apache.spark.mllib.classification.SVMWithSGD
-<span style="color:#66d9ef">val</span> numIterations <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span>
-<span style="color:#66d9ef">val</span> model <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">SVMWithSGD</span><span style="color:#f92672">.</span>train<span style="color:#f92672">(</span>train<span style="color:#f92672">,</span> numIterations<span style="color:#f92672">)</span>
-</code></pre></div><h3 id="testing">Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.apache.spark.mllib.classification.SVMWithSGD
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> numIterations <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> model <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">SVMWithSGD</span><span style="color:#f92672">.</span>train<span style="color:#f92672">(</span>train<span style="color:#f92672">,</span> numIterations<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="testing">Testing</h3>
 <p>For each sample in the testing set, output a (prediction, label) pair, and calculate the prediction accuracy. We use the broadcast mechanism to avoid unnecessary data copy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">val</span> scModel <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>broadcast<span style="color:#f92672">(</span>model<span style="color:#f92672">)</span>
-<span style="color:#66d9ef">val</span> predictionAndLabel <span style="color:#66d9ef">=</span> test<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>scModel<span style="color:#f92672">.</span>value<span style="color:#f92672">.</span>predict<span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>features<span style="color:#f92672">),</span> x<span style="color:#f92672">.</span>label<span style="color:#f92672">))</span>
-<span style="color:#66d9ef">val</span> accuracy <span style="color:#66d9ef">=</span> predictionAndLabel<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> x<span style="color:#f92672">.</span>_1 <span style="color:#f92672">==</span> x<span style="color:#f92672">.</span>_2<span style="color:#f92672">).</span>count <span style="color:#f92672">/</span> test<span style="color:#f92672">.</span>count<span style="color:#f92672">.</span>toFloat
-println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;testing Accuracy  = &#34;</span> <span style="color:#f92672">+</span> accuracy<span style="color:#f92672">)</span>
-</code></pre></div><h3 id="save--load-model">Save &amp; load model</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> scModel <span style="color:#66d9ef">=</span> sc<span style="color:#f92672">.</span>broadcast<span style="color:#f92672">(</span>model<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> predictionAndLabel <span style="color:#66d9ef">=</span> test<span style="color:#f92672">.</span>map<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> <span style="color:#f92672">(</span>scModel<span style="color:#f92672">.</span>value<span style="color:#f92672">.</span>predict<span style="color:#f92672">(</span>x<span style="color:#f92672">.</span>features<span style="color:#f92672">),</span> x<span style="color:#f92672">.</span>label<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> accuracy <span style="color:#66d9ef">=</span> predictionAndLabel<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=&gt;</span> x<span style="color:#f92672">.</span>_1 <span style="color:#f92672">==</span> x<span style="color:#f92672">.</span>_2<span style="color:#f92672">).</span>count <span style="color:#f92672">/</span> test<span style="color:#f92672">.</span>count<span style="color:#f92672">.</span>toFloat
+</span></span><span style="display:flex;"><span>println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;testing Accuracy  = &#34;</span> <span style="color:#f92672">+</span> accuracy<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="save--load-model">Save &amp; load model</h3>
 <p>In real world setting, you may need to save the trained model. You can achieve that by directly serialize you model object using java <code>ObjectOutputStream</code> and save</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">  <span style="color:#66d9ef">import</span> java.io.<span style="color:#f92672">{</span><span style="color:#a6e22e">FileOutputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">ObjectOutputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">ObjectInputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">FileInputStream</span><span style="color:#f92672">}</span>
-  <span style="color:#75715e">// save model
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> oos <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ObjectOutputStream</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileOutputStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">))</span>
-  oos<span style="color:#f92672">.</span>writeObject<span style="color:#f92672">(</span>model<span style="color:#f92672">)</span>
-  oos<span style="color:#f92672">.</span>close<span style="color:#f92672">()</span>
-
-  <span style="color:#75715e">// load model from disk
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> ois <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ObjectInputStream</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileInputStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">))</span>
-  <span style="color:#66d9ef">val</span> loadedModel <span style="color:#66d9ef">=</span> ois<span style="color:#f92672">.</span>readObject<span style="color:#f92672">().</span>asInstanceOf<span style="color:#f92672">[</span><span style="color:#66d9ef">org.apache.spark.mllib.classification.SVMModel</span><span style="color:#f92672">]</span>
-  ois<span style="color:#f92672">.</span>close<span style="color:#f92672">()</span>
-</code></pre></div><h2 id="scikit-learn">Scikit-learn</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>  <span style="color:#66d9ef">import</span> java.io.<span style="color:#f92672">{</span><span style="color:#a6e22e">FileOutputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">ObjectOutputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">ObjectInputStream</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">FileInputStream</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// save model
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> oos <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ObjectOutputStream</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileOutputStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>  oos<span style="color:#f92672">.</span>writeObject<span style="color:#f92672">(</span>model<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  oos<span style="color:#f92672">.</span>close<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// load model from disk
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">val</span> ois <span style="color:#66d9ef">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ObjectInputStream</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileInputStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">val</span> loadedModel <span style="color:#66d9ef">=</span> ois<span style="color:#f92672">.</span>readObject<span style="color:#f92672">().</span>asInstanceOf<span style="color:#f92672">[</span><span style="color:#66d9ef">org.apache.spark.mllib.classification.SVMModel</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  ois<span style="color:#f92672">.</span>close<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="scikit-learn">Scikit-learn</h2>
 <p>If typical data set is often small enough after feature construction described in previous <a href="/spark/spark-application.html">Spark Application</a> section, you may consider running machine learning predictive model training and testing using your familiar tools like scikit-learn in Python or some R packages. Here we show how to do that in Scikit-learn, a Python machine learning library.</p>
 <h3 id="fetch-data">Fetch data</h3>
 <p>In order to work with Scikit-learn, you will need to take data out of HDFS into a local file system. We can get the <code>samples</code> folder from your home directory in HDFS and merge content into one single file with the command below</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hdfs dfs -getmerge samples patients.svmlight
-</code></pre></div><h3 id="move-on-with-python">Move on with Python</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hdfs dfs -getmerge samples patients.svmlight
+</span></span></code></pre></div><h3 id="move-on-with-python">Move on with Python</h3>
 <p>In later steps, you will use python interactive shell. To open a python interactive shell, just type  <code>python</code> in bash. You will get prompt similar to the sample below</p>
 <p>Since the default library does not have <code>sklearn</code>, you need to install it by</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install sklearn
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[hang<span style="color:#a6e22e">@bootcamp1</span> <span style="color:#f92672">~</span>]<span style="color:#960050;background-color:#1e0010">$</span> python
-Python <span style="color:#ae81ff">2.7.10</span> <span style="color:#f92672">|</span>Continuum Analytics, Inc<span style="color:#f92672">.|</span> (default, Oct <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">2015</span>, <span style="color:#ae81ff">18</span>:<span style="color:#ae81ff">04</span>:<span style="color:#ae81ff">42</span>)
-[GCC <span style="color:#ae81ff">4.4.7</span> <span style="color:#ae81ff">20120313</span> (Red Hat <span style="color:#ae81ff">4.4.7</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)] on linux2
-Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
-Anaconda <span style="color:#f92672">is</span> brought to you by Continuum Analytics<span style="color:#f92672">.</span>
-Please check out: http:<span style="color:#f92672">//</span>continuum<span style="color:#f92672">.</span>io<span style="color:#f92672">/</span>thanks <span style="color:#f92672">and</span> https:<span style="color:#f92672">//</span>anaconda<span style="color:#f92672">.</span>org
-<span style="color:#f92672">&gt;&gt;&gt;</span>
-</code></pre></div><p>which show version and distribution of the python installation you are using. Here we pre-installed <a href="https://www.continuum.io/downloads">Anaconda</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install sklearn
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[hang<span style="color:#a6e22e">@bootcamp1</span> <span style="color:#f92672">~</span>]<span style="color:#960050;background-color:#1e0010">$</span> python
+</span></span><span style="display:flex;"><span>Python <span style="color:#ae81ff">2.7.10</span> <span style="color:#f92672">|</span>Continuum Analytics, Inc<span style="color:#f92672">.|</span> (default, Oct <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">2015</span>, <span style="color:#ae81ff">18</span>:<span style="color:#ae81ff">04</span>:<span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>[GCC <span style="color:#ae81ff">4.4.7</span> <span style="color:#ae81ff">20120313</span> (Red Hat <span style="color:#ae81ff">4.4.7</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)] on linux2
+</span></span><span style="display:flex;"><span>Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>Anaconda <span style="color:#f92672">is</span> brought to you by Continuum Analytics<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>Please check out: http:<span style="color:#f92672">//</span>continuum<span style="color:#f92672">.</span>io<span style="color:#f92672">/</span>thanks <span style="color:#f92672">and</span> https:<span style="color:#f92672">//</span>anaconda<span style="color:#f92672">.</span>org
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>which show version and distribution of the python installation you are using. Here we pre-installed <a href="https://www.continuum.io/downloads">Anaconda</a></p>
 <h3 id="load-and-split-data">Load and split data</h3>
 <p>Now we can load data and split it into training and testing set in similar way as the MLlib approach.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-<span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> load_svmlight_file
-
-X, y <span style="color:#f92672">=</span> load_svmlight_file(<span style="color:#e6db74">&#34;patients.svmlight&#34;</span>)
-X <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>toarray() <span style="color:#75715e"># make it dense</span>
-X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.4</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">41</span>)
-</code></pre></div><h3 id="train-classifier-1">Train classifier</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> load_svmlight_file
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X, y <span style="color:#f92672">=</span> load_svmlight_file(<span style="color:#e6db74">&#34;patients.svmlight&#34;</span>)
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>toarray() <span style="color:#75715e"># make it dense</span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.4</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">41</span>)
+</span></span></code></pre></div><h3 id="train-classifier-1">Train classifier</h3>
 <p>Let&rsquo;s train a linear SVM model again on the training set to predict heart failure</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.svm <span style="color:#f92672">import</span> LinearSVC
-model <span style="color:#f92672">=</span> LinearSVC(C<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
-model<span style="color:#f92672">.</span>fit(X_train, y_train)
-</code></pre></div><h3 id="testing-1">Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.svm <span style="color:#f92672">import</span> LinearSVC
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> LinearSVC(C<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span></code></pre></div><h3 id="testing-1">Testing</h3>
 <p>We can get prediction accuracy and <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">AUC</a> on testing set as</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> roc_auc_score
-accuracy <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>score(X_test, y_test)
-
-y_score <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>decision_function(X_test)
-auc <span style="color:#f92672">=</span> roc_auc_score(y_test, y_score)
-
-print(<span style="color:#e6db74">&#34;accuracy = &#34;</span>, accuracy, <span style="color:#e6db74">&#34;AUC = &#34;</span>, auc)
-</code></pre></div><h3 id="save--load-model-1">Save &amp; load model</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> roc_auc_score
+</span></span><span style="display:flex;"><span>accuracy <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>score(X_test, y_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y_score <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>decision_function(X_test)
+</span></span><span style="display:flex;"><span>auc <span style="color:#f92672">=</span> roc_auc_score(y_test, y_score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;accuracy = &#34;</span>, accuracy, <span style="color:#e6db74">&#34;AUC = &#34;</span>, auc)
+</span></span></code></pre></div><h3 id="save--load-model-1">Save &amp; load model</h3>
 <p>We can save and load the trained model via <a href="https://docs.python.org/2/library/pickle.html">pickle</a> serialization module in Python like</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pickle
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;pysvcmodel.pkl&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
-    pickle<span style="color:#f92672">.</span>dump(model, f)
-
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;pysvcmodel.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
-    loaded_model <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
-</code></pre></div><h3 id="sparsity-and-predictive-features">Sparsity and predictive features</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;pysvcmodel.pkl&#39;</span>, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    pickle<span style="color:#f92672">.</span>dump(model, f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;pysvcmodel.pkl&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    loaded_model <span style="color:#f92672">=</span> pickle<span style="color:#f92672">.</span>load(f)
+</span></span></code></pre></div><h3 id="sparsity-and-predictive-features">Sparsity and predictive features</h3>
 <p>Since we have limited training data but a large number of features, we may consider using L1 penalty on model to regularize parameters.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> MinMaxScaler
-
-scaler <span style="color:#f92672">=</span> MinMaxScaler()
-X_train <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(X_train)
-X_test <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>transform(X_test)
-
-l1_model <span style="color:#f92672">=</span> LinearSVC(C<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, dual<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, penalty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l1&#39;</span>)
-l1_model<span style="color:#f92672">.</span>fit(X_train, y_train)
-
-accuracy <span style="color:#f92672">=</span> l1_model<span style="color:#f92672">.</span>score(X_test, y_test)
-
-y_score <span style="color:#f92672">=</span> l1_model<span style="color:#f92672">.</span>decision_function(X_test)
-auc <span style="color:#f92672">=</span> roc_auc_score(y_test, y_score)
-print(<span style="color:#e6db74">&#34;for sparse model, accuracy = &#34;</span>, accuracy, <span style="color:#e6db74">&#34;AUC = &#34;</span>, auc)
-</code></pre></div><p>Before fitting a model, we scaled the data to make sure weights of features are comparable. With the sparse model we get from previous example, we can actually identify predictive features according to their coefficients. Here we assume you did the last exercise of previous section about Spark Application. If not, please do that first.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-
-<span style="color:#75715e">## loading mapping</span>
-mapping <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;mapping.txt&#39;</span>) <span style="color:#66d9ef">as</span> f:
-    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines():
-        splits <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;|&#39;</span>) <span style="color:#75715e"># feature-name | feature-index</span>
-        mapping<span style="color:#f92672">.</span>append(splits[<span style="color:#ae81ff">0</span>])
-
-<span style="color:#75715e">## get last 10 - the largest 10 indices</span>
-top_10 <span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>argsort(l1_model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>])[<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:]
-
-<span style="color:#66d9ef">for</span> index, fid <span style="color:#f92672">in</span> enumerate(top_10[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]): <span style="color:#75715e">#read in reverse order</span>
-    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">: feature [</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">] with coef </span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (index, mapping[fid], l1_model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>][fid]) )
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> MinMaxScaler
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scaler <span style="color:#f92672">=</span> MinMaxScaler()
+</span></span><span style="display:flex;"><span>X_train <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(X_train)
+</span></span><span style="display:flex;"><span>X_test <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>transform(X_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l1_model <span style="color:#f92672">=</span> LinearSVC(C<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, dual<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, penalty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;l1&#39;</span>)
+</span></span><span style="display:flex;"><span>l1_model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>accuracy <span style="color:#f92672">=</span> l1_model<span style="color:#f92672">.</span>score(X_test, y_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y_score <span style="color:#f92672">=</span> l1_model<span style="color:#f92672">.</span>decision_function(X_test)
+</span></span><span style="display:flex;"><span>auc <span style="color:#f92672">=</span> roc_auc_score(y_test, y_score)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;for sparse model, accuracy = &#34;</span>, accuracy, <span style="color:#e6db74">&#34;AUC = &#34;</span>, auc)
+</span></span></code></pre></div><p>Before fitting a model, we scaled the data to make sure weights of features are comparable. With the sparse model we get from previous example, we can actually identify predictive features according to their coefficients. Here we assume you did the last exercise of previous section about Spark Application. If not, please do that first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## loading mapping</span>
+</span></span><span style="display:flex;"><span>mapping <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;mapping.txt&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines():
+</span></span><span style="display:flex;"><span>        splits <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;|&#39;</span>) <span style="color:#75715e"># feature-name | feature-index</span>
+</span></span><span style="display:flex;"><span>        mapping<span style="color:#f92672">.</span>append(splits[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## get last 10 - the largest 10 indices</span>
+</span></span><span style="display:flex;"><span>top_10 <span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>argsort(l1_model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>])[<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> index, fid <span style="color:#f92672">in</span> enumerate(top_10[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]): <span style="color:#75715e">#read in reverse order</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">: feature [</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">] with coef </span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (index, mapping[fid], l1_model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>][fid]) )
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 </article>
  

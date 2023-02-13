@@ -13,7 +13,7 @@
       
       <guid>http://franticnerd/bigdata-bootcamp/unused/env-aws-docker/</guid>
       <description>Docker in AWS EC2 We developed a Docker image which pre-installed all modules in this bootcamp. You can directly use it in your own environment if you have docker. This page describes how to launch an EC2 instance on AWS and run docker container within it.
-Launch an AWS EC2 instance  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
+Launch an AWS EC2 instance Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ From the Amazon EC2 console dashboard, click AMIs on left sidebar. Switch Region to N.</description>
     </item>
     
     <item>

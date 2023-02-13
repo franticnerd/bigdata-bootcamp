@@ -22,7 +22,7 @@ Launch an Azure instance Option 1: Launch a Pre-installed Docker Host &ldquo;Doc
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -314,7 +314,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -410,16 +410,16 @@ Or, if you are more familiar with CentOS, SUSE or some other <a href="https://en
 <h2 id="start-a-docker-container">Start a docker container</h2>
 <p>Most of the related application are already installed, you can also install other apps with command “apt-get”.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install git tmux
-</code></pre></div><p>And then, start a new docker instance</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -m 6144m -h bootcamp.local <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  -v /:/mnt/host <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  /bin/bash
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install git tmux
+</span></span></code></pre></div><p>And then, start a new docker instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -it --privileged<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cap-add<span style="color:#f92672">=</span>SYS_ADMIN <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -m 6144m -h bootcamp.local <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name bigbox -p 2222:22 -p 9530:9530 -p 8888:8888<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /:/mnt/host <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  sunlab/bigbox:latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  /bin/bash
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="login-remotely-and-the-corresponding-security-issue">Login remotely and the corresponding security issue</h2>
 <p>To access the service we launched in Azure, we are required to get the corresponding port opened. In default, the ports are closed. A good way to open it is change the rule of filewall. Please refer to <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal">this official document</a> to open the port.</p>

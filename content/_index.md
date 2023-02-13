@@ -13,9 +13,9 @@ The training materials are developed by [Sunlab](http://www.sunlab.org), [Polo C
 
 ## Logistics
 
-- Date: Feb 26, 2022 (Saturday) and Feb 27, 2022 (Sunday)
+- Date: Feb 18, 2023 (Saturday) and Feb 19, 2023 (Sunday)
 - Time: 9:00 A.M. - 4:00 P.M.
-- Location: https://bluejeans.com/5341114422
+- Location: Klaus 2456; also streamed at https://gatech.zoom.us/my/chaozhanggt?pwd=QUsvK0NUVHQxNnVxbmlnWkhURitmdz09
 - Instructor: [Dr. Chao Zhang](http://chaozhang.org) chaozhang@gatech.edu
 - TAs: Mr. Yinghao Li yinghaoli@gatech.edu and Mr. Yuchen Zhuang  yzhuang43@gatech.edu
 
@@ -25,14 +25,14 @@ This bootcamp consists of a set of mini-lectures and practice sessions, which wi
 
 | Date       | Time           | Topic                          |                  |
 |------------|----------------|--------------------------------|------------------|
-| 02/26/2022 | 9am - 9:50am   | Bootcamp Overview              | Chao             |
+| Day 1 | 9am - 9:50am   | Bootcamp Overview              | Chao             |
 |            | 10am - 10:50am | Python Tools for Data Analysis | Yinghao          |
 |            | 11am - 11:50am | Practice Session               |                  |
 |            | 12pm - 1pm     | Lunch                          |                  |
 |            | 1pm - 1:50pm   | Spark Introduction             | Chao             |
 |            | 2pm - 2:50pm   | Environment Setup              | Yinghao & Yuchen |
 |            | 3pm - 3:50pm   | Practice Session               |                  |
-| 02/27/2022 | 9am - 9:50am   | Scala & Spark Basics           | Yinghao          |
+| Day 2 | 9am - 9:50am   | Scala & Spark Basics           | Yinghao          |
 |            | 10am - 10:50am | Spark SQL & GraphX             | Yuchen           |
 |            | 11am - 11:50am | Practice Session               |                  |
 |            | 12pm - 1pm     | Lunch                          |                  |

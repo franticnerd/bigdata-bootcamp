@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Spark Sql Learning Objectives
- Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF).   Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc."><meta property="og:title" content="" />
+Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF). Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc."><meta property="og:title" content="" />
 <meta property="og:description" content="Spark Sql Learning Objectives
- Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF).   Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc." />
+Load data into Spark SQL as DataFrame. Manipulate data with built-in functions. Define a User Defined Function (UDF). Overview Recent versions of Spark released the programming abstraction named DataFrame, which can be regarded as a table in a relational database. DataFrame is stored in a distributed manner so that different rows may locate on different machines. On DataFrame you can write sql queries, manipulate columns programatically with API etc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/sessions/spark-sql/" /><meta property="article:section" content="docs" />
 
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -312,7 +312,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -382,129 +382,129 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="loading-data">Loading data</h2>
 <p>Spark provides an API to load data from JSON, Parquet, Hive table etc. You can refer to the official <a href="https://spark.apache.org/docs/latest/sql-programming-guide.html#data-sources">Spark SQL programming guide</a> for those formats. Here we show how to load csv files. And we will use the <a href="https://github.com/databricks/spark-csv">spark-csv</a> module by Databricks.</p>
 <p>Start the Spark shell in local mode with the command below to add extra dependencies which are needed to complete this training.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">% spark-shell --master <span style="color:#e6db74">&#34;local[2]&#34;</span> --driver-memory 3G --packages com.databricks:spark-csv_2.11:1.5.0
-<span style="color:#f92672">[</span>logs<span style="color:#f92672">]</span>
-
-Spark context available as sc.
-15/05/04 13:12:57 INFO SparkILoop: Created sql context <span style="color:#f92672">(</span>with Hive support<span style="color:#f92672">)</span>..
-SQL context available as sqlContext.
-
-scala&gt;
-</code></pre></div><blockquote class="book-hint info">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>% spark-shell --master <span style="color:#e6db74">&#34;local[2]&#34;</span> --driver-memory 3G --packages com.databricks:spark-csv_2.11:1.5.0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>logs<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Spark context available as sc.
+</span></span><span style="display:flex;"><span>15/05/04 13:12:57 INFO SparkILoop: Created sql context <span style="color:#f92672">(</span>with Hive support<span style="color:#f92672">)</span>..
+</span></span><span style="display:flex;"><span>SQL context available as sqlContext.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala&gt;
+</span></span></code></pre></div><blockquote class="book-hint info">
   Spark 2.0+ has built-in csv library now. This parameter is not required any more, and it is only used as a sample.
 </blockquote>
 
 <blockquote class="book-hint info">
   <p>You may want to hide the log messages from spark. You can achieve that by</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">import</span> org.apache.log4j.Logger
-<span style="color:#66d9ef">import</span> org.apache.log4j.Level
-<span style="color:#a6e22e">Logger</span><span style="color:#f92672">.</span>getRootLogger<span style="color:#f92672">.</span>setLevel<span style="color:#f92672">(</span><span style="color:#a6e22e">Level</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ERROR</span><span style="color:#f92672">)</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.apache.log4j.Logger
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> org.apache.log4j.Level
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Logger</span><span style="color:#f92672">.</span>getRootLogger<span style="color:#f92672">.</span>setLevel<span style="color:#f92672">(</span><span style="color:#a6e22e">Level</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ERROR</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div>
 </blockquote>
 
 <p>Now load data into the shell.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> sqlContext <span style="color:#66d9ef">=</span> spark<span style="color:#f92672">.</span>sqlContext
-sqlContext<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.sql.SQLContext</span> <span style="color:#f92672">=</span> org<span style="color:#f92672">.</span>apache<span style="color:#f92672">.</span>spark<span style="color:#f92672">.</span>sql<span style="color:#f92672">.</span><span style="color:#a6e22e">SQLContext</span><span style="color:#66d9ef">@</span><span style="color:#ae81ff">5</span>cef5fc9
-
-scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> patientEvents <span style="color:#66d9ef">=</span> sqlContext<span style="color:#f92672">.</span>load<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;com.databricks.spark.csv&#34;</span><span style="color:#f92672">).</span>
-     toDF<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;rawvalue&#34;</span><span style="color:#f92672">).</span>
-     withColumn<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">,</span> &#39;rawvalue<span style="color:#f92672">.</span>cast<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Double&#34;</span><span style="color:#f92672">))</span>
-patientEvents<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.sql.DataFrame</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">patientId:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">eventId:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">date:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">rawvalue:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">value:</span> <span style="color:#66d9ef">double</span><span style="color:#f92672">]</span>
-</code></pre></div><p>The first parameter is path to the data (in HDFS), and second is a class name, the specific adapter required to load a CSV file. Here we specified a directory name instead of a specific file name so that all files in that directory will be read and combined into one file. Next we call <code>toDF</code> to rename the columns in the CSV file with meaningful names. Finally, we add one more column that has double type of value instead of string which we will use ourselves for the rest of this material.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> sqlContext <span style="color:#66d9ef">=</span> spark<span style="color:#f92672">.</span>sqlContext
+</span></span><span style="display:flex;"><span>sqlContext<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.sql.SQLContext</span> <span style="color:#f92672">=</span> org<span style="color:#f92672">.</span>apache<span style="color:#f92672">.</span>spark<span style="color:#f92672">.</span>sql<span style="color:#f92672">.</span><span style="color:#a6e22e">SQLContext</span><span style="color:#66d9ef">@</span><span style="color:#ae81ff">5</span>cef5fc9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">val</span> patientEvents <span style="color:#66d9ef">=</span> sqlContext<span style="color:#f92672">.</span>load<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;input/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;com.databricks.spark.csv&#34;</span><span style="color:#f92672">).</span>
+</span></span><span style="display:flex;"><span>     toDF<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;rawvalue&#34;</span><span style="color:#f92672">).</span>
+</span></span><span style="display:flex;"><span>     withColumn<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">,</span> &#39;rawvalue<span style="color:#f92672">.</span>cast<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Double&#34;</span><span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>patientEvents<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">org.apache.spark.sql.DataFrame</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">patientId:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">eventId:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">date:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">rawvalue:</span> <span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">value:</span> <span style="color:#66d9ef">double</span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>The first parameter is path to the data (in HDFS), and second is a class name, the specific adapter required to load a CSV file. Here we specified a directory name instead of a specific file name so that all files in that directory will be read and combined into one file. Next we call <code>toDF</code> to rename the columns in the CSV file with meaningful names. Finally, we add one more column that has double type of value instead of string which we will use ourselves for the rest of this material.</p>
 <h2 id="manipulating-data">Manipulating data</h2>
 <p>There are two methods to work with the DataFrame, either using SQL or using domain specific language (DSL).</p>
 <h3 id="sql">SQL</h3>
 <p>Writing SQL is straightforward assuming you have experiences with relational databases.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>registerTempTable<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;events&#34;</span><span style="color:#f92672">)</span>
-scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select patientId, eventId, count(*) count from events where eventId like &#39;DIAG%&#39; group by patientId, eventId order by count desc&#34;</span><span style="color:#f92672">).</span>collect
-res5<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">org.apache.spark.sql.Row</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(...)</span>
-</code></pre></div><p>Here the <code>patientEvents</code> DataFrame is registered as a table in sql context so that we could run sql commands. Next line is a standard sql command with <code>where</code>, <code>group by</code> and <code>order by</code> statements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>registerTempTable<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;events&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select patientId, eventId, count(*) count from events where eventId like &#39;DIAG%&#39; group by patientId, eventId order by count desc&#34;</span><span style="color:#f92672">).</span>collect
+</span></span><span style="display:flex;"><span>res5<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">org.apache.spark.sql.Row</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Array</span><span style="color:#f92672">(...)</span>
+</span></span></code></pre></div><p>Here the <code>patientEvents</code> DataFrame is registered as a table in sql context so that we could run sql commands. Next line is a standard sql command with <code>where</code>, <code>group by</code> and <code>order by</code> statements.</p>
 <h3 id="dsl">DSL</h3>
 <p>Next, we show how to manipulate data with DSL, the same result of previous SQL command can be achieved by:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>count<span style="color:#f92672">.</span>orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>show
-patientId        eventId   count
-<span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG28521</span> <span style="color:#ae81ff">16</span>   
-<span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG58881</span> <span style="color:#ae81ff">16</span>   
-<span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG2809</span>  <span style="color:#ae81ff">13</span>   
-<span style="color:#ae81ff">00824</span>B6D595BAFB8 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">11</span>   
-<span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#a6e22e">DIAG28521</span> <span style="color:#ae81ff">9</span>    
-<span style="color:#ae81ff">6</span>A8F2B98C1F6F5DA <span style="color:#a6e22e">DIAG58881</span> <span style="color:#ae81ff">8</span>    
-<span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
-<span style="color:#ae81ff">0124</span>E58C3460D3F8 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
-<span style="color:#ae81ff">2</span>D5D3D5F03C8C176 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
-<span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">7</span>    
-<span style="color:#f92672">...</span>
-</code></pre></div><p>For complete DSL functions, see <a href="http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame">DataFrame</a> class API.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>count<span style="color:#f92672">.</span>orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>show
+</span></span><span style="display:flex;"><span>patientId        eventId   count
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG28521</span> <span style="color:#ae81ff">16</span>   
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG58881</span> <span style="color:#ae81ff">16</span>   
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#a6e22e">DIAG2809</span>  <span style="color:#ae81ff">13</span>   
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00824</span>B6D595BAFB8 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">11</span>   
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#a6e22e">DIAG28521</span> <span style="color:#ae81ff">9</span>    
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>A8F2B98C1F6F5DA <span style="color:#a6e22e">DIAG58881</span> <span style="color:#ae81ff">8</span>    
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0124</span>E58C3460D3F8 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>D5D3D5F03C8C176 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">8</span>    
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#a6e22e">DIAG4019</span>  <span style="color:#ae81ff">7</span>    
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>For complete DSL functions, see <a href="http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame">DataFrame</a> class API.</p>
 <h2 id="saving-data">Saving data</h2>
 <p>Spark SQL provides a convenient way to save data in a different format just like loading data. For example you can write</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>
-    filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>
-    groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>
-    count<span style="color:#f92672">.</span>
-    orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>
-    write<span style="color:#f92672">.</span>json<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;aggregated.json&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><p>to save your transformed data in <code>json</code> format or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>
-    filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>
-    groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>count<span style="color:#f92672">.</span>
-    orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>
-    write<span style="color:#f92672">.</span>format<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.databricks.spark.csv&#34;</span><span style="color:#f92672">).</span>save<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;aggregated.csv&#34;</span><span style="color:#f92672">)</span>
-</code></pre></div><p>to save  in <code>csv</code> format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>
+</span></span><span style="display:flex;"><span>    groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>
+</span></span><span style="display:flex;"><span>    count<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>
+</span></span><span style="display:flex;"><span>    write<span style="color:#f92672">.</span>json<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;aggregated.json&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>to save your transformed data in <code>json</code> format or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    filter<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)).</span>
+</span></span><span style="display:flex;"><span>    groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">).</span>count<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>
+</span></span><span style="display:flex;"><span>    write<span style="color:#f92672">.</span>format<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.databricks.spark.csv&#34;</span><span style="color:#f92672">).</span>save<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;aggregated.csv&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>to save  in <code>csv</code> format.</p>
 <h2 id="udf">UDF</h2>
 <p>In many cases the built-in function of SQL like <code>count</code>, <code>max</code> is not enough, you can extend it with your own functions. For example, you want to <em>find</em> the number of different event types with the following UDF.</p>
 <h3 id="define">Define</h3>
 <p>Define and register an UDF</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>udf<span style="color:#f92672">.</span>register<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;getEventType&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>s<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> s <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">case</span> diagnostics <span style="color:#66d9ef">if</span> diagnostics<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;diagnostics&#34;</span>
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;PAYMENT&#34;</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;payment&#34;</span>
-    <span style="color:#66d9ef">case</span> drug <span style="color:#66d9ef">if</span> drug<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DRUG&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;drug&#34;</span>
-    <span style="color:#66d9ef">case</span> procedure <span style="color:#66d9ef">if</span> procedure<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PROC&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;procedure&#34;</span>
-    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;heartfailure&#34;</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;heart failure&#34;</span>
-    <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;unknown&#34;</span>
-    <span style="color:#f92672">})</span>
-</code></pre></div><h3 id="use">Use</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>udf<span style="color:#f92672">.</span>register<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;getEventType&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>s<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">String</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> s <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> diagnostics <span style="color:#66d9ef">if</span> diagnostics<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DIAG&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;diagnostics&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;PAYMENT&#34;</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;payment&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> drug <span style="color:#66d9ef">if</span> drug<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DRUG&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;drug&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> procedure <span style="color:#66d9ef">if</span> procedure<span style="color:#f92672">.</span>startsWith<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PROC&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;procedure&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;heartfailure&#34;</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;heart failure&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">=&gt;</span> <span style="color:#e6db74">&#34;unknown&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">})</span>
+</span></span></code></pre></div><h3 id="use">Use</h3>
 <p>Write sql and call your UDF</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select getEventType(eventId) type, count(*) count from events group by getEventType(eventId) order by count desc&#34;</span><span style="color:#f92672">).</span>show
-<span style="color:#66d9ef">type</span>          <span style="color:#66d9ef">count</span>
-drug          <span style="color:#ae81ff">16251</span>
-diagnostics   <span style="color:#ae81ff">10820</span>
-payment       <span style="color:#ae81ff">3259</span>
-procedure     <span style="color:#ae81ff">514</span>
-heart failure <span style="color:#ae81ff">300</span>
-</code></pre></div><p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select getEventType(eventId) type, count(*) count from events group by getEventType(eventId) order by count desc&#34;</span><span style="color:#f92672">).</span>show
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span>          <span style="color:#66d9ef">count</span>
+</span></span><span style="display:flex;"><span>drug          <span style="color:#ae81ff">16251</span>
+</span></span><span style="display:flex;"><span>diagnostics   <span style="color:#ae81ff">10820</span>
+</span></span><span style="display:flex;"><span>payment       <span style="color:#ae81ff">3259</span>
+</span></span><span style="display:flex;"><span>procedure     <span style="color:#ae81ff">514</span>
+</span></span><span style="display:flex;"><span>heart failure <span style="color:#ae81ff">300</span>
+</span></span></code></pre></div><p><!-- raw HTML omitted --></p>
 <ul>
 <li>SQL</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select patientId, sum(value) as payment from events where eventId = &#39;PAYMENT&#39; group by patientId order by payment desc limit 10&#34;</span><span style="color:#f92672">).</span>show
-
-patientId        payment
-<span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#ae81ff">139880.0</span>
-<span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#ae81ff">108980.0</span>
-<span style="color:#ae81ff">01</span><span style="color:#a6e22e">AC552BE839AB2B</span> <span style="color:#ae81ff">108530.0</span>
-<span style="color:#ae81ff">0103899</span>F68F866F0 <span style="color:#ae81ff">101710.0</span>
-<span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#ae81ff">99270.0</span>
-<span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#ae81ff">84730.0</span>
-<span style="color:#ae81ff">01</span><span style="color:#a6e22e">BE015FAF3D32D1</span> <span style="color:#ae81ff">83290.0</span>
-<span style="color:#ae81ff">002</span><span style="color:#a6e22e">AB71D3224BE66</span> <span style="color:#ae81ff">79850.0</span>
-<span style="color:#ae81ff">51</span>A115C3BD10C42B <span style="color:#ae81ff">76110.0</span>
-<span style="color:#ae81ff">01546</span><span style="color:#a6e22e">ADB01630C6C</span> <span style="color:#ae81ff">68190.0</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> sqlContext<span style="color:#f92672">.</span>sql<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select patientId, sum(value) as payment from events where eventId = &#39;PAYMENT&#39; group by patientId order by payment desc limit 10&#34;</span><span style="color:#f92672">).</span>show
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>patientId        payment
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#ae81ff">139880.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#ae81ff">108980.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span><span style="color:#a6e22e">AC552BE839AB2B</span> <span style="color:#ae81ff">108530.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0103899</span>F68F866F0 <span style="color:#ae81ff">101710.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#ae81ff">99270.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#ae81ff">84730.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span><span style="color:#a6e22e">BE015FAF3D32D1</span> <span style="color:#ae81ff">83290.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">002</span><span style="color:#a6e22e">AB71D3224BE66</span> <span style="color:#ae81ff">79850.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">51</span>A115C3BD10C42B <span style="color:#ae81ff">76110.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01546</span><span style="color:#a6e22e">ADB01630C6C</span> <span style="color:#ae81ff">68190.0</span>
+</span></span></code></pre></div><ul>
 <li>DSL</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>patientEvents<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;PAYMENT&#34;</span><span style="color:#f92672">).</span>groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">).</span>agg<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;value&#34;</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;sum&#34;</span><span style="color:#f92672">).</span>withColumnRenamed<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sum(value)&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;payment&#34;</span><span style="color:#f92672">).</span>orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;payment&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>show<span style="color:#f92672">(</span><span style="color:#ae81ff">10</span><span style="color:#f92672">)</span>
-
-patientId        payment
-<span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#ae81ff">139880.0</span>
-<span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#ae81ff">108980.0</span>
-<span style="color:#ae81ff">01</span><span style="color:#a6e22e">AC552BE839AB2B</span> <span style="color:#ae81ff">108530.0</span>
-<span style="color:#ae81ff">0103899</span>F68F866F0 <span style="color:#ae81ff">101710.0</span>
-<span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#ae81ff">99270.0</span>
-<span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#ae81ff">84730.0</span>
-<span style="color:#ae81ff">01</span><span style="color:#a6e22e">BE015FAF3D32D1</span> <span style="color:#ae81ff">83290.0</span>
-<span style="color:#ae81ff">002</span><span style="color:#a6e22e">AB71D3224BE66</span> <span style="color:#ae81ff">79850.0</span>
-<span style="color:#ae81ff">51</span>A115C3BD10C42B <span style="color:#ae81ff">76110.0</span>
-<span style="color:#ae81ff">01546</span><span style="color:#a6e22e">ADB01630C6C</span> <span style="color:#ae81ff">68190.0</span>
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span>scala<span style="color:#f92672">&gt;</span> patientEvents<span style="color:#f92672">.</span>filter<span style="color:#f92672">(</span>patientEvents<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;eventId&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;PAYMENT&#34;</span><span style="color:#f92672">).</span>groupBy<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;patientId&#34;</span><span style="color:#f92672">).</span>agg<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;value&#34;</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;sum&#34;</span><span style="color:#f92672">).</span>withColumnRenamed<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sum(value)&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;payment&#34;</span><span style="color:#f92672">).</span>orderBy<span style="color:#f92672">(</span>$<span style="color:#e6db74">&#34;payment&#34;</span><span style="color:#f92672">.</span>desc<span style="color:#f92672">).</span>show<span style="color:#f92672">(</span><span style="color:#ae81ff">10</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>patientId        payment
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0085</span>B4F55FFA358D <span style="color:#ae81ff">139880.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">019</span>E4729585EF3DD <span style="color:#ae81ff">108980.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span><span style="color:#a6e22e">AC552BE839AB2B</span> <span style="color:#ae81ff">108530.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0103899</span>F68F866F0 <span style="color:#ae81ff">101710.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00291</span>F39917544B1 <span style="color:#ae81ff">99270.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span>A999551906C787 <span style="color:#ae81ff">84730.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01</span><span style="color:#a6e22e">BE015FAF3D32D1</span> <span style="color:#ae81ff">83290.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">002</span><span style="color:#a6e22e">AB71D3224BE66</span> <span style="color:#ae81ff">79850.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">51</span>A115C3BD10C42B <span style="color:#ae81ff">76110.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">01546</span><span style="color:#a6e22e">ADB01630C6C</span> <span style="color:#ae81ff">68190.0</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 </article>
  
       

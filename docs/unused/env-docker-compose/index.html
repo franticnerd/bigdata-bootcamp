@@ -22,7 +22,7 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -314,7 +314,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -386,120 +386,120 @@ This is an optional section. Docker Compose is just a utility, which does <stron
 <h2 id="install-docker-compose">Install Docker Compose</h2>
 <p>If you are a Windows/macOS user, the <code>docker-compose</code> should installed with your docker application.</p>
 <p>If this command is missing in your machine</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># docker-compose</span>
--bash: docker-compose: command not found
-</code></pre></div><p>It is also pretty easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># docker-compose</span>
+</span></span><span style="display:flex;"><span>-bash: docker-compose: command not found
+</span></span></code></pre></div><p>It is also pretty easy.</p>
 <p>Please visit the <a href="https://github.com/docker/compose/releases">Docker Compose Release Page</a>, following the guide and download the latest binary release.</p>
 <h2 id="create-a-docker-composeyml">Create A <code>docker-compose.yml</code></h2>
 <p>You can go to an empty folder in somewhere, and create a text file named as <code>docker-compose.yml</code>. The content may as follow:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
-
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">bootcamp</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">sunlab/bigbox:latest</span>
-    <span style="color:#f92672">hostname</span>: <span style="color:#ae81ff">bootcamp</span>
-    <span style="color:#f92672">domainname</span>: <span style="color:#ae81ff">local</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#e6db74">&#34;no&#34;</span>
-    <span style="color:#f92672">volumes</span>:
-    <span style="color:#75715e"># Volumes section defined the mappings between host machine and</span>
-    <span style="color:#75715e"># virtual machine.</span>
-    <span style="color:#75715e"># &#34;:&#34; split each element into 2 parts</span>
-    <span style="color:#75715e"># the left part is the folder in host machine</span>
-    <span style="color:#75715e"># the right part is the folder in virtual machine</span>
-    <span style="color:#75715e"># docker-compose support relative path</span>
-    <span style="color:#75715e"># Please refer to</span>
-    <span style="color:#75715e"># https://docs.docker.com/compose/compose-file/#volumes</span>
-    <span style="color:#75715e"># for more detail if you are interested</span>
-      - <span style="color:#ae81ff">./data/logs:/var/log</span>
-      - <span style="color:#ae81ff">./data/host:/mnt/host</span>
-    <span style="color:#f92672">environment</span>:
-      - <span style="color:#ae81ff">CONTAINER=docker</span>
-    <span style="color:#75715e"># /scripts/entrypoint.sh will start all the services</span>
-    <span style="color:#75715e"># and then finally listen to port 22.</span>
-    <span style="color:#f92672">command</span>: [ <span style="color:#e6db74">&#34;/scripts/entrypoint.sh&#34;</span> ]
-    <span style="color:#f92672">ports</span>:
-    <span style="color:#75715e"># Ports section defined a few rules and forward the network</span>
-    <span style="color:#75715e"># stream between host machine and vm.</span>
-    <span style="color:#75715e"># As the rules in volumes section</span>
-    <span style="color:#75715e"># The left part is for your host machine.</span>
-    <span style="color:#75715e"># This means you can visit localhost:2333</span>
-    <span style="color:#75715e"># and then get the response from the app</span>
-    <span style="color:#75715e"># listening port 22 in docker container </span>
-      - <span style="color:#e6db74">&#34;2333:22&#34;</span>
-      - <span style="color:#e6db74">&#34;7077:7077&#34;</span> <span style="color:#75715e"># spark</span>
-      - <span style="color:#e6db74">&#34;4040:4040&#34;</span>
-      - <span style="color:#e6db74">&#34;4041:4041&#34;</span>
-      - <span style="color:#e6db74">&#34;8888:8888&#34;</span>
-      <span style="color:#75715e"># - &#34;8983:8983&#34; # for solr</span>
-</code></pre></div><p><a href="https://github.com/yuikns/bigbox/tree/master/example">Here</a> is a example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">bootcamp</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">sunlab/bigbox:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hostname</span>: <span style="color:#ae81ff">bootcamp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">domainname</span>: <span style="color:#ae81ff">local</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#e6db74">&#34;no&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Volumes section defined the mappings between host machine and</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># virtual machine.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># &#34;:&#34; split each element into 2 parts</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the left part is the folder in host machine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the right part is the folder in virtual machine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># docker-compose support relative path</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Please refer to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># https://docs.docker.com/compose/compose-file/#volumes</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># for more detail if you are interested</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./data/logs:/var/log</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./data/host:/mnt/host</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">CONTAINER=docker</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># /scripts/entrypoint.sh will start all the services</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># and then finally listen to port 22.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: [ <span style="color:#e6db74">&#34;/scripts/entrypoint.sh&#34;</span> ]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Ports section defined a few rules and forward the network</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># stream between host machine and vm.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># As the rules in volumes section</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The left part is for your host machine.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># This means you can visit localhost:2333</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># and then get the response from the app</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># listening port 22 in docker container </span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;2333:22&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;7077:7077&#34;</span> <span style="color:#75715e"># spark</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;4040:4040&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;4041:4041&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;8888:8888&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># - &#34;8983:8983&#34; # for solr</span>
+</span></span></code></pre></div><p><a href="https://github.com/yuikns/bigbox/tree/master/example">Here</a> is a example.</p>
 <h2 id="basic-operation">Basic Operation</h2>
 <p>Similar to other parts. If you are a linux user, you should always add an &lsquo;sudo&rsquo; before the command <code>docker-compose</code>.</p>
 <h3 id="up-and-down-start-and-stop-how-to-control-the-virtual-environment">Up and Down, Start and Stop. How to control the virtual environment</h3>
 <p>If you wish to create and start the container(s).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
-</code></pre></div><p>This command will search the configure file <code>docker-compose.yml</code> or <code>docker-compose.yaml</code> in current folder, and start the corresponding services.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span></code></pre></div><p>This command will search the configure file <code>docker-compose.yml</code> or <code>docker-compose.yaml</code> in current folder, and start the corresponding services.</p>
 <p>It will pull the image described in the yml file if there is no local cache. Otherwise it will create a container through local image.</p>
 <p>In this case, if you close the terminal, the service may be stopped but not destroyed.</p>
 <p>You an pass a parameter <code>-d</code>. This parameter indices the docker-compose will run the containers in the background after started.</p>
 <p>Please type the following command for more introduction.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose help up
-</code></pre></div><p>If you wish to clearly terminate everything. You may type</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose down
-</code></pre></div><p>This command will stops containers and removes containers, networks, volumes, and images created by <code>up</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose help up
+</span></span></code></pre></div><p>If you wish to clearly terminate everything. You may type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose down
+</span></span></code></pre></div><p>This command will stops containers and removes containers, networks, volumes, and images created by <code>up</code>.</p>
 <p>Everything inside the container are vanished.</p>
 <p>If you have a container created. You may use <code>docker-compose start/stop/restart</code> to start/stop/restart the service. The container will stay over there</p>
 <h3 id="run-exec-and-ssh-how-to-access-the-environment">Run, Exec and SSH. How to access the environment</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose run bootcamp bash
-</code></pre></div><p><code>run</code> will launch a brand new container based on the configuration. <code>bootcamp</code> is name of the service in the config. This may useful in debugging or somewhere else, but may not fit for this course.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose exec bootcamp bash
-</code></pre></div><p><code>exec</code> will reuse the container and execute a specific command. The command is <code>bash</code> in this case. You should make sure the service is already started before typing this command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose run bootcamp bash
+</span></span></code></pre></div><p><code>run</code> will launch a brand new container based on the configuration. <code>bootcamp</code> is name of the service in the config. This may useful in debugging or somewhere else, but may not fit for this course.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose exec bootcamp bash
+</span></span></code></pre></div><p><code>exec</code> will reuse the container and execute a specific command. The command is <code>bash</code> in this case. You should make sure the service is already started before typing this command.</p>
 <p>You can also access the environment through <a href="https://www.openssh.com/">SSH</a>.</p>
 <p>We have also initialized the SSH RSA Keys <a href="https://github.com/yuikns/bigbox/tree/master/config/ssh">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://raw.githubusercontent.com/yuikns/bigbox/master/config/ssh/id_rsa -o bigbox-private-key
-chmod <span style="color:#ae81ff">0600</span> bigbox-private-key <span style="color:#75715e"># prevent error: Permissions 0644 for &#39;./bigbox-private-key&#39; are too open.</span>
-ssh -p <span style="color:#ae81ff">2333</span> -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -o UserKnownHostsFile<span style="color:#f92672">=</span>/dev/null -i bigbox-private-key root@127.0.0.1
-</code></pre></div><p>If you are running your docker compose in remote. This identity file may unsafe. You can generate a pair by yourself.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf ~/.ssh/</span>
-<span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># ssh-keygen</span>
-Generating public/private rsa key pair.
-Enter file in which to save the key <span style="color:#f92672">(</span>/root/.ssh/id_rsa<span style="color:#f92672">)</span>:
-Created directory <span style="color:#e6db74">&#39;/root/.ssh&#39;</span>.
-Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: <span style="color:#75715e"># type enter here</span>
-Enter same passphrase again: <span style="color:#75715e"># type enter here again</span>
-Your identification has been saved in /root/.ssh/id_rsa.
-Your public key has been saved in /root/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:2NYgKW6bCmLvFPAug868hXBAIW6PhWlJeRK6LeYCHJ0 root@bootcamp.local
-The key<span style="color:#960050;background-color:#1e0010">&#39;</span>s randomart image is:
-+---<span style="color:#f92672">[</span>RSA 2048<span style="color:#f92672">]</span>----+
-|.<span style="color:#f92672">=</span>+              |
-|*o<span style="color:#f92672">=</span>..  .         |
-|oXoE. o .        |
-|++B. . + o       |
-|<span style="color:#f92672">=</span>+o+o . S .      |
-|*oo..o .         |
-|<span style="color:#f92672">=</span>* +o            |
-|B.*.             |
-| <span style="color:#f92672">=</span>+o             |
-+----<span style="color:#f92672">[</span>SHA256<span style="color:#f92672">]</span>-----+
-<span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># cd .ssh/</span>
-<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># cp id_rsa.pub authorized_keys</span>
-<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># chmod 0600 authorized_keys</span>
-<span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># ls -alh</span>
-total 20K
-drwx------ <span style="color:#ae81ff">2</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:42 .
-dr-xr-x--- <span style="color:#ae81ff">1</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:41 ..
--rw------- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:42 authorized_keys
--rw------- <span style="color:#ae81ff">1</span> root root 1.7K Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa
--rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa.pub
-</code></pre></div><p>You may copy the <code>id_rsa</code> file to local as your key file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://raw.githubusercontent.com/yuikns/bigbox/master/config/ssh/id_rsa -o bigbox-private-key
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0600</span> bigbox-private-key <span style="color:#75715e"># prevent error: Permissions 0644 for &#39;./bigbox-private-key&#39; are too open.</span>
+</span></span><span style="display:flex;"><span>ssh -p <span style="color:#ae81ff">2333</span> -o StrictHostKeyChecking<span style="color:#f92672">=</span>no -o UserKnownHostsFile<span style="color:#f92672">=</span>/dev/null -i bigbox-private-key root@127.0.0.1
+</span></span></code></pre></div><p>If you are running your docker compose in remote. This identity file may unsafe. You can generate a pair by yourself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf ~/.ssh/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># ssh-keygen</span>
+</span></span><span style="display:flex;"><span>Generating public/private rsa key pair.
+</span></span><span style="display:flex;"><span>Enter file in which to save the key <span style="color:#f92672">(</span>/root/.ssh/id_rsa<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Created directory <span style="color:#e6db74">&#39;/root/.ssh&#39;</span>.
+</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: <span style="color:#75715e"># type enter here</span>
+</span></span><span style="display:flex;"><span>Enter same passphrase again: <span style="color:#75715e"># type enter here again</span>
+</span></span><span style="display:flex;"><span>Your identification has been saved in /root/.ssh/id_rsa.
+</span></span><span style="display:flex;"><span>Your public key has been saved in /root/.ssh/id_rsa.pub.
+</span></span><span style="display:flex;"><span>The key fingerprint is:
+</span></span><span style="display:flex;"><span>SHA256:2NYgKW6bCmLvFPAug868hXBAIW6PhWlJeRK6LeYCHJ0 root@bootcamp.local
+</span></span><span style="display:flex;"><span>The key<span style="color:#960050;background-color:#1e0010">&#39;</span>s randomart image is:
+</span></span><span style="display:flex;"><span>+---<span style="color:#f92672">[</span>RSA 2048<span style="color:#f92672">]</span>----+
+</span></span><span style="display:flex;"><span>|.<span style="color:#f92672">=</span>+              |
+</span></span><span style="display:flex;"><span>|*o<span style="color:#f92672">=</span>..  .         |
+</span></span><span style="display:flex;"><span>|oXoE. o .        |
+</span></span><span style="display:flex;"><span>|++B. . + o       |
+</span></span><span style="display:flex;"><span>|<span style="color:#f92672">=</span>+o+o . S .      |
+</span></span><span style="display:flex;"><span>|*oo..o .         |
+</span></span><span style="display:flex;"><span>|<span style="color:#f92672">=</span>* +o            |
+</span></span><span style="display:flex;"><span>|B.*.             |
+</span></span><span style="display:flex;"><span>| <span style="color:#f92672">=</span>+o             |
+</span></span><span style="display:flex;"><span>+----<span style="color:#f92672">[</span>SHA256<span style="color:#f92672">]</span>-----+
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp ~<span style="color:#f92672">]</span><span style="color:#75715e"># cd .ssh/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># cp id_rsa.pub authorized_keys</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># chmod 0600 authorized_keys</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@bootcamp .ssh<span style="color:#f92672">]</span><span style="color:#75715e"># ls -alh</span>
+</span></span><span style="display:flex;"><span>total 20K
+</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ae81ff">2</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:42 .
+</span></span><span style="display:flex;"><span>dr-xr-x--- <span style="color:#ae81ff">1</span> root root 4.0K Jun <span style="color:#ae81ff">20</span> 08:41 ..
+</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:42 authorized_keys
+</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ae81ff">1</span> root root 1.7K Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">401</span> Jun <span style="color:#ae81ff">20</span> 08:41 id_rsa.pub
+</span></span></code></pre></div><p>You may copy the <code>id_rsa</code> file to local as your key file.</p>
 <h3 id="logs">Logs</h3>
 <h4 id="logs-for-hadoop-ecosystem">Logs for Hadoop Ecosystem</h4>
 <p>You may noticed, the sample <code>docker-compose.yml</code> mapped the folder from <code>/var/log</code> in vm to <code>./data/logs</code> in physical machine. You may simply check the files in your folder <code>./data/logs</code>.</p>
 <h4 id="logs-from-docker-container">Logs from docker container</h4>
 <p>You may trace it using command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose logs -f --tail<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose logs -f --tail<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+</span></span></code></pre></div></article>
  
       
 

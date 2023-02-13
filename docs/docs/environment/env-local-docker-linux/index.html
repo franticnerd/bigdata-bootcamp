@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Reference: [original website, official tutorial]
- 1. Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, you can install Docker and start the service with the following commands:
+1. Install Docker on RHEL/CentOS/Fedora Get Docker CE for CentOS Get Docker CE for Fedora In brief, you can install Docker and start the service with the following commands:
 sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start-up automatically FAQ If your SELinux and BTRFS are on working, you may meet an error message as follow:"><meta property="og:title" content="Install Docker in Linux" />
 <meta property="og:description" content="Reference: [original website, official tutorial]
- 1. Install Docker on RHEL/CentOS/Fedora  Get Docker CE for CentOS Get Docker CE for Fedora  In brief, you can install Docker and start the service with the following commands:
+1. Install Docker on RHEL/CentOS/Fedora Get Docker CE for CentOS Get Docker CE for Fedora In brief, you can install Docker and start the service with the following commands:
 sudo yum install docker-ce -y # install docker package sudo service docker start # start docker service chkconfig docker on # start-up automatically FAQ If your SELinux and BTRFS are on working, you may meet an error message as follow:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://franticnerd/bigdata-bootcamp/docs/environment/env-local-docker-linux/" /><meta property="article:section" content="docs" />
@@ -22,7 +22,7 @@ sudo yum install docker-ce -y # install docker package sudo service docker start
 <link rel="stylesheet" href="/bigdata-bootcamp/book.min.43ea4026a52be03f709fccca49769e06471f235a1fc425b2a481cc2c3ea0a7d2.css" integrity="sha256-Q&#43;pAJqUr4D9wn8zKSXaeBkcfI1ofxCWypIHMLD6gp9I=">
 
 
-<script defer src="/bigdata-bootcamp/en.search.min.02dd03932fecc93017140dc75e14b310d14b7b608e9d08b5c775934bee6c7d25.js" integrity="sha256-At0Dky/syTAXFA3HXhSzENFLe2COnQi1x3WTS&#43;5sfSU="></script>
+<script defer src="/bigdata-bootcamp/en.search.min.12e117d1d6a57d2791ab8f84a11f9fa5b3c5bc1ac819af94af1e0ba29292be53.js" integrity="sha256-EuEX0dalfSeRq4&#43;EoR&#43;fpbPFvBrIGa&#43;Urx4LopKSvlM="></script>
 
 <!--
 Made with Book Theme
@@ -314,7 +314,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -368,24 +368,24 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://docs.docker.com/engine/installation/linux/docker-ce/fedora/">Get Docker CE for Fedora</a></li>
 </ul>
 <p>In brief, you can install Docker and start the service with the following commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install docker-ce -y  <span style="color:#75715e"># install docker package</span>
-sudo service  docker start  <span style="color:#75715e"># start docker service</span>
-chkconfig docker on  <span style="color:#75715e"># start-up automatically</span>
-</code></pre></div><h3 id="faq">FAQ</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install docker-ce -y  <span style="color:#75715e"># install docker package</span>
+</span></span><span style="display:flex;"><span>sudo service  docker start  <span style="color:#75715e"># start docker service</span>
+</span></span><span style="display:flex;"><span>chkconfig docker on  <span style="color:#75715e"># start-up automatically</span>
+</span></span></code></pre></div><h3 id="faq">FAQ</h3>
 <p><strong>If your SELinux and BTRFS are on working, you may meet an error message as follow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># systemctl status docker.service -l</span>
-...
-SELinux is not supported with the BTRFS graph driver!
-...
-</code></pre></div><p>Modify /etc/sysconfig/docker as follow:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Modify these options if you want to change the way the docker daemon runs</span>
-<span style="color:#75715e">#OPTIONS=&#39;--selinux-enabled&#39;</span>
-OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
-...
-</code></pre></div><p>Restart your docker service</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># systemctl status docker.service -l</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>SELinux is not supported with the BTRFS graph driver!
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Modify /etc/sysconfig/docker as follow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Modify these options if you want to change the way the docker daemon runs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#OPTIONS=&#39;--selinux-enabled&#39;</span>
+</span></span><span style="display:flex;"><span>OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Restart your docker service</p>
 <p><strong>Storage Issue:</strong></p>
 <p>Error message found in /var/log/upstart/docker.log</p>
-<pre tabindex="0"><code>[graphdriver] using prior storage driver \&quot;btrfs\&quot;...
+<pre tabindex="0"><code>[graphdriver] using prior storage driver \&#34;btrfs\&#34;...
 </code></pre><p>Just delete directory /var/lib/docker and restart the Docker service</p>
 <h2 id="2-install-docker-on-ubuntudebian">2. Install Docker on Ubuntu/Debian</h2>
 <ul>
@@ -393,10 +393,10 @@ OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39
 <li><a href="https://docs.docker.com/engine/installation/linux/docker-ce/debian/">Get Docker CE for Debian</a></li>
 </ul>
 <p>Generally, you can add the repository and execute</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install docker-ce
-</code></pre></div><p>Both Debian Series and RHEL Series can be controlled by</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service docker start <span style="color:#75715e"># stop, restart, ...</span>
-</code></pre></div><p>Once you started your service, you would find a socket file <code>/var/run/docker.sock</code>, and then you are able to execute your docker commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install docker-ce
+</span></span></code></pre></div><p>Both Debian Series and RHEL Series can be controlled by</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo service docker start <span style="color:#75715e"># stop, restart, ...</span>
+</span></span></code></pre></div><p>Once you started your service, you would find a socket file <code>/var/run/docker.sock</code>, and then you are able to execute your docker commands.</p>
 </article>
  
       
