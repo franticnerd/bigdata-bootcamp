@@ -13,9 +13,9 @@ The training materials are developed by [Sunlab](http://www.sunlab.org), [Polo C
 
 ## Logistics
 
-- Date: Feb 18, 2023 (Saturday) and Feb 19, 2023 (Sunday)
+- Date: Mar 9, 2024 (Saturday) and Mar 10, 2024 (Sunday)
 - Time: 9:00 A.M. - 4:00 P.M.
-- Location: Klaus 2456; also streamed at https://gatech.zoom.us/my/chaozhanggt?pwd=QUsvK0NUVHQxNnVxbmlnWkhURitmdz09
+- Location: Klaus 2443; also streamed at https://gatech.zoom.us/my/chaozhanggt?pwd=QUsvK0NUVHQxNnVxbmlnWkhURitmdz09
 - Instructor: [Dr. Chao Zhang](http://chaozhang.org) chaozhang@gatech.edu
 - TAs: Mr. Yinghao Li yinghaoli@gatech.edu and Mr. Yuchen Zhuang  yzhuang43@gatech.edu
 
